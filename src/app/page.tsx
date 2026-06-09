@@ -26,7 +26,7 @@ export default function Home() {
 
       {/* 6. Soluciones Corporativas y PyME */}
       <EntrepreneurSolutions />
-      <SocialProofTicker />
+      <SocialProofTicker posts={[]} />
     </main>
   );
 }
