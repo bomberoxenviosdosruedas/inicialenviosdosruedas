@@ -1,24 +1,95 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Zap, ShieldCheck, Play } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+
 export default function Vision() {
+  const metrics = [
+    { value: "+5.000", label: "Confianza local comprobada" },
+    { value: "7 Años", label: "Innovación constante en última milla" },
+    { value: "Flota Exclusiva", label: "Motocicletas dedicadas para máxima agilidad urbana" },
+  ];
+
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-      <div className="space-y-6">
-        <div className="inline-block bg-electric-blue/20 px-3 py-1 border border-electric-blue">
-          <span className="font-technical text-xs text-electric-blue uppercase tracking-widest">NUESTRA VISIÓN</span>
-        </div>
-        <h2 className="font-display text-5xl uppercase text-white tracking-tighter">REDEFINIENDO LA LOGÍSTICA URBANA</h2>
-        <p className="font-technical text-accent text-xl uppercase italic">MÁS QUE ENTREGAS, CONECTAMOS OPORTUNIDADES</p>
-        <p className="font-body text-off-white/70 leading-relaxed">
-          En DosRuedas, no solo movemos paquetes. Impulsamos el crecimiento de comercios y empresas marplatenses a través de una infraestructura logística ágil, tecnológica y profundamente humana.
-        </p>
-      </div>
-      <div className="grid grid-cols-2 gap-6">
-        <div className="p-8 border border-electric-blue/30 bg-dark-navy/50">
-          <h4 className="font-display text-4xl text-white">99.8%</h4>
-          <p className="font-technical text-xs text-off-white/60 uppercase tracking-widest">ENTREGAS EXITOSAS</p>
-        </div>
-        <div className="p-8 border border-accent/30 bg-dark-navy/50">
-          <h4 className="font-display text-4xl text-accent">EN LÍNEA</h4>
-          <p className="font-technical text-xs text-off-white/60 uppercase tracking-widest">ESTADO OPERATIVO</p>
+    <section className="py-24 bg-white border-y-4 border-slate-950 overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Text Content */}
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+              </span>
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-primary">
+                Partner Logístico Especializado
+              </span>
+            </div>
+
+            <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-slate-950 uppercase leading-none">
+              Nuestra Visión <br />
+              <span className="text-primary">Logística</span>
+            </h2>
+
+            <p className="font-sans text-2xl font-bold text-slate-950/40 uppercase italic max-w-lg">
+              "Transformamos tus costos fijos en solutions flexibles que acompañan el crecimiento de tu negocio."
+            </p>
+
+            {/* Grid Characteristics */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+              <div className="brutalist-card p-6 bg-slate-50">
+                <Zap className="w-10 h-10 text-primary mb-4" />
+                <h4 className="text-xl font-black mb-2">Entregas a Tiempo</h4>
+                <p className="font-sans text-sm text-slate-600 uppercase font-bold tracking-tight">Puntualidad garantizada en cada envío</p>
+              </div>
+              <div className="brutalist-card p-6 bg-slate-50">
+                <ShieldCheck className="w-10 h-10 text-primary mb-4" />
+                <h4 className="text-xl font-black mb-2">Envíos Seguros</h4>
+                <p className="font-sans text-sm text-slate-600 uppercase font-bold tracking-tight">Protección total de tus paquetes</p>
+              </div>
+            </div>
+
+            {/* Metrics */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t-4 border-slate-950">
+              {metrics.map((m, i) => (
+                <div key={i} className="flex flex-col">
+                  <span className="text-3xl font-black text-primary">{m.value}</span>
+                  <span className="font-mono text-[10px] uppercase font-bold text-slate-950 leading-tight mt-1">{m.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Visual Container */}
+          <div className="relative">
+            <div className="brutalist-card aspect-video relative overflow-hidden group">
+              <Image
+                src="/hero/mapa_background.jpeg"
+                alt="Visión Logística"
+                fill
+                className="object-cover grayscale hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
+
+              {/* Accent Light */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-accent/40 blur-3xl" />
+
+              {/* Floating Card */}
+              <div className="absolute bottom-6 left-6 right-6 brutalist-card bg-white p-6 flex items-center justify-between">
+                <div>
+                  <h5 className="font-black text-lg uppercase tracking-tighter">Conocé más sobre nosotros</h5>
+                  <p className="font-mono text-xs text-slate-500 uppercase">Trayectoria y Compromiso</p>
+                </div>
+                <Link href="/nosotros/sobre-nosotros" className="w-12 h-12 bg-primary flex items-center justify-center hover:bg-slate-950 transition-colors">
+                  <Play className="w-6 h-6 text-white fill-white" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
