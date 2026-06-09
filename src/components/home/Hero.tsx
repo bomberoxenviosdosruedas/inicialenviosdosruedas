@@ -42,7 +42,7 @@ export default function Hero() {
       const randomUnit = units[Math.floor(Math.random() * units.length)];
       const randomAction = actions[Math.floor(Math.random() * actions.length)];
       const timeStr = new Date().toLocaleTimeString("es-AR", { hour12: false });
-      
+
       setLogs((prev) => {
         const nextLogs = [...prev, `[${timeStr}] ${randomUnit}: ${randomAction}`];
         if (nextLogs.length > 5) nextLogs.shift();
@@ -61,11 +61,11 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] pointer-events-none animate-pulse" style={{ animationDuration: '12s' }} />
 
       <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
-        
+
         {/* TEXT PRESENTATION COLUMN */}
         <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -83,7 +83,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -98,7 +98,7 @@ export default function Hero() {
             Urbana.
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -107,21 +107,21 @@ export default function Hero() {
             Despliegue operativo inteligente en Mar del Plata. Optimizamos la última milla mediante algoritmos de ruteo dinámico y una flota de alta frecuencia.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-wrap gap-4 justify-center lg:justify-start pt-2"
           >
-            <Link 
-              href="/cotizar/express" 
+            <Link
+              href="/cotizar/express"
               className="bg-accent text-dark-navy px-8 py-5 font-technical text-lg uppercase font-bold hover:bg-white transition-all flex items-center gap-2 border-2 border-accent hover:border-white shadow-[0_0_20px_rgba(255,214,0,0.15)] hover:shadow-none"
             >
               <span>Cotizar Envío</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link 
-              href="/servicios/envios-express" 
+            <Link
+              href="/servicios/envios-express"
               className="border-2 border-white/20 text-white px-8 py-5 font-technical text-lg uppercase hover:bg-white/10 hover:border-white transition-all block"
             >
               Conocer Cobertura
@@ -129,96 +129,47 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* TELEMETRY TERMINAL COLUMN */}
-        <motion.div 
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="lg:col-span-5 relative"
-        >
-          {/* Cyber design brackets */}
-          <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
-          <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 border-accent" />
+        <h1 className="font-display text-7xl md:text-8xl leading-[0.9] tracking-tighter uppercase text-white">
+          Logística de <br />
+          <span className="text-accent">Alta Frecuencia</span><br />
+          para la era digital.
+        </h1>
 
-          {/* Terminal Box */}
-          <div className="border-2 border-primary bg-dark-navy/95 p-6 backdrop-blur-md shadow-[0_0_40px_rgba(0,34,255,0.1)] relative">
-            
-            {/* Header */}
-            <div className="flex justify-between items-center mb-6 pb-4 border-b border-primary/20">
-              <div className="flex items-center gap-2">
-                <Terminal className="w-5 h-5 text-accent" />
-                <span className="font-technical text-xs text-white uppercase tracking-wider">
-                  MGP_Live_Telemetry
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-technical text-[10px] text-green-400 uppercase tracking-widest">
-                  ONLINE
-                </span>
-              </div>
+        <p className="font-body text-lg text-off-white/80 max-w-xl border-l-2 border-primary pl-6 py-2">
+          Despliegue operativo inmediato en Mar del Plata. Optimizamos la última milla mediante algoritmos de flujo dinámico y una flota de respuesta rápida.
+        </p>
+
+        <div className="flex flex-wrap gap-4">
+          <button className="bg-accent text-dark-navy px-8 py-4 font-technical text-lg uppercase font-bold hover:bg-white transition-all">
+            Iniciar Despliegue
+          </button>
+          <button className="border border-off-white/30 text-white px-8 py-4 font-technical text-lg uppercase hover:bg-white/10 transition-all">
+            Consultar Cobertura
+          </button>
+        </div>
+      </div>
+
+      <div className="lg:col-span-5 relative">
+        {/* Placeholder para la unidad de telemetría/tracking */}
+        <div className="border border-electric-blue/30 p-6 bg-dark-navy/50 backdrop-blur-sm">
+          <div className="flex justify-between items-start mb-6 pb-4 border-b border-electric-blue/30">
+            <div>
+              <p className="font-technical text-[10px] text-off-white/50 uppercase">Unit_Tracking_Id</p>
+              <h3 className="font-display text-accent text-2xl tracking-tighter">DR-9921-XPR</h3>
             </div>
-
-            {/* Metrics Grid */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="bg-white/5 border border-white/10 p-4 relative group hover:border-primary transition-colors">
-                <div className="absolute top-2 right-2 text-primary">
-                  <Activity className="w-4 h-4" />
-                </div>
-                <p className="font-technical text-[9px] text-off-white/40 uppercase mb-1">Unidades en Ruta</p>
-                <p className="font-display text-2xl text-white font-bold">{telemetry.activeUnits}</p>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 p-4 relative group hover:border-accent transition-colors">
-                <div className="absolute top-2 right-2 text-accent">
-                  <Cpu className="w-4 h-4" />
-                </div>
-                <p className="font-technical text-[9px] text-off-white/40 uppercase mb-1">Carga Operativa</p>
-                <p className="font-display text-2xl text-accent font-bold">{telemetry.loadFactor}</p>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 p-4 relative group hover:border-accent transition-colors">
-                <div className="absolute top-2 right-2 text-accent">
-                  <Map className="w-4 h-4" />
-                </div>
-                <p className="font-technical text-[9px] text-off-white/40 uppercase mb-1">Velocidad Promedio</p>
-                <p className="font-body text-sm text-white font-bold mt-1">{telemetry.avgSpeed}</p>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 p-4 relative group hover:border-primary transition-colors">
-                <div className="absolute top-2 right-2 text-primary">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <p className="font-technical text-[9px] text-off-white/40 uppercase mb-1">Entregados Hoy</p>
-                <p className="font-display text-xl text-white font-bold">{telemetry.deliveredToday}</p>
-              </div>
-            </div>
-
-            {/* Realtime Terminal Console */}
-            <div className="bg-black/90 p-4 border border-white/10 font-mono text-[11px] h-44 overflow-hidden flex flex-col justify-end space-y-2">
-              <p className="text-white/30 font-technical text-[9px] uppercase tracking-wider border-b border-white/5 pb-1">
-                Realtime_Core_Logs:
-              </p>
-              <div className="space-y-1">
-                {logs.map((log, i) => (
-                  <div key={i} className="flex gap-2 items-start leading-relaxed">
-                    <span className="text-primary select-none font-bold">&gt;</span>
-                    <span className={i === logs.length - 1 ? "text-accent animate-pulse font-bold" : "text-off-white/60"}>
-                      {log}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Hardware footprint detail */}
-            <div className="mt-4 flex justify-between items-center text-[8px] font-technical text-off-white/30 uppercase tracking-widest">
-              <span>LATENCY: 12ms</span>
-              <span>NODE: MDP_CENTRAL_01</span>
+            <div className="px-3 py-1 bg-accent text-dark-navy font-technical text-[10px]">
+              LIVE_SIGNAL
             </div>
           </div>
-        </motion.div>
-
+          <div className="grid grid-cols-2 gap-4">
+            {['Velocity', 'Est_Delivery'].map((item) => (
+              <div key={item} className="p-3 bg-white/5 border border-white/10">
+                <p className="font-technical text-[10px] text-off-white/50 uppercase">{item}</p>
+                <p className="font-body text-white">104.2 KM/H</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
