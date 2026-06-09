@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { Zap, ShieldCheck, Play } from "lucide-react";
-import { motion } from "framer-motion";
+import { Zap, ShieldCheck, Play } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Vision() {
   const metrics = [
@@ -12,77 +12,84 @@ export default function Vision() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center border-b border-white/10">
-      
-      {/* TEXT & METRICS COLUMN */}
-      <div className="lg:col-span-7 space-y-10">
-        <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 bg-primary/10 px-3 py-1 border border-primary/30 rounded-sm">
-            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-ping" />
-            <span className="font-technical text-xs text-primary uppercase tracking-widest font-bold">
-              Partner Logístico Especializado
-            </span>
-          </div>
-          <h2 className="font-display text-5xl md:text-7xl uppercase text-white tracking-tighter">
-            Nuestra Visión Logística
-          </h2>
-          <p className="font-body text-xl text-accent uppercase tracking-tight border-l-2 border-accent pl-4">
-            Transformamos tus costos fijos en soluciones flexibles que acompañan el crecimiento de tu negocio.
-          </p>
-        </div>
+    <section className="py-24 bg-white border-y-4 border-blue-brand overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        {/* Characteristics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-          <div className="flex gap-4 p-6 bg-white/5 border border-white/10">
-            <Zap className="w-8 h-8 text-primary shrink-0" />
-            <div>
-              <h4 className="font-technical text-sm font-bold text-white uppercase tracking-wider">Entregas a Tiempo</h4>
-              <p className="font-body text-xs text-off-white/60 mt-1">Puntualidad garantizada en cada envío.</p>
+          {/* Text Content */}
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-brand bg-blue-brand opacity-75"></span>
+                <span className="relative inline-flex rounded-brand h-3 w-3 bg-blue-brand"></span>
+              </span>
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-blue-brand">
+                Partner Logístico Especializado
+              </span>
+            </div>
+
+            <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-blue-brand uppercase leading-none">
+              Nuestra Visión <br />
+              <span className="text-blue-brand">Logística</span>
+            </h2>
+
+            <p className="font-display text-2xl font-bold text-blue-brand/40 uppercase italic max-w-lg">
+              &quot;Transformamos tus costos fijos en solutions flexibles que acompañan el crecimiento de tu negocio.&quot;
+            </p>
+
+            {/* Grid Characteristics */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+              <div className="brutalist-card p-6 bg-white-brand">
+                <Zap className="w-10 h-10 text-blue-brand mb-4" />
+                <h4 className="text-xl font-black mb-2">Entregas a Tiempo</h4>
+                <p className="font-display text-sm text-blue-brand/60 uppercase font-bold tracking-tight">Puntualidad garantizada en cada envío</p>
+              </div>
+              <div className="brutalist-card p-6 bg-white-brand">
+                <ShieldCheck className="w-10 h-10 text-blue-brand mb-4" />
+                <h4 className="text-xl font-black mb-2">Envíos Seguros</h4>
+                <p className="font-display text-sm text-blue-brand/60 uppercase font-bold tracking-tight">Protección total de tus paquetes</p>
+              </div>
             </div>
           </div>
-          <div className="flex gap-4 p-6 bg-white/5 border border-white/10">
-            <ShieldCheck className="w-8 h-8 text-accent shrink-0" />
-            <div>
-              <h4 className="font-technical text-sm font-bold text-white uppercase tracking-wider">Envíos Seguros</h4>
-              <p className="font-body text-xs text-off-white/60 mt-1">Protección total de tus paquetes.</p>
-            </div>
-          </div>
         </div>
 
-        {/* Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-          {metrics.map((m, i) => (
-            <div key={i} className="border-l-2 border-primary pl-6 py-2">
-              <h3 className="font-display text-3xl text-white font-bold">{m.value}</h3>
-              <p className="font-body text-xs text-off-white/50 leading-relaxed mt-1">{m.label}</p>
+            {/* Metrics */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t-4 border-blue-brand">
+              {metrics.map((m, i) => (
+                <div key={i} className="flex flex-col">
+                  <span className="text-3xl font-black text-blue-brand">{m.value}</span>
+                  <span className="font-mono text-[10px] uppercase font-bold text-blue-brand leading-tight mt-1">{m.label}</span>
+                </div>
+              ))}
             </div>
           ))}
         </div>
       </div>
 
-      {/* VISUAL ACTION CONTAINER COLUMN */}
-      <div className="lg:col-span-5 relative group">
-        <div className="absolute inset-0 border border-primary/20 translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300" />
-        <div className="relative border border-white/10 bg-white/5 p-6 aspect-square md:aspect-video lg:aspect-square overflow-hidden flex flex-col justify-between">
-          
-          {/* Cyber visual background */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_center,var(--color-electric-blue)_0,transparent_70%)]" />
-          
-          {/* SVG Map grid details */}
-          <div className="absolute inset-0 grid grid-cols-8 grid-rows-8 opacity-5">
-            {Array.from({ length: 64 }).map((_, i) => (
-              <div key={i} className="border-[0.5px] border-white" />
-            ))}
-          </div>
+          {/* Visual Container */}
+          <div className="relative">
+            <div className="brutalist-card aspect-video relative overflow-hidden group">
+              <Image
+                src="/hero/mapa_background.jpeg"
+                alt="Visión Logística"
+                fill
+                className="object-cover grayscale hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-blue-brand/20 mix-blend-multiply" />
 
-          <div className="flex justify-between items-start z-10">
-            <span className="font-technical text-[9px] text-off-white/40 uppercase tracking-widest">MAP_UNIT_MDP</span>
-            <span className="font-technical text-[9px] text-primary uppercase tracking-widest font-bold">INFO_NODE</span>
-          </div>
+              {/* Accent Light */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gold-brand/40 blur-3xl" />
 
-          <div className="my-auto text-center z-10 space-y-4 py-8">
-            <div className="font-display text-[160px] text-white/5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
-              MGP
+              {/* Floating Card */}
+              <div className="absolute bottom-6 left-6 right-6 brutalist-card bg-white p-6 flex items-center justify-between">
+                <div>
+                  <h5 className="font-black text-lg uppercase tracking-tighter">Conocé más sobre nosotros</h5>
+                  <p className="font-mono text-xs text-blue-brand/50 uppercase">Trayectoria y Compromiso</p>
+                </div>
+                <Link href="/nosotros/sobre-nosotros" className="w-12 h-12 bg-blue-brand flex items-center justify-center hover:bg-blue-brand transition-colors">
+                  <Play className="w-6 h-6 text-white fill-white" />
+                </Link>
+              </div>
             </div>
             <h3 className="font-display text-3xl sm:text-4xl text-white uppercase tracking-tighter leading-none relative">
               Conocé más <br /> sobre nosotros

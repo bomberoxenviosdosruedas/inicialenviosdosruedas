@@ -55,48 +55,70 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-36 pb-12 border-b border-primary/20 bg-dark-navy">
-      {/* Background Video Loop (High Tech Connection Net) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="size-full object-cover opacity-10 mix-blend-screen pointer-events-none"
-          src="https://ik.imagekit.io/lrigu76hy/tailark/dna-video.mp4?updatedAt=1745736251477"
-        />
-      </div>
+    <section className="relative min-h-[90vh] flex items-center pt-20 pb-12 overflow-hidden bg-white-brand">
+      {/* Background patterns could go here */}
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
 
-      {/* Cyber Grid Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0022FF06_1px,transparent_1px),linear-gradient(to_bottom,#0022FF06_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0" />
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse z-0" style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] pointer-events-none animate-pulse z-0" style={{ animationDuration: '12s' }} />
-
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10 my-auto">
-        
-        {/* TEXT PRESENTATION COLUMN */}
-        <div className="lg:col-span-7 space-y-8 text-center lg:text-left flex flex-col justify-center">
-          
-          {/* Badge Superior */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center justify-center lg:justify-start gap-3"
-          >
-            <div className="bg-primary/25 border border-primary/40 px-3 py-1 flex items-center gap-2 rounded-sm backdrop-blur-sm">
-              <span className="w-2 h-2 bg-accent rounded-full animate-ping" />
-              <span className="font-technical text-xs text-white uppercase tracking-widest font-bold">
-                Tu Solución Confiable
-              </span>
-            </div>
-            <div className="h-[1px] w-8 bg-primary/40 hidden sm:block" />
-            <span className="font-technical text-xs text-off-white/60 tracking-[0.25em] uppercase">
-              FLOW_INTELLIGENCE_v4.2
+        {/* Left Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="lg:col-span-7 space-y-8"
+        >
+          {/* Badge */}
+          <div className="inline-flex items-center gap-3 bg-white border-4 border-blue-brand px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-brand bg-blue-brand opacity-75"></span>
+              <span className="relative inline-flex rounded-brand h-3 w-3 bg-blue-brand"></span>
+            </span>
+            <span className="font-mono text-xs font-bold uppercase tracking-wider text-blue-brand">
+              Tu Solución Confiable
             </span>
           </motion.div>
 
+          {/* Title */}
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-blue-brand leading-[0.85] uppercase md:italic">
+            Mensajería y <br />
+            <span className="text-blue-brand">Logística</span> <br />
+            E-Commerce <br />
+            <span className="text-blue-brand/20 stroke-blue-brand stroke-2">en MDP</span>
+          </h1>
+
+          {/* Description */}
+          <p className="font-display text-xl text-blue-brand/70 max-w-xl border-l-8 border-gold-brand pl-6 py-2 leading-tight">
+            Somos tu solución confiable en servicios de mensajería y delivery en Mar del Plata.
+            Ofrecemos soluciones rápidas, seguras y económicas para todas tus necesidades de envío.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-6 pt-4">
+            <Link href="/cotizar/express" className="brutalist-button-primary group flex items-center gap-2">
+              Solicitar Servicio
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link href="/servicios/envios-express" className="brutalist-button-accent group flex items-center gap-2">
+              <div className="w-8 h-8 rounded-brand border-2 border-blue-brand flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Play className="w-4 h-4 fill-blue-brand" />
+              </div>
+              Ver Servicios
+            </Link>
+          </div>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap gap-8 pt-8 border-t-4 border-blue-brand">
+            {[
+              { icon: ShieldCheck, text: "100% SEGURO" },
+              { icon: Zap, text: "ULTRA RÁPIDO" },
+              { icon: Globe, text: "COBERTURA TOTAL" }
+            ].map((badge, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <badge.icon className="w-5 h-5 text-blue-brand" />
+                <span className="font-mono text-xs font-bold uppercase tracking-widest">{badge.text}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
           {/* Título Principal */}
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -183,50 +205,40 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="lg:col-span-5 relative"
         >
-          {/* Cyber design brackets */}
-          <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
-          <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 border-accent" />
-
-          {/* Terminal Box */}
-          <div className="border-2 border-primary bg-dark-navy/95 p-6 backdrop-blur-md shadow-[0_0_40px_rgba(0,34,255,0.1)] relative">
-            
-            {/* Header */}
-            <div className="flex justify-between items-center mb-6 pb-4 border-b border-primary/20">
-              <div className="flex items-center gap-2">
-                <Terminal className="w-5 h-5 text-accent text-yellow-400" />
-                <span className="font-technical text-xs text-white uppercase tracking-wider">
-                  MGP_Live_Telemetry
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-technical text-[10px] text-green-400 uppercase tracking-widest">
-                  ONLINE
-                </span>
-              </div>
+          <div className="relative w-full aspect-square">
+            {/* Main Image Frame */}
+            <div className="absolute inset-0 border-4 border-blue-brand bg-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+              <Image
+                src="/hero/mapa_background.jpeg"
+                alt="Mapa Logístico MDP"
+                fill
+                className="object-cover opacity-40 grayscale"
+              />
+              <div className="absolute inset-0 bg-blue-brand/10 mix-blend-multiply" />
             </div>
 
-            {/* Metrics Grid */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="bg-white/5 border border-white/10 p-4 relative group hover:border-primary transition-colors">
-                <div className="absolute top-2 right-2 text-primary">
-                  <Activity className="w-4 h-4 text-blue-400" />
-                </div>
-                <p className="font-technical text-[9px] text-off-white/40 uppercase mb-1">Unidades en Ruta</p>
-                <p className="font-display text-2xl text-white font-bold">{telemetry.activeUnits}</p>
+            {/* Floating Cards */}
+            <motion.div
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-6 -right-6 brutalist-card p-4 bg-blue-brand text-white z-20"
+            >
+              <div className="flex flex-col">
+                <span className="font-mono text-[10px] uppercase">Estado</span>
+                <span className="font-black text-xl italic">EN TRÁNSITO</span>
               </div>
+            </motion.div>
 
-              <div className="bg-white/5 border border-white/10 p-4 relative group hover:border-accent transition-colors">
-                <div className="absolute top-2 right-2 text-accent">
-                  <Cpu className="w-4 h-4 text-yellow-400" />
-                </div>
-                <p className="font-technical text-[9px] text-off-white/40 uppercase mb-1">Carga Operativa</p>
-                <p className="font-display text-2xl text-accent font-bold text-yellow-400">{telemetry.loadFactor}</p>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 p-4 relative group hover:border-accent transition-colors">
-                <div className="absolute top-2 right-2 text-accent">
-                  <Map className="w-4 h-4 text-yellow-400" />
+            <motion.div
+              animate={{ y: [0, 20, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute -bottom-6 -left-6 brutalist-card p-4 bg-gold-brand text-blue-brand z-20"
+            >
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="w-8 h-8" />
+                <div className="flex flex-col">
+                  <span className="font-mono text-[10px] uppercase tracking-tighter">Seguridad</span>
+                  <span className="font-black text-xl italic">VERIFICADO</span>
                 </div>
                 <p className="font-technical text-[9px] text-off-white/40 uppercase mb-1">Velocidad Promedio</p>
                 <p className="font-body text-sm text-white font-bold mt-1">{telemetry.avgSpeed}</p>
@@ -258,10 +270,9 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Hardware footprint detail */}
-            <div className="mt-4 flex justify-between items-center text-[8px] font-technical text-off-white/30 uppercase tracking-widest">
-              <span>LATENCY: 12ms</span>
-              <span>NODE: MDP_CENTRAL_01</span>
+            {/* Simulated 3D Elements (Cajas) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-4 border-blue-brand bg-white/80 backdrop-blur-sm shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+               <Zap className="w-24 h-24 text-blue-brand animate-pulse" />
             </div>
           </div>
         </motion.div>

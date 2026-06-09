@@ -28,18 +28,18 @@ export default function FAQAccordion() {
       <div className="space-y-16">
         {faqs.map((cat, i) => (
           <div key={i}>
-            <h3 className="font-display text-2xl text-primary uppercase mb-8 border-b border-primary/20 pb-2 inline-block">
+            <h3 className="font-display text-2xl text-blue-brand uppercase mb-8 border-b border-blue-brand/20 pb-2 inline-block">
               {cat.category}
             </h3>
             <div className="space-y-4">
               {cat.questions.map((item, j) => (
                 <details key={j} className="group border border-white/10 bg-white/5 overflow-hidden">
                   <summary className="flex justify-between items-center p-6 cursor-pointer hover:bg-white/10 transition-colors list-none">
-                    <span className="font-technical text-lg text-white uppercase tracking-wider">{item.q}</span>
-                    <span className="text-primary font-bold text-2xl transition-transform group-open:rotate-45">+</span>
+                    <span className="font-mono text-lg text-white uppercase tracking-wider">{item.q}</span>
+                    <span className="text-blue-brand font-bold text-2xl transition-transform group-open:rotate-45">+</span>
                   </summary>
                   <div className="p-6 pt-0 border-t border-white/5">
-                    <p className="font-body text-sm text-off-white/70 leading-relaxed">
+                    <p className="font-display text-sm text-white-brand/70 leading-relaxed">
                       {item.a}
                     </p>
                   </div>

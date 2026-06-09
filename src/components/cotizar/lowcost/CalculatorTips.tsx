@@ -23,11 +23,11 @@ export default function CalculatorTips() {
         <div className="lg:w-1/3">
           <h2 className="font-display text-4xl text-white uppercase leading-none mb-6">
             Consejos para <br/>
-            <span className="text-accent">Ahorrar</span> <br/>
+            <span className="text-gold-brand">Ahorrar</span> <br/>
             al Cotizar
           </h2>
-          <div className="h-1 w-20 bg-accent mb-6"></div>
-          <p className="font-body text-sm text-off-white/60">
+          <div className="h-1 w-20 bg-gold-brand mb-6"></div>
+          <p className="font-display text-sm text-white-brand/60">
             Sigue estas recomendaciones para garantizar que tu envío califique para la tarifa más económica de nuestro sistema.
           </p>
         </div>
@@ -35,11 +35,11 @@ export default function CalculatorTips() {
         <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-6">
           {tips.map((tip) => (
             <div key={tip.num} className="border border-white/20 p-6 bg-white/5 relative">
-              <span className="font-technical text-3xl text-white/10 absolute bottom-4 right-4 leading-none">
+              <span className="font-mono text-3xl text-white/10 absolute bottom-4 right-4 leading-none">
                 {tip.num}
               </span>
               <h3 className="font-display text-lg text-white mb-3 uppercase">{tip.title}</h3>
-              <p className="font-body text-xs text-off-white/70 leading-relaxed">
+              <p className="font-display text-xs text-white-brand/70 leading-relaxed">
                 {tip.description}
               </p>
             </div>

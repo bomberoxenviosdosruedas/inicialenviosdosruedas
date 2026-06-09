@@ -44,36 +44,30 @@ export default function ServicesOverview() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24 border-b border-white/10">
-      {/* Header */}
-      <div className="mb-16 max-w-3xl">
-        <span className="font-technical text-xs text-primary uppercase tracking-widest font-bold">
-          SOLUCIONES DE ÚLTIMA MILLA
-        </span>
-        <h2 className="font-display text-5xl md:text-7xl uppercase text-white tracking-tighter mt-2">
-          Soluciones Logísticas
-        </h2>
-        <p className="font-body text-off-white/60 text-lg mt-4 border-l-2 border-primary pl-4">
-          Infraestructura moderna para negocios que no se detienen. Inteligencia aplicada a cada kilómetro.
-        </p>
-      </div>
+    <section className="py-24 bg-white-brand">
+      <div className="container mx-auto px-6">
 
-      {/* Grid of cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {services.map((s, i) => {
-          const IconComponent = s.icon;
-          return (
-            <div
-              key={i}
-              className="border border-white/10 p-8 bg-white/5 flex flex-col justify-between hover:border-primary transition-all duration-300 relative group overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 p-3 bg-white/5 font-technical text-[9px] text-off-white/40 uppercase tracking-wider border-b border-l border-white/10">
-                DR_SVC_0{i + 1}
-              </div>
+        {/* Header */}
+        <div className="mb-16 space-y-4">
+          <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-blue-brand uppercase leading-none">
+            Soluciones <br />
+            <span className="text-blue-brand">Logísticas</span>
+          </h2>
+          <p className="font-display text-xl text-blue-brand/60 max-w-2xl font-bold uppercase italic">
+            &quot;Infraestructura moderna para negocios que no se detienen. Inteligencia aplicada a cada kilómetro.&quot;
+          </p>
+        </div>
 
-              <div>
-                <span className={`inline-block font-technical text-[9px] border px-2 py-0.5 mb-6 font-bold tracking-widest ${s.accent}`}>
-                  {s.badge}
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, idx) => (
+            <div key={idx} className="brutalist-card p-8 bg-white flex flex-col hover:-translate-y-2 transition-transform duration-300">
+              <div className="mb-6 flex justify-between items-start">
+                <div className="w-12 h-12 bg-blue-brand flex items-center justify-center border-4 border-blue-brand shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <service.icon className="w-6 h-6 text-white" />
+                </div>
+                <span className="font-mono text-[10px] font-black text-blue-brand border-2 border-blue-brand px-2 py-0.5 uppercase">
+                  {service.badge}
                 </span>
 
                 <div className="flex items-center gap-3 mb-4">
@@ -85,10 +79,9 @@ export default function ServicesOverview() {
                   </h3>
                 </div>
 
-                <p className="font-body text-xs text-off-white/70 leading-relaxed mb-8">
-                  {s.desc}
-                </p>
-              </div>
+              <p className="font-display text-sm text-blue-brand/60 font-bold uppercase tracking-tight mb-8 flex-grow">
+                {service.description}
+              </p>
 
               <Link
                 href={s.link}

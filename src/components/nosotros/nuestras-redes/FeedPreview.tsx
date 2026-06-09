@@ -17,55 +17,36 @@ export default function FeedPreview({ posts }: FeedPreviewProps) {
       <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
         <div>
           <h2 className="font-display text-5xl md:text-7xl text-white uppercase tracking-tighter">
-            LO ÚLTIMO EN <span className="text-primary">REDES</span>
+            LO ÚLTIMO EN <span className="text-blue-brand">REDES</span>
           </h2>
-          <p className="font-technical text-accent tracking-[0.2em] uppercase text-sm mt-2">
+          <p className="font-mono text-gold-brand tracking-[0.2em] uppercase text-sm mt-2">
             Descubrí qué está pasando en nuestra comunidad en tiempo real.
           </p>
         </div>
-        <a 
-          href="https://www.instagram.com/enviosdosruedas/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="border border-white/20 px-6 py-3 font-technical text-xs text-white uppercase tracking-widest hover:bg-white hover:text-dark-navy transition-colors cursor-pointer"
-        >
+        <div className="border border-white/20 px-6 py-3 font-mono text-xs text-white uppercase tracking-widest hover:bg-white hover:text-blue-brand transition-colors cursor-pointer">
           Seguir todas nuestras cuentas
         </a>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {displayPosts.map((post: any) => {
-          const type = post.platform === "instagram" ? "IG" : "FB";
-          const dateStr = new Date(post.timestamp).toLocaleDateString("es-AR", {
-            day: "numeric",
-            month: "short"
-          });
-          return (
-            <div key={post.id} className="bg-white/5 border border-white/10 p-8 flex flex-col relative group overflow-hidden hover:border-primary transition-colors">
-               <div className="absolute top-0 right-0 p-4 font-technical text-[10px] text-primary">
-                 {type}_FEED_LIVE
-               </div>
-               <p className="font-technical text-[10px] text-off-white/40 uppercase mb-6">{dateStr}</p>
-               <p className="font-body text-sm text-off-white/80 leading-relaxed flex-1 mb-8">
-                 "{post.content}"
-               </p>
-               <div className="pt-6 border-t border-white/10 flex justify-between items-center">
-                  <div className="flex items-center gap-2">
-                     <Heart className="w-4 h-4 text-primary" />
-                     <span className="font-technical text-xs text-white">{(post.likes || 0).toLocaleString("es-AR")} LIKES</span>
-                  </div>
-                  <a 
-                    href={post.postUrl || "#"} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="font-technical text-xs text-accent uppercase hover:underline flex items-center gap-1"
-                  >
-                    Ver Original <ExternalLink className="w-3 h-3" />
-                  </a>
-               </div>
-            </div>
-          );
-        })}
+        {posts.map((post) => (
+          <div key={post.id} className="bg-white/5 border border-white/10 p-8 flex flex-col relative group overflow-hidden">
+             <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-blue-brand">
+               {post.type}_FEED_LIVE
+             </div>
+             <p className="font-mono text-[10px] text-white-brand/40 uppercase mb-6">{post.date}</p>
+             <p className="font-display text-sm text-white-brand/80 leading-relaxed flex-1 mb-8">
+               {post.content}
+             </p>
+             <div className="pt-6 border-t border-white/10 flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                   <div className="w-2 h-2 bg-blue-brand rounded-brand" />
+                   <span className="font-mono text-xs text-white">{post.likes} LIKES</span>
+                </div>
+                <button className="font-mono text-xs text-gold-brand uppercase hover:underline">Ver Original</button>
+             </div>
+          </div>
+        ))}
       </div>
     </section>
   );

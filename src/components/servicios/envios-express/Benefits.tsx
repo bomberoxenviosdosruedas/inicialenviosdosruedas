@@ -18,34 +18,34 @@ export default function Benefits() {
   ];
 
   return (
-    <section className="py-24 bg-primary/5">
+    <section className="py-24 bg-blue-brand/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <div className="inline-block bg-primary px-3 py-1 mb-4">
-              <span className="font-technical text-xs text-white uppercase tracking-widest font-bold">
+            <div className="inline-block bg-blue-brand px-3 py-1 mb-4">
+              <span className="font-mono text-xs text-white uppercase tracking-widest font-bold">
                 VENTAJA COMPETITIVA
               </span>
             </div>
             <h2 className="font-display text-5xl md:text-7xl text-white uppercase tracking-tighter">
-              POR QUÉ <span className="text-primary">ELEGIR EXPRESS</span>
+              POR QUÉ <span className="text-blue-brand">ELEGIR EXPRESS</span>
             </h2>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {benefits.map((benefit) => (
-            <div key={benefit.badge} className="relative p-10 border border-white/10 bg-dark-navy group overflow-hidden">
-              <div className="absolute top-0 right-0 p-4 font-technical text-[10px] text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+            <div key={benefit.badge} className="relative p-10 border border-white/10 bg-blue-brand group overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-blue-brand group-hover:bg-blue-brand group-hover:text-white transition-colors">
                 {benefit.badge}
               </div>
               <h3 className="font-display text-2xl text-white mb-6 uppercase">{benefit.title}</h3>
-              <p className="font-body text-off-white/60 leading-relaxed">
+              <p className="font-display text-white-brand/60 leading-relaxed">
                 {benefit.description}
               </p>
               <div className="mt-8 flex items-center gap-4">
                 <div className="h-[1px] flex-1 bg-white/20" />
-                <div className="w-2 h-2 bg-primary rotate-45" />
+                <div className="w-2 h-2 bg-blue-brand rotate-45" />
               </div>
             </div>
           ))}

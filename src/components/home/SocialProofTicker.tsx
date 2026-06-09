@@ -1,9 +1,9 @@
 import { SocialPost } from "@/generated/prisma/client";
 import { Heart, MessageSquare, Share2, ExternalLink } from "lucide-react";
 
-interface SocialProofTickerProps {
-  posts: SocialPost[];
-}
+import { Heart, MessageCircle, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function SocialProofTicker({ posts }: SocialProofTickerProps) {
   // If there are no posts in the database, we use fallback posts to ensure the UI is populated
@@ -76,23 +76,17 @@ export default function SocialProofTicker({ posts }: SocialProofTickerProps) {
   const doubleTickerImages = [...tickerImages, ...tickerImages];
 
   return (
-    <section className="py-24 border-t border-electric-blue/20 bg-dark-navy relative overflow-hidden space-y-16">
-      {/* Decorative cyber line */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-      
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3 py-1 rounded-sm">
-              <Heart className="w-3.5 h-3.5 text-accent animate-pulse" />
-              <span className="font-technical text-xs text-accent uppercase tracking-widest font-bold">
-                Conecta con Nosotros
-              </span>
+    <section className="py-24 bg-blue-brand text-white overflow-hidden">
+      <div className="container mx-auto px-6 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 bg-blue-brand px-4 py-2 border-2 border-white">
+              <Heart className="w-4 h-4 text-white fill-white" />
+              <span className="font-mono text-xs font-bold uppercase tracking-widest">Conecta con nosotros</span>
             </div>
-            <h2 className="font-display text-5xl md:text-7xl text-white uppercase mt-2 tracking-tighter">
-              SIGUE NUESTRO MOVIMIENTO
+            <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8]">
+              SIGUE NUESTRO <br />
+              <span className="text-gold-brand">MOVIMIENTO</span>
             </h2>
           </div>
           <p className="font-body text-off-white/50 max-w-md">
@@ -100,75 +94,20 @@ export default function SocialProofTicker({ posts }: SocialProofTickerProps) {
           </p>
         </div>
 
-        {/* Quick Links Horizontal Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {quickLinks.map((net, i) => {
-            const isInstagram = net.platform === "instagram";
-            const isFacebook = net.platform === "facebook";
-            
-            return (
-              <div 
-                key={i} 
-                className="border border-white/10 p-8 flex flex-col items-center text-center bg-white/5 hover:border-primary transition-all duration-300"
+          <div className="flex flex-wrap gap-4">
+            {socialFeeds.map((feed, i) => (
+              <Link
+                key={i}
+                href={feed.link}
+                target="_blank"
+                className="brutalist-card bg-white text-blue-brand p-4 flex items-center gap-4 hover:bg-gold-brand transition-colors group"
               >
-                <div className="w-12 h-12 bg-primary/10 border border-primary/20 rounded-full flex items-center justify-center text-accent mb-4">
-                  {isInstagram ? (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-accent">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                    </svg>
-                  ) : isFacebook ? (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-primary">
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                    </svg>
-                  ) : (
-                    <MessageSquare className="w-5 h-5 text-accent" />
-                  )}
+                <div className={`p-2 border-2 border-blue-brand ${feed.color} text-white`}>
+                  <feed.icon className="w-5 h-5" />
                 </div>
-                <h3 className="font-display text-2xl text-white uppercase mb-2 tracking-tighter">{net.name}</h3>
-                <p className="font-body text-xs text-off-white/60 mb-6 h-8">{net.desc}</p>
-                <a
-                  href={net.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3 border border-white/20 text-white font-technical text-xs uppercase font-bold hover:bg-accent hover:text-dark-navy hover:border-accent transition-colors"
-                >
-                  {net.cta}
-                </a>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* INFINITE SCROLL TICKER */}
-      <div className="relative w-full overflow-hidden bg-black/40 border-y border-white/5 py-8">
-        <div className="flex w-[200%] animate-marquee">
-          <div className="flex gap-6 w-1/2 justify-around">
-            {doubleTickerImages.map((src, i) => (
-              <div 
-                key={i} 
-                className="relative overflow-hidden w-64 aspect-square border border-white/10 shrink-0 group cursor-pointer"
-              >
-                <img 
-                  src={src} 
-                  alt={`Social post preview ${i}`} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                
-                {/* Overlay details on hover */}
-                <div className="absolute inset-0 bg-dark-navy/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-6">
-                  <div className="font-technical text-[9px] text-accent uppercase tracking-widest">
-                    {src.includes("ig") ? "instagram" : "facebook"}
-                  </div>
-                  <div className="flex justify-center items-center gap-2 text-white font-technical text-xs uppercase font-bold bg-primary px-4 py-2 border border-primary-light">
-                    <span>Ver Post</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </div>
-                  <div className="font-technical text-[8px] text-off-white/40">
-                    DOSRUEDAS_FEED
-                  </div>
+                <div className="flex flex-col">
+                  <span className="font-black text-sm uppercase tracking-tighter leading-none">{feed.platform}</span>
+                  <span className="font-mono text-[10px] uppercase font-bold text-blue-brand/50">{feed.label}</span>
                 </div>
               </div>
             ))}
@@ -176,15 +115,25 @@ export default function SocialProofTicker({ posts }: SocialProofTickerProps) {
         </div>
       </div>
 
-      {/* DYNAMIC DATABASE POSTS GRID */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-10">
-          <h3 className="font-display text-2xl text-white uppercase tracking-tighter">
-            Últimas Actualizaciones (BD)
-          </h3>
-          <p className="font-body text-xs text-off-white/40 uppercase mt-1">
-            Feed_Source: PostgreSQL_Query
-          </p>
+      {/* Infinite Ticker */}
+      <div className="relative flex overflow-x-hidden border-y-4 border-white bg-white py-8">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {tickerImages.concat(tickerImages).map((src, i) => (
+            <div key={i} className="mx-4 relative w-64 aspect-square brutalist-card group overflow-hidden bg-white-brand">
+              <Image
+                src={src}
+                alt={`Social post ${i}`}
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              />
+              <div className="absolute inset-0 bg-blue-brand/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                <button className="bg-white text-blue-brand border-4 border-blue-brand px-6 py-2 font-black uppercase tracking-tighter shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
+                  VER POST
+                  <ExternalLink className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

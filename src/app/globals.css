@@ -1,41 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700;900&family=IBM+Plex+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
 
-:root {
-  /* Industrial Brutalist Palette */
-  --color-electric-blue: #00236F;
-  --color-vivid-gold: #FDBF35;
-  --color-slate-50: #F8FAFC;
-  --color-slate-950: #020617;
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #0c32a0;
 
-  --background: var(--color-slate-50);
-  --foreground: var(--color-slate-950);
-}
+  --color-blue-brand: #0c32a0;
+  --color-gold-brand: #ffec00;
+  --color-white-brand: #ffffff;
 
-@theme inline {
-  --color-primary: var(--color-electric-blue);
-  --color-accent: var(--color-vivid-gold);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --radius-brand: 0.25rem;
 
-  /* Typography - IBM Plex Sans for primary/display, IBM Plex Mono for technical */
-  --font-sans: 'IBM Plex Sans', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-display: "Anybody", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-  /* Brutalist Shadows */
   --shadow-brutalist: 8px 8px 0px 0px rgba(0, 0, 0, 1);
 }
 
 @layer base {
   body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-sans);
+    background: var(--color-white-brand);
+    color: var(--color-blue-brand);
+    font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sans);
+    font-family: var(--font-display);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.05em;
@@ -50,18 +41,24 @@
   }
 }
 
-/* Brutalist utility classes */
+/* Custom global utilities layer matching our verified cyber-brutalist specs */
+@utility glass-panel {
+  background: rgba(12, 50, 160, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(12, 50, 160, 0.2);
+}
+
 @layer components {
   .brutalist-card {
-    @apply bg-white border-4 border-slate-950 rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)];
+    @apply bg-white-brand border-4 border-blue-brand rounded-none shadow-brutalist;
   }
 
   .brutalist-button-primary {
-    @apply bg-primary text-white border-4 border-slate-950 rounded-none px-6 py-3 font-bold uppercase tracking-tighter shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all;
+    @apply bg-blue-brand text-white-brand border-4 border-blue-brand rounded-none px-6 py-3 font-bold uppercase tracking-tighter shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all;
   }
 
   .brutalist-button-accent {
-    @apply bg-accent text-slate-950 border-4 border-slate-950 rounded-none px-6 py-3 font-bold uppercase tracking-tighter shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all;
+    @apply bg-gold-brand text-blue-brand border-4 border-blue-brand rounded-none px-6 py-3 font-bold uppercase tracking-tighter shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all;
   }
 
   @keyframes marquee {

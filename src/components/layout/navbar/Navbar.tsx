@@ -23,86 +23,48 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 px-6 ${
-      scrolled 
-        ? "bg-dark-navy/90 border-b border-primary/30 py-4 backdrop-blur-md shadow-lg" 
-        : "bg-transparent border-b border-transparent py-5"
-    }`}>
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* LOGO AND BRAND */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative overflow-hidden w-10 h-10 rounded-full border border-primary/30 bg-white flex items-center justify-center group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
-            <img
-              src="/LogoEnviosDosRuedas.webp"
-              alt="Logo Envíos DosRuedas"
-              className="w-8 h-8 object-contain"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-display text-xl text-white tracking-wider leading-none">
-              ENVÍOS DOSRUEDAS
-            </span>
-            <span className="font-technical text-[9px] text-accent tracking-widest leading-none mt-0.5 lowercase">
-              tu solución confiable
+    <nav className="w-full bg-white border-b-4 border-blue-brand sticky top-0 z-50">
+      <div className="container mx-auto px-6 h-24 flex justify-between items-center">
+
+        {/* Logo and Brand */}
+        <Link href="/" className="flex flex-col group">
+          <div className="flex items-center gap-3">
+            <div className="relative w-10 h-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <Image
+                src="/LogoEnviosDosRuedas.webp"
+                alt="Envíos Dos Ruedas Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <span className="font-black text-2xl tracking-tighter uppercase leading-none text-blue-brand">
+              Envíos <br /> DosRuedas
             </span>
           </div>
+          <span className="font-mono text-[10px] uppercase font-bold text-blue-brand ml-12 -mt-1">
+            tu solución confiable
+          </span>
         </Link>
 
-        {/* DESKTOP MENU */}
-        <div className="hidden md:flex items-center gap-8 font-technical text-sm text-off-white">
-          <Link href="/" className="flex items-center gap-1.5 hover:text-accent transition-colors">
-            <Home className="w-4 h-4 text-primary" />
-            <span>Inicio</span>
+        {/* Navigation Desktop */}
+        <div className="hidden lg:flex items-center gap-8 font-mono text-xs font-black uppercase tracking-widest">
+          <Link href="/" className="flex items-center gap-1 hover:text-blue-brand transition-colors">
+            <Home className="w-4 h-4" />
+            Inicio
           </Link>
 
-          {/* NOSOTROS DROPDOWN */}
-          <div className="relative group/dropdown">
-            <button className="flex items-center gap-1 hover:text-accent transition-colors cursor-pointer uppercase">
-              <span>Nosotros</span>
-              <ChevronDown className="w-3.5 h-3.5" />
-            </button>
-            <div className="absolute top-full left-0 mt-2 w-48 bg-dark-navy border border-primary/30 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-300 z-50">
-              <div className="flex flex-col p-2">
-                <Link href="/nosotros/sobre-nosotros" className="p-2.5 hover:bg-primary/20 text-xs transition-colors">
-                  Sobre Nosotros
-                </Link>
-                <Link href="/nosotros/preguntas-frecuentes" className="p-2.5 hover:bg-primary/20 text-xs transition-colors">
-                  Preguntas Frecuentes
-                </Link>
-                <Link href="/nosotros/nuestras-redes" className="p-2.5 hover:bg-primary/20 text-xs transition-colors">
-                  Nuestras Redes
-                </Link>
-              </div>
-            </div>
+          {/* Drops (simplified for this audit as links or buttons with indicator) */}
+          <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-brand transition-colors">
+            Nosotros <ChevronDown className="w-3 h-3" />
           </div>
 
-          {/* SERVICIOS DROPDOWN */}
-          <div className="relative group/dropdown">
-            <button className="flex items-center gap-1 hover:text-accent transition-colors cursor-pointer uppercase">
-              <span>Servicios</span>
-              <ChevronDown className="w-3.5 h-3.5" />
-            </button>
-            <div className="absolute top-full left-0 mt-2 w-56 bg-dark-navy border border-primary/30 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-300 z-50">
-              <div className="flex flex-col p-2">
-                <Link href="/servicios/envios-express" className="p-2.5 hover:bg-primary/20 text-xs transition-colors border-b border-white/5">
-                  Envíos Express
-                </Link>
-                <Link href="/servicios/envios-lowcost" className="p-2.5 hover:bg-primary/20 text-xs transition-colors border-b border-white/5">
-                  Envíos LowCost
-                </Link>
-                <Link href="/servicios/enviosflex" className="p-2.5 hover:bg-primary/20 text-xs transition-colors border-b border-white/5">
-                  Envíos Flex (MeLi)
-                </Link>
-                <Link href="/servicios/plan-emprendedores" className="p-2.5 hover:bg-primary/20 text-xs transition-colors">
-                  Plan Emprendedores (3PL)
-                </Link>
-              </div>
-            </div>
+          <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-brand transition-colors">
+            Servicios <ChevronDown className="w-3 h-3" />
           </div>
 
-          <Link href="/contacto" className="flex items-center gap-1.5 hover:text-accent transition-colors">
-            <Mail className="w-4 h-4 text-primary" />
-            <span>Contacto</span>
+          <Link href="/contacto" className="flex items-center gap-1 hover:text-blue-brand transition-colors">
+            <Mail className="w-4 h-4" />
+            Contacto
           </Link>
         </div>
 
@@ -112,8 +74,13 @@ export default function Navbar() {
             href="tel:+5492236602699"
             className="font-technical text-off-white hover:text-accent transition-colors flex items-center gap-2"
           >
-            <Phone className="w-4 h-4 text-accent animate-pulse" />
-            <span>+54 223 660-2699</span>
+            <div className="w-10 h-10 bg-white-brand border-4 border-blue-brand flex items-center justify-center group-hover:bg-gold-brand transition-colors">
+              <Phone className="w-5 h-5 animate-pulse" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-mono text-[10px] font-bold text-blue-brand/50 uppercase leading-none">Llamanos ahora</span>
+              <span className="font-black text-sm text-blue-brand">+54 223 660-2699</span>
+            </div>
           </a>
           <Link
             href="/cotizar/express"
