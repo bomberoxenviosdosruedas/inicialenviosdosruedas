@@ -32,23 +32,23 @@ export default function PrivacyPolicyContent() {
 
   return (
     <div className="bg-white/5 border border-white/10 p-10 md:p-20 relative overflow-hidden">
-      <div className="absolute top-0 right-0 p-8 font-technical text-[10px] text-primary uppercase tracking-[0.3em]">
+      <div className="absolute top-0 right-0 p-8 font-mono text-[10px] text-blue-brand uppercase tracking-[0.3em]">
         LEGAL_DOC_PRIVACY_V1.0
       </div>
       
       <div className="mb-12 border-b border-white/10 pb-8">
-        <p className="font-technical text-xs text-primary mb-2 uppercase tracking-widest font-bold">Documentación Legal</p>
+        <p className="font-mono text-xs text-blue-brand mb-2 uppercase tracking-widest font-bold">Documentación Legal</p>
         <h2 className="font-display text-4xl md:text-5xl text-white uppercase tracking-tighter">Detalles de nuestra política</h2>
-        <p className="font-body text-[10px] text-off-white/40 uppercase mt-4">Última actualización: 1 de Agosto de 2024</p>
+        <p className="font-display text-[10px] text-white-brand/40 uppercase mt-4">Última actualización: 1 de Agosto de 2024</p>
       </div>
 
       <div className="space-y-12">
         {sections.map((s, i) => (
           <section key={i} className="group">
-            <h3 className="font-display text-xl text-white uppercase mb-4 group-hover:text-primary transition-colors">
+            <h3 className="font-display text-xl text-white uppercase mb-4 group-hover:text-blue-brand transition-colors">
               {s.title}
             </h3>
-            <p className="font-body text-sm text-off-white/60 leading-relaxed max-w-4xl">
+            <p className="font-display text-sm text-white-brand/60 leading-relaxed max-w-4xl">
               {s.content}
             </p>
           </section>

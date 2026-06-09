@@ -9,13 +9,13 @@ export default function SupportChannels() {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mb-24">
       {channels.map((chan) => (
         <div key={chan.name} className="border border-white/10 p-12 flex flex-col hover:bg-white/5 transition-colors group">
-          <div className="font-technical text-[10px] text-primary mb-8 uppercase tracking-[0.3em]">{chan.type}_CHANNEL_ACTIVE</div>
+          <div className="font-mono text-[10px] text-blue-brand mb-8 uppercase tracking-[0.3em]">{chan.type}_CHANNEL_ACTIVE</div>
           <h3 className="font-display text-3xl text-white uppercase mb-4 tracking-tighter">{chan.name}</h3>
-          <p className="font-display text-xl text-primary mb-6">{chan.info}</p>
-          <p className="font-body text-xs text-off-white/40 mb-10 flex-1 leading-relaxed">
+          <p className="font-display text-xl text-blue-brand mb-6">{chan.info}</p>
+          <p className="font-display text-xs text-white-brand/40 mb-10 flex-1 leading-relaxed">
             {chan.desc}
           </p>
-          <button className="w-full py-4 border-2 border-white/10 font-technical text-xs uppercase font-bold tracking-widest text-white group-hover:border-primary group-hover:bg-primary transition-all">
+          <button className="w-full py-4 border-2 border-white/10 font-mono text-xs uppercase font-bold tracking-widest text-white group-hover:border-blue-brand group-hover:bg-blue-brand transition-all">
             {chan.cta}
           </button>
         </div>

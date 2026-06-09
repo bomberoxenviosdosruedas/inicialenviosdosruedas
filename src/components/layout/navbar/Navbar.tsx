@@ -8,7 +8,7 @@ import { Mail, Phone, Calculator, ChevronDown, Home } from "lucide-react";
  */
 export default function Navbar() {
   return (
-    <nav className="w-full bg-white border-b-4 border-slate-950 sticky top-0 z-50">
+    <nav className="w-full bg-white border-b-4 border-blue-brand sticky top-0 z-50">
       <div className="container mx-auto px-6 h-24 flex justify-between items-center">
 
         {/* Logo and Brand */}
@@ -22,32 +22,32 @@ export default function Navbar() {
                 className="object-contain"
               />
             </div>
-            <span className="font-black text-2xl tracking-tighter uppercase leading-none text-slate-950">
+            <span className="font-black text-2xl tracking-tighter uppercase leading-none text-blue-brand">
               Envíos <br /> DosRuedas
             </span>
           </div>
-          <span className="font-mono text-[10px] uppercase font-bold text-primary ml-12 -mt-1">
+          <span className="font-mono text-[10px] uppercase font-bold text-blue-brand ml-12 -mt-1">
             tu solución confiable
           </span>
         </Link>
 
         {/* Navigation Desktop */}
         <div className="hidden lg:flex items-center gap-8 font-mono text-xs font-black uppercase tracking-widest">
-          <Link href="/" className="flex items-center gap-1 hover:text-primary transition-colors">
+          <Link href="/" className="flex items-center gap-1 hover:text-blue-brand transition-colors">
             <Home className="w-4 h-4" />
             Inicio
           </Link>
 
           {/* Drops (simplified for this audit as links or buttons with indicator) */}
-          <div className="relative group cursor-pointer flex items-center gap-1 hover:text-primary transition-colors">
+          <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-brand transition-colors">
             Nosotros <ChevronDown className="w-3 h-3" />
           </div>
 
-          <div className="relative group cursor-pointer flex items-center gap-1 hover:text-primary transition-colors">
+          <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-brand transition-colors">
             Servicios <ChevronDown className="w-3 h-3" />
           </div>
 
-          <Link href="/contacto" className="flex items-center gap-1 hover:text-primary transition-colors">
+          <Link href="/contacto" className="flex items-center gap-1 hover:text-blue-brand transition-colors">
             <Mail className="w-4 h-4" />
             Contacto
           </Link>
@@ -59,12 +59,12 @@ export default function Navbar() {
             href="tel:+5492236602699"
             className="hidden xl:flex items-center gap-3 group"
           >
-            <div className="w-10 h-10 bg-slate-100 border-4 border-slate-950 flex items-center justify-center group-hover:bg-accent transition-colors">
+            <div className="w-10 h-10 bg-white-brand border-4 border-blue-brand flex items-center justify-center group-hover:bg-gold-brand transition-colors">
               <Phone className="w-5 h-5 animate-pulse" />
             </div>
             <div className="flex flex-col">
-              <span className="font-mono text-[10px] font-bold text-slate-500 uppercase leading-none">Llamanos ahora</span>
-              <span className="font-black text-sm text-slate-950">+54 223 660-2699</span>
+              <span className="font-mono text-[10px] font-bold text-blue-brand/50 uppercase leading-none">Llamanos ahora</span>
+              <span className="font-black text-sm text-blue-brand">+54 223 660-2699</span>
             </div>
           </a>
 

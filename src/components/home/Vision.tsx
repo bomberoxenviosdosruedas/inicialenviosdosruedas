@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Zap, ShieldCheck, Play } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,7 +12,7 @@ export default function Vision() {
   ];
 
   return (
-    <section className="py-24 bg-white border-y-4 border-slate-950 overflow-hidden">
+    <section className="py-24 bg-white border-y-4 border-blue-brand overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -21,43 +20,43 @@ export default function Vision() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2">
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-brand bg-blue-brand opacity-75"></span>
+                <span className="relative inline-flex rounded-brand h-3 w-3 bg-blue-brand"></span>
               </span>
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-primary">
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-blue-brand">
                 Partner Logístico Especializado
               </span>
             </div>
 
-            <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-slate-950 uppercase leading-none">
+            <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-blue-brand uppercase leading-none">
               Nuestra Visión <br />
-              <span className="text-primary">Logística</span>
+              <span className="text-blue-brand">Logística</span>
             </h2>
 
-            <p className="font-sans text-2xl font-bold text-slate-950/40 uppercase italic max-w-lg">
-              "Transformamos tus costos fijos en solutions flexibles que acompañan el crecimiento de tu negocio."
+            <p className="font-display text-2xl font-bold text-blue-brand/40 uppercase italic max-w-lg">
+              &quot;Transformamos tus costos fijos en solutions flexibles que acompañan el crecimiento de tu negocio.&quot;
             </p>
 
             {/* Grid Characteristics */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-              <div className="brutalist-card p-6 bg-slate-50">
-                <Zap className="w-10 h-10 text-primary mb-4" />
+              <div className="brutalist-card p-6 bg-white-brand">
+                <Zap className="w-10 h-10 text-blue-brand mb-4" />
                 <h4 className="text-xl font-black mb-2">Entregas a Tiempo</h4>
-                <p className="font-sans text-sm text-slate-600 uppercase font-bold tracking-tight">Puntualidad garantizada en cada envío</p>
+                <p className="font-display text-sm text-blue-brand/60 uppercase font-bold tracking-tight">Puntualidad garantizada en cada envío</p>
               </div>
-              <div className="brutalist-card p-6 bg-slate-50">
-                <ShieldCheck className="w-10 h-10 text-primary mb-4" />
+              <div className="brutalist-card p-6 bg-white-brand">
+                <ShieldCheck className="w-10 h-10 text-blue-brand mb-4" />
                 <h4 className="text-xl font-black mb-2">Envíos Seguros</h4>
-                <p className="font-sans text-sm text-slate-600 uppercase font-bold tracking-tight">Protección total de tus paquetes</p>
+                <p className="font-display text-sm text-blue-brand/60 uppercase font-bold tracking-tight">Protección total de tus paquetes</p>
               </div>
             </div>
 
             {/* Metrics */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t-4 border-slate-950">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t-4 border-blue-brand">
               {metrics.map((m, i) => (
                 <div key={i} className="flex flex-col">
-                  <span className="text-3xl font-black text-primary">{m.value}</span>
-                  <span className="font-mono text-[10px] uppercase font-bold text-slate-950 leading-tight mt-1">{m.label}</span>
+                  <span className="text-3xl font-black text-blue-brand">{m.value}</span>
+                  <span className="font-mono text-[10px] uppercase font-bold text-blue-brand leading-tight mt-1">{m.label}</span>
                 </div>
               ))}
             </div>
@@ -72,18 +71,18 @@ export default function Vision() {
                 fill
                 className="object-cover grayscale hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-blue-brand/20 mix-blend-multiply" />
 
               {/* Accent Light */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-accent/40 blur-3xl" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gold-brand/40 blur-3xl" />
 
               {/* Floating Card */}
               <div className="absolute bottom-6 left-6 right-6 brutalist-card bg-white p-6 flex items-center justify-between">
                 <div>
                   <h5 className="font-black text-lg uppercase tracking-tighter">Conocé más sobre nosotros</h5>
-                  <p className="font-mono text-xs text-slate-500 uppercase">Trayectoria y Compromiso</p>
+                  <p className="font-mono text-xs text-blue-brand/50 uppercase">Trayectoria y Compromiso</p>
                 </div>
-                <Link href="/nosotros/sobre-nosotros" className="w-12 h-12 bg-primary flex items-center justify-center hover:bg-slate-950 transition-colors">
+                <Link href="/nosotros/sobre-nosotros" className="w-12 h-12 bg-blue-brand flex items-center justify-center hover:bg-blue-brand transition-colors">
                   <Play className="w-6 h-6 text-white fill-white" />
                 </Link>
               </div>

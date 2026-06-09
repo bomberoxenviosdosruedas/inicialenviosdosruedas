@@ -13,61 +13,61 @@ export default function QuoteForm() {
   };
 
   return (
-    <div className="border-2 border-primary p-8 bg-dark-navy relative overflow-hidden group">
-      <div className="absolute top-0 right-0 p-2 bg-primary/10 text-primary font-technical text-[10px] tracking-widest">
+    <div className="border-2 border-blue-brand p-8 bg-blue-brand relative overflow-hidden group">
+      <div className="absolute top-0 right-0 p-2 bg-blue-brand/10 text-blue-brand font-mono text-[10px] tracking-widest">
         CFG_ROUTING_v1.0
       </div>
       
-      <div className="mb-8 border-b border-primary/30 pb-4">
+      <div className="mb-8 border-b border-blue-brand/30 pb-4">
         <h3 className="font-display text-2xl text-white uppercase tracking-tighter">
           Configuración de Ruta
         </h3>
-        <p className="font-body text-xs text-off-white/60 uppercase">Step_01: Input_Parameters</p>
+        <p className="font-display text-xs text-white-brand/60 uppercase">Step_01: Input_Parameters</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
-          <label className="font-technical text-sm text-accent uppercase tracking-widest block">
+          <label className="font-mono text-sm text-gold-brand uppercase tracking-widest block">
             Punto de Origen
           </label>
           <input
             type="text"
             placeholder="Ej: Av. Colón 1234"
-            className="w-full bg-white/5 border border-white/20 p-4 font-body text-white focus:border-primary focus:outline-none transition-colors"
+            className="w-full bg-white/5 border border-white/20 p-4 font-display text-white focus:border-blue-brand focus:outline-none transition-colors"
           />
         </div>
 
         <div className="space-y-2">
-          <label className="font-technical text-sm text-accent uppercase tracking-widest block">
+          <label className="font-mono text-sm text-gold-brand uppercase tracking-widest block">
             Punto de Destino
           </label>
           <input
             type="text"
             placeholder="Ej: Juan B. Justo 5678"
-            className="w-full bg-white/5 border border-white/20 p-4 font-body text-white focus:border-primary focus:outline-none transition-colors"
+            className="w-full bg-white/5 border border-white/20 p-4 font-display text-white focus:border-blue-brand focus:outline-none transition-colors"
           />
         </div>
 
         <button
           type="submit"
           disabled={calculating}
-          className="w-full bg-primary text-white py-5 font-technical text-xl uppercase font-bold hover:bg-white hover:text-dark-navy transition-all relative group overflow-hidden disabled:opacity-50"
+          className="w-full bg-blue-brand text-white py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-blue-brand transition-all relative group overflow-hidden disabled:opacity-50"
         >
           <span className="relative z-10">
             {calculating ? "Calculando..." : "Calcular Cotización"}
           </span>
-          <div className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-300 -z-0" />
+          <div className="absolute inset-0 bg-gold-brand translate-y-full group-hover:translate-y-0 transition-transform duration-300 -z-0" />
         </button>
       </form>
 
       <div className="mt-8 grid grid-cols-2 gap-4">
         <div className="border border-white/10 p-4 bg-white/5">
-          <p className="font-technical text-[10px] text-off-white/40 uppercase mb-1">Status_Signal</p>
-          <p className="font-body text-xs text-primary font-bold">READY_FOR_INPUT</p>
+          <p className="font-mono text-[10px] text-white-brand/40 uppercase mb-1">Status_Signal</p>
+          <p className="font-display text-xs text-blue-brand font-bold">READY_FOR_INPUT</p>
         </div>
         <div className="border border-white/10 p-4 bg-white/5">
-          <p className="font-technical text-[10px] text-off-white/40 uppercase mb-1">Precision_Index</p>
-          <p className="font-body text-xs text-accent font-bold">HIGH_RES_99%</p>
+          <p className="font-mono text-[10px] text-white-brand/40 uppercase mb-1">Precision_Index</p>
+          <p className="font-display text-xs text-gold-brand font-bold">HIGH_RES_99%</p>
         </div>
       </div>
     </div>

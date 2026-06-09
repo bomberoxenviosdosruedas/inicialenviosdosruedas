@@ -29,7 +29,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-slate-950 text-white pt-24 pb-12 border-t-8 border-primary">
+    <footer className="bg-blue-brand text-white pt-24 pb-12 border-t-8 border-blue-brand">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
 
@@ -49,12 +49,12 @@ export default function Footer() {
                   Envíos <br /> DosRuedas
                 </span>
               </div>
-              <span className="font-mono text-xs uppercase font-bold text-accent ml-16 -mt-1">
+              <span className="font-mono text-xs uppercase font-bold text-gold-brand ml-16 -mt-1">
                 tu solución confiable
               </span>
             </Link>
 
-            <p className="font-sans text-sm text-slate-400 font-bold uppercase tracking-tight max-w-sm">
+            <p className="font-display text-sm text-white-brand font-bold uppercase tracking-tight max-w-sm">
               Soluciones de logística, mensajería, MercadoLibre Flex y Fulfillment 3PL para e-commerce y pymes en Mar del Plata.
             </p>
 
@@ -64,7 +64,7 @@ export default function Footer() {
                   key={i}
                   href={social.href}
                   target="_blank"
-                  className="w-12 h-12 border-4 border-white flex items-center justify-center hover:bg-primary transition-colors"
+                  className="w-12 h-12 border-4 border-white flex items-center justify-center hover:bg-blue-brand transition-colors"
                 >
                   <social.icon className="w-6 h-6" />
                 </Link>
@@ -75,11 +75,11 @@ export default function Footer() {
           {/* Nav Columns */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-8">
             <div>
-              <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-primary mb-8">Nosotros</h4>
+              <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-blue-brand mb-8">Nosotros</h4>
               <ul className="space-y-4">
                 {['Sobre Nosotros', 'Preguntas Frecuentes', 'Nuestras Redes'].map((item) => (
                   <li key={item}>
-                    <Link href={`/nosotros/${item.toLowerCase().replace(/ /g, '-')}`} className="font-sans text-sm font-bold uppercase tracking-tighter hover:text-accent transition-colors">
+                    <Link href={`/nosotros/${item.toLowerCase().replace(/ /g, '-')}`} className="font-display text-sm font-bold uppercase tracking-tighter hover:text-gold-brand transition-colors">
                       {item}
                     </Link>
                   </li>
@@ -87,11 +87,11 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-primary mb-8">Servicios</h4>
+              <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-blue-brand mb-8">Servicios</h4>
               <ul className="space-y-4">
                 {['Envíos Express', 'Envíos LowCost', 'Envíos Flex (MeLi)', 'E-Commerce & 3PL'].map((item) => (
                   <li key={item}>
-                    <Link href={`/servicios/${item.toLowerCase().replace(/ /g, '-').replace(/[()]/g, '')}`} className="font-sans text-sm font-bold uppercase tracking-tighter hover:text-accent transition-colors">
+                    <Link href={`/servicios/${item.toLowerCase().replace(/ /g, '-').replace(/[()]/g, '')}`} className="font-display text-sm font-bold uppercase tracking-tighter hover:text-gold-brand transition-colors">
                       {item}
                     </Link>
                   </li>
@@ -102,18 +102,18 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div className="lg:col-span-3 space-y-8">
-            <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-primary mb-8">Contacto</h4>
+            <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-blue-brand mb-8">Contacto</h4>
             <div className="space-y-4">
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] uppercase text-slate-500 font-bold">Ubicación</span>
+                <span className="font-mono text-[10px] uppercase text-blue-brand/50 font-bold">Ubicación</span>
                 <span className="font-black text-sm uppercase italic">Mar del Plata, Argentina</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] uppercase text-slate-500 font-bold">Teléfono</span>
+                <span className="font-mono text-[10px] uppercase text-blue-brand/50 font-bold">Teléfono</span>
                 <span className="font-black text-sm">223-660-2699</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] uppercase text-slate-500 font-bold">Email</span>
+                <span className="font-mono text-[10px] uppercase text-blue-brand/50 font-bold">Email</span>
                 <span className="font-black text-sm">matiascejas@enviosdosruedas.com</span>
               </div>
             </div>
@@ -128,21 +128,21 @@ export default function Footer() {
             { icon: Globe, text: "COBERTURA DISTRITAL" },
             { icon: ArrowUpRight, text: "STATUS ONLINE" }
           ].map((banner, i) => (
-            <div key={i} className="brutalist-card bg-white text-slate-950 p-4 flex flex-col items-center justify-center gap-2 text-center group hover:bg-accent transition-colors">
-              <banner.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
+            <div key={i} className="brutalist-card bg-white text-blue-brand p-4 flex flex-col items-center justify-center gap-2 text-center group hover:bg-gold-brand transition-colors">
+              <banner.icon className="w-8 h-8 text-blue-brand group-hover:scale-110 transition-transform" />
               <span className="font-mono text-[10px] font-black tracking-widest">{banner.text}</span>
             </div>
           ))}
         </div>
 
         {/* Copyright */}
-        <div className="pt-12 border-t-4 border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+        <div className="pt-12 border-t-4 border-blue-brand flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="font-mono text-[10px] font-bold text-blue-brand/50 uppercase tracking-widest">
             © 2026 Envios DosRuedas. Todos los derechos reservados.
           </p>
           <div className="flex gap-8">
-            <Link href="/politica-de-privacidad" className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest hover:text-white transition-colors">Privacidad</Link>
-            <Link href="/terminos-y-condiciones" className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest hover:text-white transition-colors">Términos</Link>
+            <Link href="/politica-de-privacidad" className="font-mono text-[10px] font-bold text-blue-brand/50 uppercase tracking-widest hover:text-white transition-colors">Privacidad</Link>
+            <Link href="/terminos-y-condiciones" className="font-mono text-[10px] font-bold text-blue-brand/50 uppercase tracking-widest hover:text-white transition-colors">Términos</Link>
           </div>
         </div>
       </div>

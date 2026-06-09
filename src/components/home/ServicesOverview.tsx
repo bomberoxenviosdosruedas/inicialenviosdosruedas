@@ -40,17 +40,17 @@ const services = [
 
 export default function ServicesOverview() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 bg-white-brand">
       <div className="container mx-auto px-6">
 
         {/* Header */}
         <div className="mb-16 space-y-4">
-          <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-slate-950 uppercase leading-none">
+          <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-blue-brand uppercase leading-none">
             Soluciones <br />
-            <span className="text-primary">Logísticas</span>
+            <span className="text-blue-brand">Logísticas</span>
           </h2>
-          <p className="font-sans text-xl text-slate-600 max-w-2xl font-bold uppercase italic">
-            "Infraestructura moderna para negocios que no se detienen. Inteligencia aplicada a cada kilómetro."
+          <p className="font-display text-xl text-blue-brand/60 max-w-2xl font-bold uppercase italic">
+            &quot;Infraestructura moderna para negocios que no se detienen. Inteligencia aplicada a cada kilómetro.&quot;
           </p>
         </div>
 
@@ -59,10 +59,10 @@ export default function ServicesOverview() {
           {services.map((service, idx) => (
             <div key={idx} className="brutalist-card p-8 bg-white flex flex-col hover:-translate-y-2 transition-transform duration-300">
               <div className="mb-6 flex justify-between items-start">
-                <div className="w-12 h-12 bg-slate-950 flex items-center justify-center border-4 border-slate-950 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <div className="w-12 h-12 bg-blue-brand flex items-center justify-center border-4 border-blue-brand shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
-                <span className="font-mono text-[10px] font-black text-primary border-2 border-primary px-2 py-0.5 uppercase">
+                <span className="font-mono text-[10px] font-black text-blue-brand border-2 border-blue-brand px-2 py-0.5 uppercase">
                   {service.badge}
                 </span>
               </div>
@@ -71,7 +71,7 @@ export default function ServicesOverview() {
                 {service.title}
               </h3>
 
-              <p className="font-sans text-sm text-slate-600 font-bold uppercase tracking-tight mb-8 flex-grow">
+              <p className="font-display text-sm text-blue-brand/60 font-bold uppercase tracking-tight mb-8 flex-grow">
                 {service.description}
               </p>
 
