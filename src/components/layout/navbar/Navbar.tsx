@@ -2,225 +2,236 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Mail, Phone, Calculator, ChevronDown, Home, Menu, X } from "lucide-react";
+import { Home, ChevronDown, Mail, Phone, Calculator, Menu, X } from "lucide-react";
 
-/**
- * Navbar Optimizada - Envíos Dos Ruedas
- * Estilo Industrial Brutalist
- */
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleDropdown = (name: string) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  };
 
   return (
-    <nav className="w-full bg-white border-b-4 border-slate-950 sticky top-0 z-50">
-      <div className="container mx-auto px-6 h-24 flex justify-between items-center">
-        {/* Logo and Brand */}
-        <Link href="/" className="flex flex-col group">
-          <div className="flex items-center gap-3">
-            <div className="relative w-10 h-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-              <Image
-                src="/LogoEnviosDosRuedas.webp"
-                alt="Envíos Dos Ruedas Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            <span className="font-black text-2xl tracking-tighter uppercase leading-none text-slate-950">
-              Envíos <br /> Dosruedas
+    <nav className="w-full bg-dark-navy/95 border-b border-primary/30 py-4 px-6 sticky top-0 z-50 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* LOGO AND BRAND */}
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative overflow-hidden w-10 h-10 rounded-full border border-primary/30 bg-white flex items-center justify-center group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
+            <img
+              src="/LogoEnviosDosRuedas.webp"
+              alt="Logo Envíos DosRuedas"
+              className="w-8 h-8 object-contain"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display text-xl text-white tracking-wider leading-none">
+              ENVÍOS DOSRUEDAS
+            </span>
+            <span className="font-technical text-[9px] text-accent tracking-widest leading-none mt-0.5 lowercase">
+              tu solución confiable
             </span>
           </div>
-          <span className="font-mono text-[10px] font-bold text-primary ml-12 -mt-1 lowercase">
-            tu solución confiable
-          </span>
         </Link>
 
-        {/* Navigation Desktop */}
-        <div className="hidden lg:flex items-center gap-8 font-mono text-xs font-black uppercase tracking-widest">
-          <Link href="/" className="flex items-center gap-1 hover:text-primary transition-colors duration-200">
-            <Home className="w-4 h-4" />
-            Inicio
+        {/* DESKTOP MENU */}
+        <div className="hidden md:flex items-center gap-8 font-technical text-sm text-off-white">
+          <Link href="/" className="flex items-center gap-1.5 hover:text-accent transition-colors">
+            <Home className="w-4 h-4 text-primary" />
+            <span>Inicio</span>
           </Link>
 
-          {/* Nosotros Dropdown */}
-          <div className="relative group py-2">
-            <button className="flex items-center gap-1 hover:text-primary transition-colors duration-200 focus:outline-none">
-              Nosotros <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" />
+          {/* NOSOTROS DROPDOWN */}
+          <div className="relative group/dropdown">
+            <button className="flex items-center gap-1 hover:text-accent transition-colors cursor-pointer uppercase">
+              <span>Nosotros</span>
+              <ChevronDown className="w-3.5 h-3.5" />
             </button>
-            <div className="absolute top-full left-0 mt-1 w-56 bg-white border-4 border-slate-950 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-50">
-              <div className="flex flex-col text-slate-950 font-mono text-xs font-black">
-                <Link href="/nosotros/sobre-nosotros" className="px-4 py-3 border-b-2 border-slate-950 hover:bg-yellow-400 transition-colors">
+            <div className="absolute top-full left-0 mt-2 w-48 bg-dark-navy border border-primary/30 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-300 z-50">
+              <div className="flex flex-col p-2">
+                <Link href="/nosotros/sobre-nosotros" className="p-2.5 hover:bg-primary/20 text-xs transition-colors">
                   Sobre Nosotros
                 </Link>
-                <Link href="/nosotros/preguntas-frecuentes" className="px-4 py-3 border-b-2 border-slate-950 hover:bg-yellow-400 transition-colors">
+                <Link href="/nosotros/preguntas-frecuentes" className="p-2.5 hover:bg-primary/20 text-xs transition-colors">
                   Preguntas Frecuentes
                 </Link>
-                <Link href="/nosotros/nuestras-redes" className="px-4 py-3 hover:bg-yellow-400 transition-colors">
+                <Link href="/nosotros/nuestras-redes" className="p-2.5 hover:bg-primary/20 text-xs transition-colors">
                   Nuestras Redes
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Servicios Dropdown */}
-          <div className="relative group py-2">
-            <button className="flex items-center gap-1 hover:text-primary transition-colors duration-200 focus:outline-none">
-              Servicios <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" />
+          {/* SERVICIOS DROPDOWN */}
+          <div className="relative group/dropdown">
+            <button className="flex items-center gap-1 hover:text-accent transition-colors cursor-pointer uppercase">
+              <span>Servicios</span>
+              <ChevronDown className="w-3.5 h-3.5" />
             </button>
-            <div className="absolute top-full left-0 mt-1 w-64 bg-white border-4 border-slate-950 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-50">
-              <div className="flex flex-col text-slate-950 font-mono text-xs font-black">
-                <Link href="/servicios/envios-express" className="px-4 py-3 border-b-2 border-slate-950 hover:bg-yellow-400 transition-colors">
+            <div className="absolute top-full left-0 mt-2 w-56 bg-dark-navy border border-primary/30 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-300 z-50">
+              <div className="flex flex-col p-2">
+                <Link href="/servicios/envios-express" className="p-2.5 hover:bg-primary/20 text-xs transition-colors border-b border-white/5">
                   Envíos Express
                 </Link>
-                <Link href="/servicios/envios-lowcost" className="px-4 py-3 border-b-2 border-slate-950 hover:bg-yellow-400 transition-colors">
+                <Link href="/servicios/envios-lowcost" className="p-2.5 hover:bg-primary/20 text-xs transition-colors border-b border-white/5">
                   Envíos LowCost
                 </Link>
-                <Link href="/servicios/enviosflex" className="px-4 py-3 border-b-2 border-slate-950 hover:bg-yellow-400 transition-colors">
-                  Envíos Flex
+                <Link href="/servicios/enviosflex" className="p-2.5 hover:bg-primary/20 text-xs transition-colors border-b border-white/5">
+                  Envíos Flex (MeLi)
                 </Link>
-                <Link href="/servicios/plan-emprendedores" className="px-4 py-3 hover:bg-yellow-400 transition-colors">
-                  E-Commerce & 3PL
+                <Link href="/servicios/plan-emprendedores" className="p-2.5 hover:bg-primary/20 text-xs transition-colors">
+                  Plan Emprendedores (3PL)
                 </Link>
               </div>
             </div>
           </div>
 
-          <Link href="/contacto" className="flex items-center gap-1 hover:text-primary transition-colors duration-200">
-            <Mail className="w-4 h-4" />
-            Contacto
+          <Link href="/contacto" className="flex items-center gap-1.5 hover:text-accent transition-colors">
+            <Mail className="w-4 h-4 text-primary" />
+            <span>Contacto</span>
           </Link>
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-6">
+        {/* RIGHT ACTION BUTTONS */}
+        <div className="hidden lg:flex items-center gap-6">
           <a
             href="tel:+5492236602699"
-            className="hidden xl:flex items-center gap-3 group"
+            className="font-technical text-off-white hover:text-accent transition-colors flex items-center gap-2"
           >
-            <div className="w-10 h-10 bg-slate-100 border-4 border-slate-950 flex items-center justify-center group-hover:bg-yellow-400 transition-colors">
-              <Phone className="w-5 h-5 text-slate-950 group-hover:animate-bounce" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-mono text-[9px] font-bold text-slate-500 uppercase leading-none">Llamanos ahora</span>
-              <span className="font-black text-sm text-slate-950 hover:text-primary transition-colors">+54 223 660-2699</span>
-            </div>
+            <Phone className="w-4 h-4 text-accent animate-pulse" />
+            <span>+54 223 660-2699</span>
           </a>
-
           <Link
             href="/cotizar/express"
-            className="brutalist-button-primary flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 text-xs md:text-sm"
+            className="bg-accent text-dark-navy px-5 py-2.5 font-technical uppercase font-bold hover:bg-white transition-colors flex items-center gap-2 border border-accent"
           >
-            <Calculator className="w-4.5 h-4.5" />
-            <span className="hidden sm:inline">Cotizar Envío</span>
-            <span className="sm:hidden">Cotizar</span>
+            <Calculator className="w-4 h-4" />
+            <span>Cotizar Envío</span>
           </Link>
+        </div>
 
-          {/* Hamburger Menu Mobile */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden w-10 h-10 bg-white border-4 border-slate-950 flex items-center justify-center hover:bg-yellow-400 transition-colors focus:outline-none"
-            aria-label="Toggle menu"
+        {/* MOBILE MENU TOGGLE */}
+        <div className="flex items-center gap-4 md:hidden">
+          <Link
+            href="/cotizar/express"
+            className="bg-accent text-dark-navy p-2 hover:bg-white transition-colors border border-accent"
           >
-            {isOpen ? <X className="w-6 h-6 text-slate-950" /> : <Menu className="w-6 h-6 text-slate-950" />}
+            <Calculator className="w-4 h-4" />
+          </Link>
+          <button onClick={toggleMenu} className="text-white hover:text-accent focus:outline-none">
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU PANEL */}
       {isOpen && (
-        <div className="lg:hidden w-full bg-white border-b-4 border-slate-950 transition-all duration-300">
-          <div className="px-6 py-6 flex flex-col gap-6 font-mono text-sm font-black uppercase tracking-wider">
-            <Link
-              href="/"
-              onClick={() => setIsOpen(false)}
-              className="flex items-center gap-2 hover:text-primary transition-colors"
+        <div className="md:hidden border-t border-primary/30 mt-4 py-4 space-y-4 font-technical text-sm text-off-white bg-dark-navy z-50 relative">
+          <Link
+            href="/"
+            onClick={toggleMenu}
+            className="block px-4 py-2 hover:bg-primary/20 hover:text-accent transition-colors flex items-center gap-2"
+          >
+            <Home className="w-4 h-4 text-primary" />
+            <span>Inicio</span>
+          </Link>
+
+          {/* NOSOTROS MOBILE ACCORDION */}
+          <div className="px-4">
+            <button
+              onClick={() => toggleDropdown("nosotros")}
+              className="w-full text-left py-2 hover:text-accent flex justify-between items-center uppercase"
             >
-              <Home className="w-4 h-4" />
-              Inicio
-            </Link>
+              <span>Nosotros</span>
+              <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "nosotros" ? "rotate-185" : ""}`} />
+            </button>
+            {activeDropdown === "nosotros" && (
+              <div className="pl-4 mt-2 space-y-2 border-l border-primary/20">
+                <Link
+                  href="/nosotros/sobre-nosotros"
+                  onClick={toggleMenu}
+                  className="block py-2 text-xs hover:text-accent transition-colors"
+                >
+                  Sobre Nosotros
+                </Link>
+                <Link
+                  href="/nosotros/preguntas-frecuentes"
+                  onClick={toggleMenu}
+                  className="block py-2 text-xs hover:text-accent transition-colors"
+                >
+                  Preguntas Frecuentes
+                </Link>
+                <Link
+                  href="/nosotros/nuestras-redes"
+                  onClick={toggleMenu}
+                  className="block py-2 text-xs hover:text-accent transition-colors"
+                >
+                  Nuestras Redes
+                </Link>
+              </div>
+            )}
+          </div>
 
-            {/* Nosotros Section in Mobile */}
-            <div className="flex flex-col gap-2">
-              <span className="text-[10px] text-slate-400 tracking-widest font-black uppercase border-b border-slate-200 pb-1">Nosotros</span>
-              <Link
-                href="/nosotros/sobre-nosotros"
-                onClick={() => setIsOpen(false)}
-                className="pl-4 hover:text-primary transition-colors"
-              >
-                Sobre Nosotros
-              </Link>
-              <Link
-                href="/nosotros/preguntas-frecuentes"
-                onClick={() => setIsOpen(false)}
-                className="pl-4 hover:text-primary transition-colors"
-              >
-                Preguntas Frecuentes
-              </Link>
-              <Link
-                href="/nosotros/nuestras-redes"
-                onClick={() => setIsOpen(false)}
-                className="pl-4 hover:text-primary transition-colors"
-              >
-                Nuestras Redes
-              </Link>
-            </div>
-
-            {/* Servicios Section in Mobile */}
-            <div className="flex flex-col gap-2">
-              <span className="text-[10px] text-slate-400 tracking-widest font-black uppercase border-b border-slate-200 pb-1">Servicios</span>
-              <Link
-                href="/servicios/envios-express"
-                onClick={() => setIsOpen(false)}
-                className="pl-4 hover:text-primary transition-colors"
-              >
-                Envíos Express
-              </Link>
-              <Link
-                href="/servicios/envios-lowcost"
-                onClick={() => setIsOpen(false)}
-                className="pl-4 hover:text-primary transition-colors"
-              >
-                Envíos LowCost
-              </Link>
-              <Link
-                href="/servicios/enviosflex"
-                onClick={() => setIsOpen(false)}
-                className="pl-4 hover:text-primary transition-colors"
-              >
-                Envíos Flex
-              </Link>
-              <Link
-                href="/servicios/plan-emprendedores"
-                onClick={() => setIsOpen(false)}
-                className="pl-4 hover:text-primary transition-colors"
-              >
-                E-Commerce & 3PL
-              </Link>
-            </div>
-
-            <Link
-              href="/contacto"
-              onClick={() => setIsOpen(false)}
-              className="flex items-center gap-2 hover:text-primary transition-colors"
+          {/* SERVICIOS MOBILE ACCORDION */}
+          <div className="px-4">
+            <button
+              onClick={() => toggleDropdown("servicios")}
+              className="w-full text-left py-2 hover:text-accent flex justify-between items-center uppercase"
             >
-              <Mail className="w-4 h-4" />
-              Contacto
-            </Link>
+              <span>Servicios</span>
+              <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "servicios" ? "rotate-185" : ""}`} />
+            </button>
+            {activeDropdown === "servicios" && (
+              <div className="pl-4 mt-2 space-y-2 border-l border-primary/20">
+                <Link
+                  href="/servicios/envios-express"
+                  onClick={toggleMenu}
+                  className="block py-2 text-xs hover:text-accent transition-colors"
+                >
+                  Envíos Express
+                </Link>
+                <Link
+                  href="/servicios/envios-lowcost"
+                  onClick={toggleMenu}
+                  className="block py-2 text-xs hover:text-accent transition-colors"
+                >
+                  Envíos LowCost
+                </Link>
+                <Link
+                  href="/servicios/enviosflex"
+                  onClick={toggleMenu}
+                  className="block py-2 text-xs hover:text-accent transition-colors"
+                >
+                  Envíos Flex (MeLi)
+                </Link>
+                <Link
+                  href="/servicios/plan-emprendedores"
+                  onClick={toggleMenu}
+                  className="block py-2 text-xs hover:text-accent transition-colors"
+                >
+                  Plan Emprendedores (3PL)
+                </Link>
+              </div>
+            )}
+          </div>
 
-            {/* Phone link inside mobile menu */}
+          <Link
+            href="/contacto"
+            onClick={toggleMenu}
+            className="block px-4 py-2 hover:bg-primary/20 hover:text-accent transition-colors flex items-center gap-2"
+          >
+            <Mail className="w-4 h-4 text-primary" />
+            <span>Contacto</span>
+          </Link>
+
+          <div className="border-t border-primary/10 pt-4 px-4 flex flex-col gap-4">
             <a
               href="tel:+5492236602699"
-              onClick={() => setIsOpen(false)}
-              className="flex items-center gap-3 border-t-2 border-slate-950 pt-4 mt-2"
+              className="hover:text-accent transition-colors flex items-center gap-2"
             >
-              <div className="w-10 h-10 bg-slate-100 border-4 border-slate-950 flex items-center justify-center">
-                <Phone className="w-5 h-5 text-slate-950 animate-pulse" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-mono text-[9px] font-bold text-slate-500 uppercase leading-none">Llamanos ahora</span>
-                <span className="font-black text-sm text-slate-950">+54 223 660-2699</span>
-              </div>
+              <Phone className="w-4 h-4 text-accent animate-pulse" />
+              <span>+54 223 660-2699</span>
             </a>
           </div>
         </div>
