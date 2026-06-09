@@ -1,3 +1,11 @@
+/**
+ * ROOT LAYOUT - DESIGN SYSTEM ADAPTATION
+ *
+ * This layout implements the "Professional & Corporate" design system.
+ * It uses 'IBM Plex Sans' (font-primary) as the core typeface to ensure
+ * scanability and a technical, product-specific tone.
+ */
+
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar/Navbar";
@@ -45,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Envíos DosRuedas | Logística Inteligente en MDP',
-    description: 'Acelerá tus ventas con envíos en el día. MercadoLibre Flex, Express y 3PL en Mar del Plata.',
+    description: 'Acelerá tus ventas con envíos en el día. MercadoLibre Flex, Express and 3PL en Mar del Plata.',
     images: ['/hero/hero_background.jpeg'],
   },
   manifest: "/manifest.json",
@@ -127,7 +135,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-body">
+      {/*
+        Implementation note: 'font-primary' corresponds to IBM Plex Sans
+        as defined in globals.css @theme block.
+      */}
+      <body className="min-h-full flex flex-col font-primary">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
