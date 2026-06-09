@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Home, ChevronDown, Mail, Phone, Calculator, Menu, X } from "lucide-react";
 
 export default function Navbar() {
