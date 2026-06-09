@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play, ShieldCheck, Zap, Globe } from "lucide-react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import RotatingCard from "./RotatingCard";
 
 export default function Hero() {
   const [telemetry, setTelemetry] = useState({
@@ -59,14 +60,14 @@ export default function Hero() {
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
 
         {/* Left Content (Column 1) */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="lg:col-span-7 space-y-8"
-        >
+        <div className="lg:col-span-7 space-y-8">
           {/* Badge */}
-          <div className="inline-flex items-center gap-3 bg-white border-4 border-blue-brand px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.1 }}
+            className="inline-flex items-center gap-3 bg-white/40 backdrop-blur-md border-4 border-blue-brand px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          >
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-brand bg-blue-brand opacity-75"></span>
               <span className="relative inline-flex rounded-brand h-3 w-3 bg-blue-brand"></span>
@@ -74,38 +75,58 @@ export default function Hero() {
             <span className="font-mono text-xs font-bold uppercase tracking-wider text-blue-brand">
               Tu Solución Confiable
             </span>
-          </div>
+          </motion.div>
 
           {/* Title */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-blue-brand leading-[0.85] uppercase md:italic">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.3 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-blue-brand leading-[0.9] uppercase lg:italic"
+          >
             Mensajería y <br />
-            <span className="text-blue-brand">Logística</span> <br />
+            Logística <br />
             E-Commerce <br />
-            <span className="text-blue-brand/20 stroke-blue-brand stroke-2">en MDP</span>
-          </h1>
+            <span className="text-blue-brand/20 stroke-blue-brand stroke-2">en Mar del Plata</span>
+          </motion.h1>
 
           {/* Description */}
-          <p className="font-display text-xl text-blue-brand/70 max-w-xl border-l-8 border-gold-brand pl-6 py-2 leading-tight">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.5 }}
+            className="font-display text-xl text-blue-brand/70 max-w-xl border-l-8 border-gold-brand pl-6 py-2 leading-tight"
+          >
             Somos tu solución confiable en servicios de mensajería y delivery en Mar del Plata.
             Ofrecemos soluciones rápidas, seguras y económicas para todas tus necesidades de envío.
-          </p>
+          </motion.p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-6 pt-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.7 }}
+            className="flex flex-wrap gap-6 pt-4"
+          >
             <Link href="/cotizar/express" className="brutalist-button-primary group flex items-center gap-2">
               Solicitar Servicio
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </Link>
             <Link href="/servicios/envios-express" className="brutalist-button-accent group flex items-center gap-2">
-              <div className="w-8 h-8 rounded-brand border-2 border-blue-brand flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Play className="w-4 h-4 fill-blue-brand" />
+              <div className="w-8 h-8 rounded-full bg-blue-brand/10 border-2 border-blue-brand flex items-center justify-center group-hover:scale-120 transition-transform">
+                <Play className="w-3 h-3 fill-blue-brand" />
               </div>
               Ver Servicios
             </Link>
-          </div>
+          </motion.div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap gap-8 pt-8 border-t-4 border-blue-brand">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.0, delay: 0.9 }}
+            className="flex flex-wrap gap-8 pt-8 border-t-4 border-blue-brand"
+          >
             {[
               { icon: ShieldCheck, text: "100% SEGURO" },
               { icon: Zap, text: "ULTRA RÁPIDO" },
@@ -116,8 +137,8 @@ export default function Hero() {
                 <span className="font-mono text-xs font-bold uppercase tracking-widest">{badge.text}</span>
               </div>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Right Content (Column 2) */}
         <motion.div 
@@ -161,9 +182,13 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* Simulated 3D Elements */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 border-4 border-blue-brand bg-white/80 backdrop-blur-sm shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
-               <Zap className="w-16 h-16 text-blue-brand animate-pulse" />
+            {/* Rotating 3D Card */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 max-w-[85%] aspect-[1.586] z-10">
+              <RotatingCard
+                frontImageSrc="/hero/delante.webp"
+                backImageSrc="/hero/detras.webp"
+                className="w-full h-full"
+              />
             </div>
           </div>
 

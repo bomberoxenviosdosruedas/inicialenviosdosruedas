@@ -39,7 +39,7 @@ export default function Navbar() {
               />
             </div>
             <span className="font-black text-2xl tracking-tighter uppercase leading-none text-blue-brand">
-              Envíos <br /> DosRuedas
+              Envíos <br /> Dosruedas
             </span>
           </div>
           <span className="font-mono text-[10px] uppercase font-bold text-blue-brand ml-12 -mt-1">
@@ -81,10 +81,10 @@ export default function Navbar() {
                 Envíos LowCost
               </Link>
               <Link href="/servicios/enviosflex" className="block text-blue-brand hover:text-gold-brand hover:bg-blue-brand/5 p-2 transition-colors font-mono">
-                Envíos Flex (MeLi)
+                Envíos Flex
               </Link>
               <Link href="/servicios/plan-emprendedores" className="block text-blue-brand hover:text-gold-brand hover:bg-blue-brand/5 p-2 transition-colors font-mono">
-                Plan Emprendedores
+                E-Commerce & 3PL
               </Link>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-6">
           <a
             href="tel:+5492236602699"
-            className="font-technical text-off-white hover:text-accent transition-colors flex items-center gap-2"
+            className="font-technical text-off-white hover:text-accent transition-colors flex items-center gap-2 group"
           >
             <div className="w-10 h-10 bg-white-brand border-4 border-blue-brand flex items-center justify-center group-hover:bg-gold-brand transition-colors">
               <Phone className="w-5 h-5 animate-pulse" />
@@ -111,7 +111,7 @@ export default function Navbar() {
           </a>
           <Link
             href="/cotizar/express"
-            className="bg-accent text-dark-navy px-5 py-2.5 font-technical uppercase font-bold hover:bg-white transition-colors flex items-center gap-2 border border-accent"
+            className="bg-gold-brand text-blue-brand border-4 border-blue-brand rounded-none px-5 py-2.5 font-technical uppercase font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all flex items-center gap-2"
           >
             <Calculator className="w-4 h-4" />
             <span>Cotizar Envío</span>
@@ -122,7 +122,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4 md:hidden">
           <Link
             href="/cotizar/express"
-            className="bg-accent text-dark-navy p-2 hover:bg-white transition-colors border border-accent"
+            className="bg-gold-brand text-blue-brand border-4 border-blue-brand rounded-none p-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center justify-center"
           >
             <Calculator className="w-4 h-4" />
           </Link>
