@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import FAQAccordion from "@/components/nosotros/preguntas-frecuentes/FAQAccordion";
 import SupportCTA from "@/components/nosotros/preguntas-frecuentes/SupportCTA";
+
+export const metadata: Metadata = {
+  title: "Preguntas Frecuentes",
+  description: "Respuestas rápidas a las consultas más frecuentes sobre envíos express, MercadoLibre Flex, formas de pago y logística en Mar del Plata.",
+};
 
 export default function PreguntasFrecuentesPage() {
   return (

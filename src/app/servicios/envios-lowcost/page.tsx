@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import HeroLowCost from "@/components/servicios/envios-lowcost/HeroLowCost";
 import MassiveEfficiency from "@/components/servicios/envios-lowcost/MassiveEfficiency";
 import Benefits from "@/components/servicios/envios-lowcost/Benefits";
 import PricingGrid from "@/components/servicios/envios-lowcost/PricingGrid";
+
+export const metadata: Metadata = {
+  title: "Envíos LowCost Programados",
+  description: "Servicio de logística económica y envíos programados en Mar del Plata. Minimizá los costos de envío de tu negocio con entregas consolidadas en el día.",
+};
 
 export default function EnviosLowCostPage() {
   return (

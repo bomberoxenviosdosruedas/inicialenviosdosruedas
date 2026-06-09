@@ -54,13 +54,39 @@ export default function Navbar() {
             Inicio
           </Link>
 
-          {/* Drops (simplified for this audit as links or buttons with indicator) */}
-          <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-brand transition-colors">
-            Nosotros <ChevronDown className="w-3 h-3" />
+          {/* Nosotros Dropdown */}
+          <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-brand transition-colors py-4">
+            <span className="flex items-center gap-1">Nosotros <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" /></span>
+            <div className="absolute top-full left-0 hidden group-hover:block bg-white border-4 border-blue-brand p-4 space-y-3 min-w-[220px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-50 rounded-none text-left">
+              <Link href="/nosotros/sobre-nosotros" className="block text-blue-brand hover:text-gold-brand hover:bg-blue-brand/5 p-2 transition-colors font-mono">
+                Sobre Nosotros
+              </Link>
+              <Link href="/nosotros/preguntas-frecuentes" className="block text-blue-brand hover:text-gold-brand hover:bg-blue-brand/5 p-2 transition-colors font-mono">
+                Preguntas Frecuentes
+              </Link>
+              <Link href="/nosotros/nuestras-redes" className="block text-blue-brand hover:text-gold-brand hover:bg-blue-brand/5 p-2 transition-colors font-mono">
+                Nuestras Redes
+              </Link>
+            </div>
           </div>
 
-          <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-brand transition-colors">
-            Servicios <ChevronDown className="w-3 h-3" />
+          {/* Servicios Dropdown */}
+          <div className="relative group cursor-pointer flex items-center gap-1 hover:text-blue-brand transition-colors py-4">
+            <span className="flex items-center gap-1">Servicios <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" /></span>
+            <div className="absolute top-full left-0 hidden group-hover:block bg-white border-4 border-blue-brand p-4 space-y-3 min-w-[260px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-50 rounded-none text-left">
+              <Link href="/servicios/envios-express" className="block text-blue-brand hover:text-gold-brand hover:bg-blue-brand/5 p-2 transition-colors font-mono">
+                Envíos Express
+              </Link>
+              <Link href="/servicios/envios-lowcost" className="block text-blue-brand hover:text-gold-brand hover:bg-blue-brand/5 p-2 transition-colors font-mono">
+                Envíos LowCost
+              </Link>
+              <Link href="/servicios/enviosflex" className="block text-blue-brand hover:text-gold-brand hover:bg-blue-brand/5 p-2 transition-colors font-mono">
+                Envíos Flex (MeLi)
+              </Link>
+              <Link href="/servicios/plan-emprendedores" className="block text-blue-brand hover:text-gold-brand hover:bg-blue-brand/5 p-2 transition-colors font-mono">
+                Plan Emprendedores
+              </Link>
+            </div>
           </div>
 
           <Link href="/contacto" className="flex items-center gap-1 hover:text-blue-brand transition-colors">

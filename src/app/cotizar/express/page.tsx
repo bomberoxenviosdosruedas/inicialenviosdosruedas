@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import QuoteContainer from "@/components/cotizar/express/QuoteContainer";
 import MapFeatures from "@/components/cotizar/express/MapFeatures";
 import PricingExplanation from "@/components/cotizar/express/PricingExplanation";
 import CalculatorTips from "@/components/cotizar/express/CalculatorTips";
+
+export const metadata: Metadata = {
+  title: "Cotizador Express Online",
+  description: "Calculá el costo de tu envío express en Mar del Plata en tiempo real. Ruteo inmediato y entrega garantizada en 2 horas.",
+};
 
 export default function CotizarExpressPage() {
   return (

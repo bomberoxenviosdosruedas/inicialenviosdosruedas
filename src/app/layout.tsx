@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
+import { Anybody, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar/Navbar";
 import Footer from "@/components/layout/footer/Footer";
+
+const anybody = Anybody({
+  subsets: ["latin"],
+  variable: "--font-anybody",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.enviosdosruedas.com'),
@@ -120,7 +133,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="es" className="h-full antialiased scroll-smooth">
+    <html lang="es" className={`${anybody.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"

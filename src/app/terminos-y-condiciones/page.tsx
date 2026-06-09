@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import TermsContent from "@/components/terminos-y-condiciones/TermsContent";
+
+export const metadata: Metadata = {
+  title: "Términos y Condiciones",
+  description: "Términos y Condiciones de uso de los servicios logísticos y de mensajería de Envíos DosRuedas en Mar del Plata.",
+};
 
 export default function TerminosYCondicionesPage() {
   return (

@@ -210,59 +210,83 @@ export default function Hero() {
           <div className="relative w-full overflow-hidden py-2 md:w-[calc(100%-11rem)]">
             <InfiniteSlider durationOnHover={20} duration={40} gap={96}>
               <div className="flex">
-                <img
+                <Image
                   className="mx-auto h-5 w-auto invert opacity-50 hover:opacity-100 transition-all duration-300"
                   src="https://html.tailus.io/blocks/customers/nvidia.svg"
                   alt="Nvidia Logo"
+                  width={100}
+                  height={20}
+                  unoptimized
                 />
               </div>
               <div className="flex">
-                <img
+                <Image
                   className="mx-auto h-4 w-auto invert opacity-50 hover:opacity-100 transition-all duration-300"
                   src="https://html.tailus.io/blocks/customers/column.svg"
                   alt="Column Logo"
+                  width={100}
+                  height={16}
+                  unoptimized
                 />
               </div>
               <div className="flex">
-                <img
+                <Image
                   className="mx-auto h-4 w-auto invert opacity-50 hover:opacity-100 transition-all duration-300"
                   src="https://html.tailus.io/blocks/customers/github.svg"
                   alt="GitHub Logo"
+                  width={100}
+                  height={16}
+                  unoptimized
                 />
               </div>
               <div className="flex">
-                <img
+                <Image
                   className="mx-auto h-5 w-auto invert opacity-50 hover:opacity-100 transition-all duration-300"
                   src="https://html.tailus.io/blocks/customers/nike.svg"
                   alt="Nike Logo"
+                  width={100}
+                  height={20}
+                  unoptimized
                 />
               </div>
               <div className="flex">
-                <img
+                <Image
                   className="mx-auto h-5 w-auto invert opacity-50 hover:opacity-100 transition-all duration-300"
                   src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
                   alt="Lemon Squeezy Logo"
+                  width={100}
+                  height={20}
+                  unoptimized
                 />
               </div>
               <div className="flex">
-                <img
+                <Image
                   className="mx-auto h-4 w-auto invert opacity-50 hover:opacity-100 transition-all duration-300"
                   src="https://html.tailus.io/blocks/customers/laravel.svg"
                   alt="Laravel Logo"
+                  width={100}
+                  height={16}
+                  unoptimized
                 />
               </div>
               <div className="flex">
-                <img
+                <Image
                   className="mx-auto h-7 w-auto invert opacity-50 hover:opacity-100 transition-all duration-300"
                   src="https://html.tailus.io/blocks/customers/lilly.svg"
                   alt="Lilly Logo"
+                  width={100}
+                  height={28}
+                  unoptimized
                 />
               </div>
               <div className="flex">
-                <img
+                <Image
                   className="mx-auto h-6 w-auto invert opacity-50 hover:opacity-100 transition-all duration-300"
                   src="https://html.tailus.io/blocks/customers/openai.svg"
                   alt="OpenAI Logo"
+                  width={100}
+                  height={24}
+                  unoptimized
                 />
               </div>
             </InfiniteSlider>

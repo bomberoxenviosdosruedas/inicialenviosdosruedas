@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import PrivacyPolicyContent from "@/components/politica-de-privacidad/PrivacyPolicyContent";
+
+export const metadata: Metadata = {
+  title: "Política de Privacidad",
+  description: "Política de Privacidad de Envíos DosRuedas. Conocé cómo protegemos y gestionamos la información personal de nuestros clientes y usuarios.",
+};
 
 export default function PoliticaDePrivacidadPage() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import HeroExpress from "@/components/servicios/envios-express/HeroExpress";
 import PremiumSolutions from "@/components/servicios/envios-express/PremiumSolutions";
 import PricingTable from "@/components/servicios/envios-express/PricingTable";
@@ -5,6 +6,11 @@ import DynamicQuotation from "@/components/servicios/envios-express/DynamicQuota
 import ConditionsAccordion from "@/components/servicios/envios-express/ConditionsAccordion";
 import Benefits from "@/components/servicios/envios-express/Benefits";
 import UrgentScenarios from "@/components/servicios/envios-express/UrgentScenarios";
+
+export const metadata: Metadata = {
+  title: "Envíos Express en 2 Horas",
+  description: "Servicio de mensajería y entrega express garantizada en 2 horas en Mar del Plata. Seguridad y rapidez para tus documentos y paquetes urgentes.",
+};
 
 export default function EnviosExpressPage() {
   return (

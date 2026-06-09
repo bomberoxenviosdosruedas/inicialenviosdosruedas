@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import FeedPreview from "@/components/nosotros/nuestras-redes/FeedPreview";
 import SocialGrid from "@/components/nosotros/nuestras-redes/SocialGrid";
 import { prisma } from "@/lib/db";
+
+export const metadata: Metadata = {
+  title: "Nuestras Redes",
+  description: "Conectá con la comunidad de Envíos DosRuedas en Mar del Plata. Seguí nuestras redes para ofertas exclusivas, consejos y novedades.",
+};
 
 export default async function NuestrasRedesPage() {
   const posts = await prisma.socialPost.findMany({

@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import HeroFlex from "@/components/servicios/enviosflex/HeroFlex";
 import MarketplaceIntegration from "@/components/servicios/enviosflex/MarketplaceIntegration";
 import OperationalFlow from "@/components/servicios/enviosflex/OperationalFlow";
 import Requirements from "@/components/servicios/enviosflex/Requirements";
+
+export const metadata: Metadata = {
+  title: "MercadoLibre Flex Mar del Plata",
+  description: "Servicio de distribución autorizado de Mercado Envíos Flex en Mar del Plata. Habilitá entregas en el día y aumentá la reputación de tu cuenta de MercadoLibre.",
+};
 
 export default function EnviosFlexPage() {
   const zones = [

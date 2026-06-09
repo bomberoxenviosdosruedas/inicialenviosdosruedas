@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import ContactForm from "@/components/contacto/ContactForm";
 import LocationInfo from "@/components/contacto/LocationInfo";
 import SupportChannels from "@/components/contacto/SupportChannels";
+
+export const metadata: Metadata = {
+  title: "Contacto",
+  description: "Comunicate con Envíos DosRuedas en Mar del Plata. Canales oficiales de soporte, teléfono, correo y formulario de consultas.",
+};
 
 export default function ContactoPage() {
   return (

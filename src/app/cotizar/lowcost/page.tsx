@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import QuoteContainer from "@/components/cotizar/lowcost/QuoteContainer";
 import MapFeatures from "@/components/cotizar/lowcost/MapFeatures";
 import PricingExplanation from "@/components/cotizar/lowcost/PricingExplanation";
 import CalculatorTips from "@/components/cotizar/lowcost/CalculatorTips";
+
+export const metadata: Metadata = {
+  title: "Cotizador LowCost Online",
+  description: "Calculá el costo de tus envíos programados y masivos en Mar del Plata. Eficiencia de costos para entregas en el mismo día.",
+};
 
 export default function CotizarLowCostPage() {
   return (

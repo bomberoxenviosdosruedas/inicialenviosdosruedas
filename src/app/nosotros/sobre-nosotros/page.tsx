@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import History from "@/components/nosotros/sobre-nosotros/History";
 import Values from "@/components/nosotros/sobre-nosotros/Values";
 import Team from "@/components/nosotros/sobre-nosotros/Team";
+
+export const metadata: Metadata = {
+  title: "Sobre Nosotros",
+  description: "Conocé la historia, misión y valores de Envíos DosRuedas. Liderando la logística urbana en Mar del Plata desde el primer día.",
+};
 
 export default function SobreNosotrosPage() {
   const metrics = [

@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import HeroPlan from "@/components/servicios/plan-emprendedores/HeroPlan";
 import KeyBenefits from "@/components/servicios/plan-emprendedores/KeyBenefits";
 import PlanTiers from "@/components/servicios/plan-emprendedores/PlanTiers";
 import ContactForm from "@/components/servicios/plan-emprendedores/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Plan Emprendedores y Logística 3PL",
+  description: "Solución de almacenamiento, picking, empaque y distribución 3PL para e-commerce en Mar del Plata. Escalá tus ventas delegando tu logística de última milla.",
+};
 
 export default function PlanEmprendedoresPage() {
   return (
