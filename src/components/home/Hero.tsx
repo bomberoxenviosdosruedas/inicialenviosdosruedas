@@ -1,56 +1,128 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { ArrowRight, Play, ShieldCheck, Zap, Globe } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+
 export default function Hero() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div className="lg:col-span-7 space-y-8">
-        <div className="flex items-center gap-3">
-          <div className="bg-primary px-3 py-1">
-            <span className="font-technical text-xs text-dark-navy uppercase tracking-widest">Status: Active_Feed</span>
+    <section className="relative min-h-[90vh] flex items-center pt-20 pb-12 overflow-hidden bg-slate-50">
+      {/* Background patterns could go here */}
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+
+        {/* Left Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="lg:col-span-7 space-y-8"
+        >
+          {/* Badge */}
+          <div className="inline-flex items-center gap-3 bg-white border-4 border-slate-950 px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+            </span>
+            <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-950">
+              Tu Solución Confiable
+            </span>
           </div>
-          <div className="h-[1px] w-12 bg-electric-blue"></div>
-          <span className="font-body text-xs text-off-white tracking-[0.2em]">RED_LOGISTICA_V4.0</span>
-        </div>
 
-        <h1 className="font-display text-7xl md:text-8xl leading-[0.9] tracking-tighter uppercase text-white">
-          Logística de <br/>
-          <span className="text-accent">Alta Frecuencia</span><br/>
-          para la era digital.
-        </h1>
+          {/* Title */}
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-slate-950 leading-[0.85] uppercase md:italic">
+            Mensajería y <br />
+            <span className="text-primary">Logística</span> <br />
+            E-Commerce <br />
+            <span className="text-slate-950/20 stroke-slate-950 stroke-2">en MDP</span>
+          </h1>
 
-        <p className="font-body text-lg text-off-white/80 max-w-xl border-l-2 border-primary pl-6 py-2">
-          Despliegue operativo inmediato en Mar del Plata. Optimizamos la última milla mediante algoritmos de flujo dinámico y una flota de respuesta rápida.
-        </p>
+          {/* Description */}
+          <p className="font-sans text-xl text-slate-700 max-w-xl border-l-8 border-accent pl-6 py-2 leading-tight">
+            Somos tu solución confiable en servicios de mensajería y delivery en Mar del Plata.
+            Ofrecemos soluciones rápidas, seguras y económicas para todas tus necesidades de envío.
+          </p>
 
-        <div className="flex flex-wrap gap-4">
-          <button className="bg-accent text-dark-navy px-8 py-4 font-technical text-lg uppercase font-bold hover:bg-white transition-all">
-            Iniciar Despliegue
-          </button>
-          <button className="border border-off-white/30 text-white px-8 py-4 font-technical text-lg uppercase hover:bg-white/10 transition-all">
-            Consultar Cobertura
-          </button>
-        </div>
-      </div>
-
-      <div className="lg:col-span-5 relative">
-        {/* Placeholder para la unidad de telemetría/tracking */}
-        <div className="border border-electric-blue/30 p-6 bg-dark-navy/50 backdrop-blur-sm">
-          <div className="flex justify-between items-start mb-6 pb-4 border-b border-electric-blue/30">
-            <div>
-              <p className="font-technical text-[10px] text-off-white/50 uppercase">Unit_Tracking_Id</p>
-              <h3 className="font-display text-accent text-2xl tracking-tighter">DR-9921-XPR</h3>
-            </div>
-            <div className="px-3 py-1 bg-accent text-dark-navy font-technical text-[10px]">
-              LIVE_SIGNAL
-            </div>
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-6 pt-4">
+            <Link href="/cotizar/express" className="brutalist-button-primary group flex items-center gap-2">
+              Solicitar Servicio
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link href="/servicios/envios-express" className="brutalist-button-accent group flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full border-2 border-slate-950 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Play className="w-4 h-4 fill-slate-950" />
+              </div>
+              Ver Servicios
+            </Link>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            {['Velocity', 'Est_Delivery'].map((item) => (
-              <div key={item} className="p-3 bg-white/5 border border-white/10">
-                <p className="font-technical text-[10px] text-off-white/50 uppercase">{item}</p>
-                <p className="font-body text-white">104.2 KM/H</p>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap gap-8 pt-8 border-t-4 border-slate-950">
+            {[
+              { icon: ShieldCheck, text: "100% SEGURO" },
+              { icon: Zap, text: "ULTRA RÁPIDO" },
+              { icon: Globe, text: "COBERTURA TOTAL" }
+            ].map((badge, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <badge.icon className="w-5 h-5 text-primary" />
+                <span className="font-mono text-xs font-bold uppercase tracking-widest">{badge.text}</span>
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
+
+        {/* Right Content / Visuals */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="lg:col-span-5 relative hidden lg:block"
+        >
+          <div className="relative w-full aspect-square">
+            {/* Main Image Frame */}
+            <div className="absolute inset-0 border-4 border-slate-950 bg-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+              <Image
+                src="/hero/mapa_background.jpeg"
+                alt="Mapa Logístico MDP"
+                fill
+                className="object-cover opacity-40 grayscale"
+              />
+              <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
+            </div>
+
+            {/* Floating Cards */}
+            <motion.div
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-6 -right-6 brutalist-card p-4 bg-primary text-white z-20"
+            >
+              <div className="flex flex-col">
+                <span className="font-mono text-[10px] uppercase">Estado</span>
+                <span className="font-black text-xl italic">EN TRÁNSITO</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, 20, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute -bottom-6 -left-6 brutalist-card p-4 bg-accent text-slate-950 z-20"
+            >
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="w-8 h-8" />
+                <div className="flex flex-col">
+                  <span className="font-mono text-[10px] uppercase tracking-tighter">Seguridad</span>
+                  <span className="font-black text-xl italic">VERIFICADO</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Simulated 3D Elements (Cajas) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-4 border-slate-950 bg-white/80 backdrop-blur-sm shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+               <Zap className="w-24 h-24 text-primary animate-pulse" />
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
