@@ -1,12 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Home, ChevronDown, Mail, Phone, Calculator, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleDropdown = (name: string) => {
@@ -14,7 +23,11 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-dark-navy/95 border-b border-primary/30 py-4 px-6 sticky top-0 z-50 backdrop-blur-md">
+    <nav className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 px-6 ${
+      scrolled 
+        ? "bg-dark-navy/90 border-b border-primary/30 py-4 backdrop-blur-md shadow-lg" 
+        : "bg-transparent border-b border-transparent py-5"
+    }`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* LOGO AND BRAND */}
         <Link href="/" className="flex items-center gap-3 group">
