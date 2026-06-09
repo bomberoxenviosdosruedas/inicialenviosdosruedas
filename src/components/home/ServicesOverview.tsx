@@ -1,44 +1,48 @@
-'use client';
+"use client";
 
-import { Zap, Clock, Package, Truck, ChevronRight } from 'lucide-react';
-import Link from 'next/link';
-
-const services = [
-  {
-    title: "Envíos Express",
-    icon: Zap,
-    description: "Prioridad absoluta y certeza total. Diseñado para operaciones de alta criticidad horaria. Vos elegís el rango exacto de entrega con solo 2 horas de anticipación.",
-    button: "Solicitar Express",
-    link: "/cotizar/express",
-    badge: "ALTA PRIORIDAD"
-  },
-  {
-    title: "Envíos LowCost",
-    icon: Clock,
-    description: "Rentabilidad y ruteo masivo. Variabilizá tus costos logísticos. Ingresá tus pedidos antes de las 13:00 hs y garantizamos entrega en el día.",
-    button: "Ahorrá con LowCost",
-    link: "/servicios/envios-lowcost",
-    badge: "MÁXIMA EFICIENCIA"
-  },
-  {
-    title: "Envíos Flex (MeLi)",
-    icon: Package,
-    description: "Potenciá tu reputación al máximo. Somos expertos en MercadoLibre. Cumplimos tus acuerdos de nivel de servicio (SLAs) Same-Day para que tu termómetro esté en verde.",
-    button: "Activar Envíos Flex",
-    link: "/servicios/enviosflex",
-    badge: "SLA GUARANTEED"
-  },
-  {
-    title: "E-Commerce & 3PL",
-    icon: Truck,
-    description: "Tercerización y cuentas corrientes. Más que un envío, somos tu depósito. Soluciones escalables para PyMEs con facturación mensual centralizada.",
-    button: "Hablar con un asesor",
-    link: "/nosotros/contacto",
-    badge: "3PL STRATEGY"
-  }
-];
+import Link from "next/link";
+import { Zap, Clock, Package, Truck, ChevronRight } from "lucide-react";
 
 export default function ServicesOverview() {
+  const services = [
+    {
+      title: "Envíos Express",
+      desc: "Prioridad absoluta y certeza total. Diseñado para operaciones de alta criticidad horaria. Vos elegís el rango exacto de entrega con solo 2 horas de anticipación.",
+      btn: "Solicitar Express",
+      badge: "ALTA PRIORIDAD",
+      link: "/cotizar/express",
+      icon: Zap,
+      accent: "border-primary text-primary"
+    },
+    {
+      title: "Envíos LowCost",
+      desc: "Rentabilidad y ruteo masivo. Variabilizá tus costos logísticos. Ingresá tus pedidos antes de las 13:00 hs y garantizamos entrega en el día.",
+      btn: "Ahorrá con LowCost",
+      badge: "RENTABILIDAD",
+      link: "/cotizar/lowcost",
+      icon: Clock,
+      accent: "border-accent text-accent"
+    },
+    {
+      title: "Envíos Flex (MeLi)",
+      desc: "Potenciá tu reputación al máximo. Somos expertos en MercadoLibre. Cumplimos tus acuerdos de nivel de servicio (SLAs) Same-Day para que tu termómetro esté en verde.",
+      btn: "Activar Envíos Flex",
+      badge: "MERCADOLIBRE",
+      link: "/servicios/enviosflex",
+      icon: Package,
+      accent: "border-accent text-accent"
+    },
+    {
+      title: "E-Commerce & 3PL",
+      desc: "Tercerización y cuentas corrientes. Más que un envío, somos tu depósito. Soluciones escalables para PyMEs con facturación mensual centralizada.",
+      btn: "Hablar con un asesor",
+      badge: "INTEGRAL",
+      link: "/servicios/plan-emprendedores",
+      icon: Truck,
+      accent: "border-primary text-primary"
+    }
+  ];
+
   return (
     <section className="py-24 bg-white-brand">
       <div className="container mx-auto px-6">
@@ -65,26 +69,30 @@ export default function ServicesOverview() {
                 <span className="font-mono text-[10px] font-black text-blue-brand border-2 border-blue-brand px-2 py-0.5 uppercase">
                   {service.badge}
                 </span>
-              </div>
 
-              <h3 className="text-2xl font-black uppercase tracking-tighter mb-4 leading-none">
-                {service.title}
-              </h3>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <IconComponent className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-display text-2xl text-white uppercase tracking-tighter group-hover:text-accent transition-colors">
+                    {s.title}
+                  </h3>
+                </div>
 
               <p className="font-display text-sm text-blue-brand/60 font-bold uppercase tracking-tight mb-8 flex-grow">
                 {service.description}
               </p>
 
               <Link
-                href={service.link}
-                className="brutalist-button-primary w-full flex items-center justify-center gap-2"
+                href={s.link}
+                className="w-full py-4 bg-white/5 border border-white/10 text-white font-technical text-xs uppercase hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn"
               >
-                {service.button}
-                <ChevronRight className="w-5 h-5" />
+                <span>{s.btn}</span>
+                <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </section>
   );

@@ -1,7 +1,13 @@
 import FeedPreview from "@/components/nosotros/nuestras-redes/FeedPreview";
 import SocialGrid from "@/components/nosotros/nuestras-redes/SocialGrid";
+import { prisma } from "@/lib/db";
 
-export default function NuestrasRedesPage() {
+export default async function NuestrasRedesPage() {
+  const posts = await prisma.socialPost.findMany({
+    orderBy: { timestamp: "desc" },
+    take: 6,
+  });
+
   const benefits = [
     { title: "Ofertas Exclusivas", desc: "Accede a descuentos y promociones especiales solo para nuestra comunidad digital." },
     { title: "Actualizaciones", desc: "Sé el primero en conocer nuevos servicios, zonas de cobertura y mejoras técnicas." },
@@ -32,7 +38,7 @@ export default function NuestrasRedesPage() {
         <SocialGrid />
 
         {/* FEED PREVIEW */}
-        <FeedPreview />
+        <FeedPreview posts={posts} />
 
         {/* BENEFITS */}
         <section className="py-24 border-y border-white/10">

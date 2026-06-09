@@ -1,33 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
-import { ShieldCheck, Zap, Globe, ArrowUpRight, MessageCircle } from "lucide-react";
+import { ShieldCheck, Zap, Globe, ArrowUpRight } from "lucide-react";
 
-// Helper icons for platforms not in this lucide version
-const FacebookIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-  </svg>
-);
-
-const InstagramIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-  </svg>
-);
-
-/**
- * Footer - Envíos Dos Ruedas
- * Estilo Industrial Brutalist
- */
 export default function Footer() {
-  const socialLinks = [
-    { icon: InstagramIcon, href: "https://www.instagram.com/enviosdosruedas/" },
-    { icon: FacebookIcon, href: "https://facebook.com/enviosdosruedas" },
-    { icon: MessageCircle, href: "https://wa.me/5492236602699" },
-  ];
-
   return (
     <footer className="bg-blue-brand text-white pt-24 pb-12 border-t-8 border-blue-brand">
       <div className="container mx-auto px-6">
@@ -52,7 +28,8 @@ export default function Footer() {
               <span className="font-mono text-xs uppercase font-bold text-gold-brand ml-16 -mt-1">
                 tu solución confiable
               </span>
-            </Link>
+            </div>
+          </Link>
 
             <p className="font-display text-sm text-white-brand font-bold uppercase tracking-tight max-w-sm">
               Soluciones de logística, mensajería, MercadoLibre Flex y Fulfillment 3PL para e-commerce y pymes en Mar del Plata.
@@ -71,6 +48,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
+        </div>
 
           {/* Nav Columns */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-8">
@@ -134,6 +112,7 @@ export default function Footer() {
             </div>
           ))}
         </div>
+      </div>
 
         {/* Copyright */}
         <div className="pt-12 border-t-4 border-blue-brand flex flex-col md:flex-row justify-between items-center gap-6">

@@ -1,8 +1,15 @@
-export default function FeedPreview() {
-  const posts = [
-    { id: 1, type: "IG", date: "Hace 2h", content: "Nueva zona de cobertura habilitada en Sierra de los Padres! 🚀", likes: "124" },
-    { id: 2, type: "FB", date: "Hace 5h", content: "Consejos para embalar tus envíos de e-commerce de forma segura.", likes: "89" },
-    { id: 3, type: "IG", date: "Ayer", content: "Conocé a Lucas, uno de nuestros repartidores estrella en la zona puerto.", likes: "256" },
+import { SocialPost } from "@/generated/prisma/client";
+import { Heart, ExternalLink } from "lucide-react";
+
+interface FeedPreviewProps {
+  posts: SocialPost[];
+}
+
+export default function FeedPreview({ posts }: FeedPreviewProps) {
+  const displayPosts = posts.length > 0 ? posts : [
+    { id: 1, platform: "instagram", timestamp: new Date(), content: "Nueva zona de cobertura habilitada en Sierra de los Padres! 🚀", likes: 124, postUrl: "https://www.instagram.com/enviosdosruedas/" },
+    { id: 2, platform: "facebook", timestamp: new Date(), content: "Consejos para embalar tus envíos de e-commerce de forma segura.", likes: 89, postUrl: "https://facebook.com/enviosdosruedas" },
+    { id: 3, platform: "instagram", timestamp: new Date(), content: "Conocé a Lucas, uno de nuestros repartidores estrella en la zona puerto.", likes: 256, postUrl: "https://www.instagram.com/enviosdosruedas/" },
   ];
 
   return (
@@ -18,7 +25,7 @@ export default function FeedPreview() {
         </div>
         <div className="border border-white/20 px-6 py-3 font-mono text-xs text-white uppercase tracking-widest hover:bg-white hover:text-blue-brand transition-colors cursor-pointer">
           Seguir todas nuestras cuentas
-        </div>
+        </a>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

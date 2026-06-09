@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Zap, Calculator, MessageCircle, ShieldCheck, Globe, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
@@ -37,23 +37,13 @@ export default function CtaSection() {
               Olvidate de la gestión de paquetes y enfocate en vender más. Dejá la distribución urbana en manos de expertos.
             </p>
 
-            <div className="flex flex-wrap gap-6 pt-4">
-              <Link
-                href="https://wa.me/5492236602699?text=Hola%20Envios%20DosRuedas,%20vengo%20desde%20la%20web"
-                target="_blank"
-                className="brutalist-button-primary flex items-center gap-2 bg-green-600 hover:bg-green-700"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Contactanos por WhatsApp
-              </Link>
-              <Link
-                href="/cotizar/express"
-                className="brutalist-button-accent flex items-center gap-2"
-              >
-                <Calculator className="w-5 h-5" />
-                Ver Tarifas 2026
-              </Link>
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent">
+              <Cpu className="w-5 h-5" />
             </div>
+            <span className="font-technical text-xs text-white uppercase tracking-wider font-bold">
+              Innovación constante en última milla
+            </span>
           </div>
 
           {/* Pillars */}

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Building2, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
@@ -30,8 +30,12 @@ export default function EntrepreneurSolutions() {
     <section className="py-24 bg-white-brand overflow-hidden">
       <div className="container mx-auto px-6">
 
-        {/* Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-16">
+  return (
+    <section className="bg-white/5 py-24 border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Header grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
           <div className="lg:col-span-8 space-y-6">
             <div className="inline-flex items-center gap-3 bg-white border-4 border-blue-brand px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
               <Building2 className="w-5 h-5 text-blue-brand animate-bounce" />
@@ -47,7 +51,6 @@ export default function EntrepreneurSolutions() {
               Transformamos la última milla de tu empresa con una flota ágil y especializada de alta precisión.
             </p>
           </div>
-
           <div className="lg:col-span-4 grid grid-cols-2 gap-4">
             <div className="brutalist-card p-6 bg-blue-brand text-white">
               <span className="block text-4xl font-black">500+</span>
@@ -60,7 +63,7 @@ export default function EntrepreneurSolutions() {
           </div>
         </div>
 
-        {/* Solutions Grid */}
+        {/* Grilla de 3 columnas */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {solutions.map((solution, idx) => (
             <div key={idx} className="group brutalist-card bg-white flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
@@ -76,13 +79,13 @@ export default function EntrepreneurSolutions() {
                 <div className="absolute top-4 left-4 bg-white border-4 border-blue-brand p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                    <Building2 className="w-6 h-6 text-blue-brand" />
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="p-8 flex flex-col flex-grow space-y-6">
-                <h4 className="text-2xl font-black uppercase tracking-tighter leading-none">
-                  {solution.title}
+                <h4 className="font-display text-2xl text-white uppercase tracking-tight mb-4 group-hover:text-accent transition-colors">
+                  {s.title}
                 </h4>
+                <p className="font-body text-xs text-off-white/60 mb-6 leading-relaxed">
+                  {s.desc}
+                </p>
 
                 <ul className="space-y-3 flex-grow">
                   {solution.features.map((feature, fIdx) => (
@@ -103,6 +106,14 @@ export default function EntrepreneurSolutions() {
                   <ArrowUpRight className="w-5 h-5" />
                 </Link>
               </div>
+
+              <Link
+                href={s.link}
+                className="font-technical text-sm text-accent uppercase font-bold hover:text-white transition-colors flex items-center gap-2 group/btn"
+              >
+                <span>Configurar Plan</span>
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" />
+              </Link>
             </div>
           ))}
         </div>

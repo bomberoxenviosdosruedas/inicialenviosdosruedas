@@ -1,5 +1,4 @@
-import QuoteForm from "@/components/cotizar/lowcost/QuoteForm";
-import QuoteResult from "@/components/cotizar/lowcost/QuoteResult";
+import QuoteContainer from "@/components/cotizar/lowcost/QuoteContainer";
 import MapFeatures from "@/components/cotizar/lowcost/MapFeatures";
 import PricingExplanation from "@/components/cotizar/lowcost/PricingExplanation";
 import CalculatorTips from "@/components/cotizar/lowcost/CalculatorTips";
@@ -26,9 +25,8 @@ export default function CotizarLowCostPage() {
         </section>
 
         {/* INTERACTIVE CALCULATOR */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          <QuoteForm />
-          <QuoteResult />
+        <div className="mb-20">
+          <QuoteContainer />
         </div>
 
         {/* FEATURES SECTION */}

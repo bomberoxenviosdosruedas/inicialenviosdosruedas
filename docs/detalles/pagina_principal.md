@@ -40,7 +40,7 @@ La página principal debe componerse de las siguientes secciones estructuradas y
   - "COBERTURA TOTAL" (icono `Globe`)
 - **Elementos Visuales Flotantes (`HeroVisuals`)**: Tarjetas holográficas flotantes con estados simulados: "EN TRÁNSITO", "VERIFICADO", mapa de fondo (`/hero/mapa_background.jpeg`) y cajas de entrega tridimensionales difuminadas.
 
-#### 3. Visión Estratégica (src\components\home\Vision.tsx)
+#### 3. Visión Estratégica ('src/components/home/Vision.tsx')
 - **Etiqueta Superior**: "Partner Logístico Especializado" con un punto pulsante.
 - **Título**: "Nuestra Visión Logística".
 - **Bajada**: "Transformamos tus costos fijos en solutions flexibles que acompañan el crecimiento de tu negocio."
