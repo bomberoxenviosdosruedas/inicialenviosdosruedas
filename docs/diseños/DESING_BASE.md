@@ -1,71 +1,75 @@
-# Design System Inspired by Dashboard
+# Design System de Envíos DosRuedas
 
-> Category: Professional & Corporate
-> Dark-themed cloud-platform aesthetic with modular grids, glass-like panels, and strong data hierarchy for productivity dashboards.
+> Categoría: Logística Profesional & E-commerce (Tech-Logistics)
+> Estética Dark-Theme de plataforma en la nube, con retículas modulares, paneles oscuros translúcidos (glassmorphism) y fuerte jerarquía de datos orientada al rendimiento y precisión urbana.
 
-## 1. Visual Theme & Atmosphere
+## 1. Tema Visual y Atmósfera (Configuración Global)
 
-Dark-themed cloud-platform aesthetic with modular grids, glass-like panels, and strong data hierarchy for productivity dashboards.
+Configuración base definida en `src/app/globals.css` y orquestada por el layout principal `src/app/layout.tsx`. El sistema utiliza Tailwind CSS a través de `@tailwindcss/postcss` configurado en `postcss.config.mjs`.
 
-- **Visual style:** modern, clean, cloud-platform aesthetic (Heroku/Vercel/GitHub inspired), dark theme, subtle gradients, soft shadows, glass-like panels, rounded components
-- **Color stance:** primary, neutral, success, warning, danger
-- **Design intent:** Keep outputs recognizable to this style family while preserving usability and readability.
+- **Estilo Visual:** Moderno, industrial-tecnológico, de plataforma corporativa. Tema oscuro (Dark Theme) predominante, gradientes sutiles para delimitar zonas (ej. `bg-gradient-to-t from-[#09090B]`), bordes técnicos (`border-zinc-800`), e interfaces que evocan software de monitoreo satelital.
+- **Postura Cromática:** Azul corporativo, neutrales oscuros (Zinc), acentos de alerta (Amarillo/Rojo) y éxito (Verde).
+- **Intención de Diseño:** Proyectar la solidez de una infraestructura de software combinada con la agilidad física del reparto urbano (Precisión en Movimiento).
 
-## 2. Color
+## 2. Paleta de Colores (Tokens Globales)
 
-- **Primary:** `#0C5CAB` — Token from style foundations.
-- **Secondary:** `#0A4A8A` — Token from style foundations.
-- **Success:** `#10B981` — Token from style foundations.
-- **Warning:** `#F59E0B` — Token from style foundations.
-- **Danger:** `#EF4444` — Token from style foundations.
-- **Surface:** `#09090B` — Token from style foundations.
-- **Text:** `#FAFAFA` — Token from style foundations.
-- **Neutral:** `#09090B` — Derived from the surface token for official format compatibility.
+Definidos en la configuración de Tailwind y variables globales:
 
-- Favor Primary (#0C5CAB) for CTA emphasis.
-- Use Surface (#09090B) for large backgrounds and cards.
-- Keep body copy on Text (#FAFAFA) for legibility.
+- **Primary (Core Blue):** `#0C5CAB` — Utilizado para botones de acción principal, iconos clave y énfasis de marca.
+- **Secondary (Dark Blue):** `#0A4A8A` — Estados de hover para interacciones primarias y gradientes.
+- **Warning/Accent (Velocity Yellow):** `#F59E0B` — Utilizado para acciones de alta prioridad (Cotizaciones Express), etiquetas de "En tránsito" o atención inmediata.
+- **Success (Green):** `#10B981` — Indicadores de entrega completada o planes económicos.
+- **Danger (Red):** `#EF4444` — Indicadores de error o mensajes de alerta ("Conecta con nosotros").
+- **Surface (Core Dark):** `#09090B` — El fondo global definido en `<main>` dentro de `layout.tsx`. Fondo absoluto para dar contraste.
+- **Surface Muted:** `bg-zinc-900/50` o `bg-zinc-950` — Paneles superpuestos y tarjetas de servicio.
+- **Text (Light):** `#FAFAFA` — Texto principal, garantizando máxima legibilidad sobre fondos oscuros.
+- **Text Muted:** `text-zinc-400` / `text-zinc-300` — Para descripciones secundarias y copy de soporte.
 
-## 3. Typography
+## 3. Tipografía (Importada en globals.css / layout.tsx)
 
-- **Scale:** 12/14/16/20/24/32
-- **Families:** primary=IBM Plex Sans, display=IBM Plex Sans, mono=IBM Plex Sans
-- **Weights:** 100, 200, 300, 400, 500, 600, 700, 800, 900
-- Headings should carry the style personality; body text should optimize scanability and contrast.
+Sistema tipográfico enfocado en la lectura a distancia y la presentación de métricas:
 
-## 4. Spacing & Grid
+- **Escala de fuentes:** Manejada fluidamente por Tailwind (text-xs a text-7xl).
+- **Fuente Principal (Cuerpo/Datos):** `Geist` (Sans-serif) — Utilizada para descripciones de servicios, textos largos y números de seguimiento por su legibilidad técnica.
+- **Fuente Display (Títulos de alto impacto):** `Anton` (Sans-serif, uppercase) — Utilizada en el `Hero` ("MENSAJERÍA Y LOGÍSTICA...") y títulos de sección (H2) para lectura instantánea.
+- **Fuente Secundaria/Acento:** `Bebas Neue` (Cursive/Display) — Utilizada para etiquetas métricas, estados, e indicadores (ej. "PRECISIÓN EN MOVIMIENTO", "100% SEGURO").
 
-- **Spacing scale:** 8pt baseline grid
-- Keep vertical rhythm consistent across sections and components.
-- Align columns and modules to a predictable grid; avoid ad-hoc offsets.
+## 4. Espaciado y Retícula (Grid System)
 
-## 5. Layout & Composition
+- **Retícula:** Basada en el sistema de Tailwind. Utilización constante de `container mx-auto px-6` definido en los layouts de sección para contener el contenido en anchos máximos consistentes.
+- **Ritmo Vertical:** Separación estricta entre secciones usando clases como `py-24` o márgenes inferiores `mb-16` para los encabezados.
+- **Composición de columnas:** Uso de CSS Grid (`grid-cols-1 md:grid-cols-3`) para catálogos de servicios, características ("Nuestra Visión") y footers.
 
-- Prefer clear content blocks with consistent internal padding.
-- Keep hierarchy obvious: headline → support text → primary action.
-- Use whitespace to separate concerns before adding borders or shadows.
+## 5. Layout y Composición (`src/app/layout.tsx`)
 
-## 6. Components
+- **Estructura Base:** El `RootLayout` envuelve toda la aplicación en un contenedor `<main>` con fondo oscuro (`bg-[#09090B]`) y texto claro (`text-[#FAFAFA]`).
+- **Navegación y Cierre:** Incorporación semántica de componentes globales (`<Navbar />` fijado en la parte superior y `<Footer />` al final del documento).
+- **Separación de responsabilidades:** El diseño prefiere bloques claros, separados por bordes técnicos (ej. `border-b border-zinc-800`), antes que sombras intensas.
 
-- Buttons: primary action uses `#0C5CAB`; secondary actions stay neutral.
-- Inputs: strong focus-visible states, clear labels, and predictable error messaging.
-- Cards/sections: use consistent radii, spacing, and elevation strategy across the page.
+## 6. Componentes
 
-## 7. Motion & Interaction
+- **Botones:** - Primario: Fondo `#0C5CAB` con texto blanco, esquinas redondeadas estándar (`rounded-md`).
+  - Acción Crítica (CTA): Fondo amarillo `#F59E0B` con texto oscuro (`text-zinc-950`).
+  - Secundario: Bordes neutros (`border-zinc-700`) o transparentes con hover ligero.
+- **Tarjetas (Cards):** Fondos traslúcidos (`bg-zinc-900/50`) o negros (`bg-[#09090B]`), bordes finos (`border-zinc-800`) que cambian al color primario en hover (`hover:border-[#0C5CAB]`).
+- **Imágenes:** Optimizadas mediante `next/image` de Next.js, ocupando fondos completos con opacidades controladas (`opacity-20`, `mix-blend-overlay`) para no competir con el texto.
 
-- Use subtle transitions that emphasize Primary (#0C5CAB) as the interaction signal.
-- Default to short, purposeful transitions (150–250ms) with stable easing.
-- Ensure hover, focus-visible, active, disabled, and loading states are explicit.
+## 7. Movimiento e Interacción (Motion)
 
-## 8. Voice & Brand
+Orquestado principalmente vía cliente (`'use client';`) mediante Framer Motion:
+- **Scroll Reveal:** Las secciones aparecen progresivamente ("fade-in-up") usando `initial={{ opacity: 0, y: 30 }}` y `whileInView={{ opacity: 1, y: 0 }}`.
+- **Hover States:** Interacciones cortas (duration: 300ms). Escalado sutil en tarjetas (`hover:-translate-y-1` o `group-hover:scale-110` en imágenes).
+- **Feedback Visual:** Transiciones suaves de opacidad e iluminación en bordes, indicando claramente la zona de interacción.
 
-- Tone should reflect the visual style: concise, confident, and product-specific.
-- Keep microcopy action-oriented and avoid generic filler language.
-- Preserve the style identity in headlines while keeping UI labels literal and clear.
+## 8. Voz y Tono de Marca
 
-## 9. Anti-patterns
+- **Tono:** Seguro, corporativo, literal, orientado a la acción y a la métrica ("Ventaja Injusta", "Precisión en movimiento", "Cotizar Envío").
+- **Microcopy:** Directo y sin rellenos. Las etiquetas de interfaz priorizan la claridad técnica sobre el tono coloquial.
+- **Mayúsculas (Uppercase):** Uso intensivo de mayúsculas en títulos y etiquetas (apoyado por fuentes como Anton y Bebas) para denotar autoridad.
 
-- Do not introduce off-palette colors when an existing token can solve the problem.
-- Do not flatten hierarchy by using the same type size/weight for all text.
-- Do not add decorative effects that reduce readability or accessibility.
-- Do not mix unrelated visual metaphors in the same interface.
+## 9. Anti-patrones (Restricciones del Repositorio)
+
+- **Evitar CSS tradicional en línea:** Toda configuración de estilos se maneja por clases utilitarias de Tailwind o en su defecto por plugins en el archivo `postcss.config.mjs`. El archivo `globals.css` solo debe contener directivas de `@tailwind` y fuentes importadas.
+- **No introducir colores fuera de paleta:** Si se necesita un gris, utilizar la escala de `zinc` de Tailwind para mantener coherencia térmica con el fondo principal (`#09090B`).
+- **No aplanar jerarquías:** Mantener siempre el contraste visual extremo: Títulos gigantes vs. Texto de soporte pequeño. 
+- **No usar sombras difusas de colores vivos:** La estética *Tech-Logistics* requiere sombras oscuras o cortes duros (bordes), no efectos de brillo neón excesivo (Glow).a
