@@ -69,30 +69,26 @@ export default function ServicesOverview() {
                 <span className="font-mono text-[10px] font-black text-blue-brand border-2 border-blue-brand px-2 py-0.5 uppercase">
                   {service.badge}
                 </span>
+              </div>
 
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center">
-                    <IconComponent className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="font-display text-2xl text-white uppercase tracking-tighter group-hover:text-accent transition-colors">
-                    {s.title}
-                  </h3>
-                </div>
+              <h3 className="text-2xl font-black uppercase tracking-tighter mb-4 leading-none">
+                {service.title}
+              </h3>
 
               <p className="font-display text-sm text-blue-brand/60 font-bold uppercase tracking-tight mb-8 flex-grow">
-                {service.description}
+                {service.desc}
               </p>
 
               <Link
-                href={s.link}
-                className="w-full py-4 bg-white/5 border border-white/10 text-white font-technical text-xs uppercase hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn"
+                href={service.link}
+                className="brutalist-button-primary w-full flex items-center justify-center gap-2 group/btn"
               >
-                <span>{s.btn}</span>
+                <span>{service.btn}</span>
                 <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );

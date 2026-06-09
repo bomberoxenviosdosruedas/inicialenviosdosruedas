@@ -1,9 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { ShieldCheck, Zap, Globe, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { ShieldCheck, Zap, Globe, ArrowUpRight, Instagram, Facebook, MessageSquare } from "lucide-react";
 
 export default function Footer() {
+  const socialLinks = [
+    { icon: Instagram, href: "https://www.instagram.com/enviosdosruedas/" },
+    { icon: Facebook, href: "https://facebook.com/enviosdosruedas" },
+    { icon: MessageSquare, href: "https://wa.me/542236602699" }
+  ];
+
   return (
     <footer className="bg-blue-brand text-white pt-24 pb-12 border-t-8 border-blue-brand">
       <div className="container mx-auto px-6">
@@ -28,8 +35,7 @@ export default function Footer() {
               <span className="font-mono text-xs uppercase font-bold text-gold-brand ml-16 -mt-1">
                 tu solución confiable
               </span>
-            </div>
-          </Link>
+            </Link>
 
             <p className="font-display text-sm text-white-brand font-bold uppercase tracking-tight max-w-sm">
               Soluciones de logística, mensajería, MercadoLibre Flex y Fulfillment 3PL para e-commerce y pymes en Mar del Plata.
@@ -48,16 +54,15 @@ export default function Footer() {
               ))}
             </div>
           </div>
-        </div>
 
           {/* Nav Columns */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-8">
             <div>
-              <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-blue-brand mb-8">Nosotros</h4>
+              <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-white/50 mb-8">Nosotros</h4>
               <ul className="space-y-4">
                 {['Sobre Nosotros', 'Preguntas Frecuentes', 'Nuestras Redes'].map((item) => (
                   <li key={item}>
-                    <Link href={`/nosotros/${item.toLowerCase().replace(/ /g, '-')}`} className="font-display text-sm font-bold uppercase tracking-tighter hover:text-gold-brand transition-colors">
+                    <Link href={`/nosotros/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-')}`} className="font-display text-sm font-bold uppercase tracking-tighter hover:text-gold-brand transition-colors">
                       {item}
                     </Link>
                   </li>
@@ -65,11 +70,11 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-blue-brand mb-8">Servicios</h4>
+              <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-white/50 mb-8">Servicios</h4>
               <ul className="space-y-4">
                 {['Envíos Express', 'Envíos LowCost', 'Envíos Flex (MeLi)', 'E-Commerce & 3PL'].map((item) => (
                   <li key={item}>
-                    <Link href={`/servicios/${item.toLowerCase().replace(/ /g, '-').replace(/[()]/g, '')}`} className="font-display text-sm font-bold uppercase tracking-tighter hover:text-gold-brand transition-colors">
+                    <Link href={`/servicios/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-').replace(/[()]/g, '')}`} className="font-display text-sm font-bold uppercase tracking-tighter hover:text-gold-brand transition-colors">
                       {item}
                     </Link>
                   </li>
@@ -80,18 +85,18 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div className="lg:col-span-3 space-y-8">
-            <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-blue-brand mb-8">Contacto</h4>
+            <h4 className="font-mono text-xs font-black uppercase tracking-[0.2em] text-white/50 mb-8">Contacto</h4>
             <div className="space-y-4">
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] uppercase text-blue-brand/50 font-bold">Ubicación</span>
+                <span className="font-mono text-[10px] uppercase text-white/50 font-bold">Ubicación</span>
                 <span className="font-black text-sm uppercase italic">Mar del Plata, Argentina</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] uppercase text-blue-brand/50 font-bold">Teléfono</span>
+                <span className="font-mono text-[10px] uppercase text-white/50 font-bold">Teléfono</span>
                 <span className="font-black text-sm">223-660-2699</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] uppercase text-blue-brand/50 font-bold">Email</span>
+                <span className="font-mono text-[10px] uppercase text-white/50 font-bold">Email</span>
                 <span className="font-black text-sm">matiascejas@enviosdosruedas.com</span>
               </div>
             </div>
@@ -112,16 +117,15 @@ export default function Footer() {
             </div>
           ))}
         </div>
-      </div>
 
         {/* Copyright */}
         <div className="pt-12 border-t-4 border-blue-brand flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="font-mono text-[10px] font-bold text-blue-brand/50 uppercase tracking-widest">
+          <p className="font-mono text-[10px] font-bold text-white/50 uppercase tracking-widest">
             © 2026 Envios DosRuedas. Todos los derechos reservados.
           </p>
           <div className="flex gap-8">
-            <Link href="/politica-de-privacidad" className="font-mono text-[10px] font-bold text-blue-brand/50 uppercase tracking-widest hover:text-white transition-colors">Privacidad</Link>
-            <Link href="/terminos-y-condiciones" className="font-mono text-[10px] font-bold text-blue-brand/50 uppercase tracking-widest hover:text-white transition-colors">Términos</Link>
+            <Link href="/politica-de-privacidad" className="font-mono text-[10px] font-bold text-white/50 uppercase tracking-widest hover:text-white transition-colors">Privacidad</Link>
+            <Link href="/terminos-y-condiciones" className="font-mono text-[10px] font-bold text-white/50 uppercase tracking-widest hover:text-white transition-colors">Términos</Link>
           </div>
         </div>
       </div>

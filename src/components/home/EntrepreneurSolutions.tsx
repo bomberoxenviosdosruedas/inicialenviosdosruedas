@@ -29,16 +29,12 @@ export default function EntrepreneurSolutions() {
   return (
     <section className="py-24 bg-white-brand overflow-hidden">
       <div className="container mx-auto px-6">
-
-  return (
-    <section className="bg-white/5 py-24 border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6">
         
         {/* Header grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
           <div className="lg:col-span-8 space-y-6">
             <div className="inline-flex items-center gap-3 bg-white border-4 border-blue-brand px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-              <Building2 className="w-5 h-5 text-blue-brand animate-bounce" />
+              <Building2 className="w-5 h-5 text-blue-brand" />
               <span className="font-mono text-xs font-bold uppercase tracking-wider text-blue-brand">
                 Soluciones Corporativas y PyME
               </span>
@@ -79,13 +75,13 @@ export default function EntrepreneurSolutions() {
                 <div className="absolute top-4 left-4 bg-white border-4 border-blue-brand p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                    <Building2 className="w-6 h-6 text-blue-brand" />
                 </div>
+              </div>
 
-                <h4 className="font-display text-2xl text-white uppercase tracking-tight mb-4 group-hover:text-accent transition-colors">
-                  {s.title}
+              {/* Card Body */}
+              <div className="p-8 flex flex-col flex-grow space-y-6">
+                <h4 className="font-black text-2xl text-blue-brand uppercase tracking-tighter">
+                  {solution.title}
                 </h4>
-                <p className="font-body text-xs text-off-white/60 mb-6 leading-relaxed">
-                  {s.desc}
-                </p>
 
                 <ul className="space-y-3 flex-grow">
                   {solution.features.map((feature, fIdx) => (
@@ -106,14 +102,6 @@ export default function EntrepreneurSolutions() {
                   <ArrowUpRight className="w-5 h-5" />
                 </Link>
               </div>
-
-              <Link
-                href={s.link}
-                className="font-technical text-sm text-accent uppercase font-bold hover:text-white transition-colors flex items-center gap-2 group/btn"
-              >
-                <span>Configurar Plan</span>
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" />
-              </Link>
             </div>
           ))}
         </div>

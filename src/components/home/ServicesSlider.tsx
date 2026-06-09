@@ -91,38 +91,11 @@ export default function ServicesSlider() {
                 className="group flex items-center justify-between font-mono text-xs font-black uppercase tracking-widest border-t-4 border-blue-brand pt-6 hover:text-blue-brand transition-colors"
               >
                 <span>Saber Más</span>
-                <ArrowRight className="w-4 h-4" />
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-
-            {/* Right Column: Technical details board */}
-            <div className="lg:col-span-5 bg-black/60 border border-white/10 p-6 space-y-4">
-              <p className="font-technical text-[10px] text-accent uppercase tracking-wider border-b border-white/10 pb-2">
-                Ficha_Técnica_DR
-              </p>
-              
-              <div className="space-y-4">
-                {active.features.map((feat, idx) => (
-                  <div key={idx} className="flex justify-between items-center text-xs font-body border-b border-white/5 pb-2">
-                    <span className="text-off-white/50 uppercase">{feat.label}</span>
-                    <span className="text-white font-bold">{feat.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      {/* Slide Navigation Dots */}
-      <div className="flex justify-center gap-3 mt-8">
-        {capabilities.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActiveIdx(i)}
-            className={`w-3 h-3 rounded-none transition-all duration-300 ${activeIdx === i ? "bg-accent scale-x-200" : "bg-white/20 hover:bg-white/40"}`}
-          />
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -37,31 +37,34 @@ export default function CtaSection() {
               Olvidate de la gestión de paquetes y enfocate en vender más. Dejá la distribución urbana en manos de expertos.
             </p>
 
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent">
-              <Cpu className="w-5 h-5" />
+            <div className="flex flex-wrap gap-6 pt-4">
+              <Link href="/cotizar/express" className="brutalist-button-primary flex items-center gap-2">
+                <Calculator className="w-5 h-5" />
+                Cotizar Envío
+              </Link>
+              <Link href="https://wa.me/542236602699" target="_blank" className="brutalist-button-accent flex items-center gap-2">
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp
+              </Link>
             </div>
-            <span className="font-technical text-xs text-white uppercase tracking-wider font-bold">
-              Innovación constante en última milla
-            </span>
-          </div>
 
-          {/* Pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-12 border-t-4 border-blue-brand">
-            {[
-              { icon: ShieldCheck, text: "Confianza local comprobada" },
-              { icon: TrendingUp, text: "Innovación constante en última milla" },
-              { icon: Globe, text: "Motocicletas dedicadas para máxima agilidad urbana" }
-            ].map((pilar, i) => (
-              <div key={i} className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-brand bg-white-brand flex items-center justify-center border-2 border-blue-brand shrink-0">
-                  <pilar.icon className="w-6 h-6 text-blue-brand" />
+            {/* Pillars */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-12 border-t-4 border-blue-brand">
+              {[
+                { icon: ShieldCheck, text: "Confianza local comprobada" },
+                { icon: TrendingUp, text: "Innovación constante en última milla" },
+                { icon: Globe, text: "Motocicletas dedicadas para máxima agilidad urbana" }
+              ].map((pilar, i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-brand bg-white-brand flex items-center justify-center border-2 border-blue-brand shrink-0">
+                    <pilar.icon className="w-6 h-6 text-blue-brand" />
+                  </div>
+                  <span className="font-mono text-[10px] font-black uppercase text-blue-brand leading-tight">
+                    {pilar.text}
+                  </span>
                 </div>
-                <span className="font-mono text-[10px] font-black uppercase text-blue-brand leading-tight">
-                  {pilar.text}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

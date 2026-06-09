@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Play, ShieldCheck, Zap, Globe, Terminal, Cpu, Activity, Map } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Play, ShieldCheck, Zap, Globe } from "lucide-react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 
@@ -55,11 +55,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 pb-12 overflow-hidden bg-white-brand">
-      {/* Background patterns could go here */}
+    <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden bg-white-brand">
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
 
-        {/* Left Content */}
+        {/* Left Content (Column 1) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,7 +74,7 @@ export default function Hero() {
             <span className="font-mono text-xs font-bold uppercase tracking-wider text-blue-brand">
               Tu Solución Confiable
             </span>
-          </motion.div>
+          </div>
 
           {/* Title */}
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-blue-brand leading-[0.85] uppercase md:italic">
@@ -119,160 +118,81 @@ export default function Hero() {
             ))}
           </div>
         </motion.div>
-          {/* Título Principal */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tighter uppercase text-white lg:italic"
-          >
-            Mensajería y Logística <br />
-            <span className="text-accent relative inline-block text-yellow-400">
-              E-Commerce
-            </span>{" "}
-            <br />
-            en Mar del Plata.
-          </motion.h1>
 
-          {/* Descripción */}
-          <motion.p 
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-body text-base md:text-lg text-off-white/80 max-w-xl mx-auto lg:mx-0 border-l-4 border-primary pl-6 py-2 leading-relaxed text-left"
-          >
-            Somos tu solución confiable en servicios de mensajería y delivery en Mar del Plata. Ofrecemos soluciones rápidas, seguras y económicas para todas tus necesidades de envío.
-          </motion.p>
-
-          {/* Botones de Acción */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-wrap gap-4 justify-center lg:justify-start pt-2"
-          >
-            <Button asChild variant="secondary" size="lg" className="h-14 px-8 font-technical text-xs uppercase font-bold group">
-              <Link href="/cotizar/express">
-                <span>Solicitar Servicio</span>
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="h-14 px-8 font-technical text-xs uppercase font-bold group">
-              <Link href="/servicios/envios-express">
-                <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center mr-2 group-hover:scale-110 transition-transform">
-                  <Play className="w-3 h-3 text-white fill-white" />
-                </div>
-                <span>Ver Servicios</span>
-              </Link>
-            </Button>
-          </motion.div>
-
-          {/* Badges de Confianza Inferiores */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-3 gap-2 sm:gap-6 pt-10 border-t border-white/10 mt-10 max-w-xl mx-auto lg:mx-0"
-          >
-            <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
-              <ShieldCheck className="w-6 h-6 text-accent shrink-0 text-yellow-400" />
-              <div>
-                <p className="font-technical text-[10px] text-white font-bold leading-none">100% SEGURO</p>
-                <p className="font-body text-[8px] text-off-white/40 uppercase tracking-wider mt-0.5">Protección total</p>
-              </div>
-            </div>
-            <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
-              <Zap className="w-6 h-6 text-primary shrink-0 text-blue-400" />
-              <div>
-                <p className="font-technical text-[10px] text-white font-bold leading-none">ULTRA RÁPIDO</p>
-                <p className="font-body text-[8px] text-off-white/40 uppercase tracking-wider mt-0.5">En el mismo día</p>
-              </div>
-            </div>
-            <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
-              <Globe className="w-6 h-6 text-accent shrink-0 text-yellow-400" />
-              <div>
-                <p className="font-technical text-[10px] text-white font-bold leading-none">COBERTURA TOTAL</p>
-                <p className="font-body text-[8px] text-off-white/40 uppercase tracking-wider mt-0.5">En todo Mar del Plata</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* TELEMETRY TERMINAL COLUMN */}
+        {/* Right Content (Column 2) */}
         <motion.div 
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.2 }}
-          className="lg:col-span-5 relative"
+          className="lg:col-span-5 space-y-6"
         >
-          <div className="relative w-full aspect-square">
-            {/* Main Image Frame */}
-            <div className="absolute inset-0 border-4 border-blue-brand bg-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
-              <Image
-                src="/hero/mapa_background.jpeg"
-                alt="Mapa Logístico MDP"
-                fill
-                className="object-cover opacity-40 grayscale"
-              />
-              <div className="absolute inset-0 bg-blue-brand/10 mix-blend-multiply" />
-            </div>
+          <div className="relative w-full aspect-square border-4 border-blue-brand bg-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+            <Image
+              src="/hero/mapa_background.jpeg"
+              alt="Mapa Logístico MDP"
+              fill
+              className="object-cover opacity-40 grayscale"
+            />
+            <div className="absolute inset-0 bg-blue-brand/10 mix-blend-multiply" />
 
             {/* Floating Cards */}
             <motion.div
-              animate={{ y: [0, -20, 0] }}
+              animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 brutalist-card p-4 bg-blue-brand text-white z-20"
+              className="absolute -top-2 -right-2 brutalist-card p-3 bg-blue-brand text-white z-20"
             >
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] uppercase">Estado</span>
-                <span className="font-black text-xl italic">EN TRÁNSITO</span>
+                <span className="font-mono text-[8px] uppercase">Estado</span>
+                <span className="font-black text-sm italic">EN TRÁNSITO</span>
               </div>
             </motion.div>
 
             <motion.div
-              animate={{ y: [0, 20, 0] }}
+              animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 -left-6 brutalist-card p-4 bg-gold-brand text-blue-brand z-20"
+              className="absolute -bottom-2 -left-2 brutalist-card p-3 bg-gold-brand text-blue-brand z-20"
             >
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="w-8 h-8" />
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5" />
                 <div className="flex flex-col">
-                  <span className="font-mono text-[10px] uppercase tracking-tighter">Seguridad</span>
-                  <span className="font-black text-xl italic">VERIFICADO</span>
+                  <span className="font-mono text-[8px] uppercase tracking-tighter">Seguridad</span>
+                  <span className="font-black text-sm italic">VERIFICADO</span>
                 </div>
-                <p className="font-technical text-[9px] text-off-white/40 uppercase mb-1">Velocidad Promedio</p>
-                <p className="font-body text-sm text-white font-bold mt-1">{telemetry.avgSpeed}</p>
               </div>
+            </motion.div>
 
-              <div className="bg-white/5 border border-white/10 p-4 relative group hover:border-primary transition-colors">
-                <div className="absolute top-2 right-2 text-primary">
-                  <ShieldCheck className="w-4 h-4 text-blue-400" />
+            {/* Simulated 3D Elements */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 border-4 border-blue-brand bg-white/80 backdrop-blur-sm shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+               <Zap className="w-16 h-16 text-blue-brand animate-pulse" />
+            </div>
+          </div>
+
+          {/* Realtime Terminal Console */}
+          <div className="bg-black p-4 border-4 border-blue-brand shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] font-mono text-[11px] h-40 overflow-hidden flex flex-col justify-end space-y-2">
+            <p className="text-white/30 font-mono text-[9px] uppercase tracking-wider border-b border-white/5 pb-1">
+              Realtime_Core_Logs:
+            </p>
+            <div className="space-y-1 text-left">
+              {logs.map((log, i) => (
+                <div key={i} className="flex gap-2 items-start leading-relaxed">
+                  <span className="text-blue-400 select-none font-bold">&gt;</span>
+                  <span className={i === logs.length - 1 ? "text-yellow-400 animate-pulse font-bold" : "text-white/60"}>
+                    {log}
+                  </span>
                 </div>
-                <p className="font-technical text-[9px] text-off-white/40 uppercase mb-1">Entregados Hoy</p>
-                <p className="font-display text-xl text-white font-bold">{telemetry.deliveredToday}</p>
-              </div>
+              ))}
             </div>
+          </div>
 
-            {/* Realtime Terminal Console */}
-            <div className="bg-black/90 p-4 border border-white/10 font-mono text-[11px] h-44 overflow-hidden flex flex-col justify-end space-y-2">
-              <p className="text-white/30 font-technical text-[9px] uppercase tracking-wider border-b border-white/5 pb-1">
-                Realtime_Core_Logs:
-              </p>
-              <div className="space-y-1 text-left">
-                {logs.map((log, i) => (
-                  <div key={i} className="flex gap-2 items-start leading-relaxed">
-                    <span className="text-primary select-none font-bold text-blue-400">&gt;</span>
-                    <span className={i === logs.length - 1 ? "text-accent animate-pulse font-bold text-yellow-400" : "text-off-white/60"}>
-                      {log}
-                    </span>
-                  </div>
-                ))}
-              </div>
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="brutalist-card p-4 bg-white text-blue-brand">
+              <span className="block text-[10px] font-mono text-blue-brand/50 uppercase">Velocidad Promedio</span>
+              <span className="font-black text-2xl italic">{telemetry.avgSpeed}</span>
             </div>
-
-            {/* Simulated 3D Elements (Cajas) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-4 border-blue-brand bg-white/80 backdrop-blur-sm shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
-               <Zap className="w-24 h-24 text-blue-brand animate-pulse" />
+            <div className="brutalist-card p-4 bg-white text-blue-brand">
+              <span className="block text-[10px] font-mono text-blue-brand/50 uppercase">Entregados Hoy</span>
+              <span className="font-black text-2xl italic">{telemetry.deliveredToday}</span>
             </div>
           </div>
         </motion.div>

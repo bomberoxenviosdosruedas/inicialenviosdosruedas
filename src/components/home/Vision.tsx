@@ -50,9 +50,6 @@ export default function Vision() {
                 <p className="font-display text-sm text-blue-brand/60 uppercase font-bold tracking-tight">Protección total de tus paquetes</p>
               </div>
             </div>
-          </div>
-        </div>
-
             {/* Metrics */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t-4 border-blue-brand">
               {metrics.map((m, i) => (
@@ -62,11 +59,9 @@ export default function Vision() {
                 </div>
               ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
-          {/* Visual Container */}
+          {/* Visual Container (Column 2) */}
           <div className="relative">
             <div className="brutalist-card aspect-video relative overflow-hidden group">
               <Image
@@ -83,28 +78,16 @@ export default function Vision() {
               {/* Floating Card */}
               <div className="absolute bottom-6 left-6 right-6 brutalist-card bg-white p-6 flex items-center justify-between">
                 <div>
-                  <h5 className="font-black text-lg uppercase tracking-tighter">Conocé más sobre nosotros</h5>
+                  <h5 className="font-black text-lg uppercase tracking-tighter text-blue-brand">Conocé más sobre nosotros</h5>
                   <p className="font-mono text-xs text-blue-brand/50 uppercase">Trayectoria y Compromiso</p>
                 </div>
-                <Link href="/nosotros/sobre-nosotros" className="w-12 h-12 bg-blue-brand flex items-center justify-center hover:bg-blue-brand transition-colors">
+                <Link href="/nosotros/sobre-nosotros" className="w-12 h-12 bg-blue-brand flex items-center justify-center hover:bg-gold-brand transition-colors">
                   <Play className="w-6 h-6 text-white fill-white" />
                 </Link>
               </div>
             </div>
-            <h3 className="font-display text-3xl sm:text-4xl text-white uppercase tracking-tighter leading-none relative">
-              Conocé más <br /> sobre nosotros
-            </h3>
           </div>
 
-          <div className="flex justify-between items-center z-10 pt-4 border-t border-white/10">
-            <span className="font-technical text-xs text-off-white/60">DosRuedas_Story.exe</span>
-            <Link
-              href="/nosotros/sobre-nosotros"
-              className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-accent hover:text-dark-navy transition-colors"
-            >
-              <Play className="w-4.5 h-4.5 fill-current ml-0.5" />
-            </Link>
-          </div>
         </div>
       </div>
     </section>
