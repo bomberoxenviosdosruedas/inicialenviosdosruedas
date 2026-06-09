@@ -184,11 +184,7 @@ export default function Hero() {
 
             {/* Rotating 3D Card */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 max-w-[85%] aspect-[1.586] z-10">
-              <RotatingCard
-                frontImageSrc="/hero/delante.webp"
-                backImageSrc="/hero/detras.webp"
-                className="w-full h-full"
-              />
+              <RotatingCard className="w-full h-full" />
             </div>
           </div>
 

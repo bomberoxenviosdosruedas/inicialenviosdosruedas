@@ -38,11 +38,11 @@ export default function Navbar() {
                 className="object-contain"
               />
             </div>
-            <span className="font-black text-2xl tracking-tighter uppercase leading-none text-blue-brand">
+            <span className="font-black text-2xl tracking-tighter leading-none text-blue-brand">
               Envíos <br /> Dosruedas
             </span>
           </div>
-          <span className="font-mono text-[10px] uppercase font-bold text-blue-brand ml-12 -mt-1">
+          <span className="font-mono text-[10px] font-bold text-blue-brand ml-12 -mt-1">
             tu solución confiable
           </span>
         </Link>
@@ -119,14 +119,14 @@ export default function Navbar() {
         </div>
 
         {/* MOBILE MENU TOGGLE */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
           <Link
             href="/cotizar/express"
             className="bg-gold-brand text-blue-brand border-4 border-blue-brand rounded-none p-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center justify-center"
           >
             <Calculator className="w-4 h-4" />
           </Link>
-          <button onClick={toggleMenu} className="text-white hover:text-accent focus:outline-none">
+          <button onClick={toggleMenu} className="text-blue-brand hover:text-gold-brand focus:outline-none">
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -134,13 +134,13 @@ export default function Navbar() {
 
       {/* MOBILE MENU PANEL */}
       {isOpen && (
-        <div className="md:hidden border-t border-primary/30 mt-4 py-4 space-y-4 font-technical text-sm text-off-white bg-dark-navy z-50 relative">
+        <div className="lg:hidden border-t-4 border-blue-brand py-4 space-y-4 font-mono text-sm text-white-brand bg-blue-brand z-50 relative shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           <Link
             href="/"
             onClick={toggleMenu}
-            className="block px-4 py-2 hover:bg-primary/20 hover:text-accent transition-colors flex items-center gap-2"
+            className="block px-4 py-2 hover:bg-white-brand/10 hover:text-gold-brand transition-colors flex items-center gap-2"
           >
-            <Home className="w-4 h-4 text-primary" />
+            <Home className="w-4 h-4 text-gold-brand" />
             <span>Inicio</span>
           </Link>
 
@@ -148,31 +148,31 @@ export default function Navbar() {
           <div className="px-4">
             <button
               onClick={() => toggleDropdown("nosotros")}
-              className="w-full text-left py-2 hover:text-accent flex justify-between items-center uppercase"
+              className="w-full text-left py-2 hover:text-gold-brand flex justify-between items-center uppercase"
             >
               <span>Nosotros</span>
-              <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "nosotros" ? "rotate-185" : ""}`} />
+              <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "nosotros" ? "rotate-180" : ""}`} />
             </button>
             {activeDropdown === "nosotros" && (
-              <div className="pl-4 mt-2 space-y-2 border-l border-primary/20">
+              <div className="pl-4 mt-2 space-y-2 border-l-2 border-gold-brand/30">
                 <Link
                   href="/nosotros/sobre-nosotros"
                   onClick={toggleMenu}
-                  className="block py-2 text-xs hover:text-accent transition-colors"
+                  className="block py-2 text-xs hover:text-gold-brand transition-colors"
                 >
                   Sobre Nosotros
                 </Link>
                 <Link
                   href="/nosotros/preguntas-frecuentes"
                   onClick={toggleMenu}
-                  className="block py-2 text-xs hover:text-accent transition-colors"
+                  className="block py-2 text-xs hover:text-gold-brand transition-colors"
                 >
                   Preguntas Frecuentes
                 </Link>
                 <Link
                   href="/nosotros/nuestras-redes"
                   onClick={toggleMenu}
-                  className="block py-2 text-xs hover:text-accent transition-colors"
+                  className="block py-2 text-xs hover:text-gold-brand transition-colors"
                 >
                   Nuestras Redes
                 </Link>
@@ -184,40 +184,40 @@ export default function Navbar() {
           <div className="px-4">
             <button
               onClick={() => toggleDropdown("servicios")}
-              className="w-full text-left py-2 hover:text-accent flex justify-between items-center uppercase"
+              className="w-full text-left py-2 hover:text-gold-brand flex justify-between items-center uppercase"
             >
               <span>Servicios</span>
-              <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "servicios" ? "rotate-185" : ""}`} />
+              <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "servicios" ? "rotate-180" : ""}`} />
             </button>
             {activeDropdown === "servicios" && (
-              <div className="pl-4 mt-2 space-y-2 border-l border-primary/20">
+              <div className="pl-4 mt-2 space-y-2 border-l-2 border-gold-brand/30">
                 <Link
                   href="/servicios/envios-express"
                   onClick={toggleMenu}
-                  className="block py-2 text-xs hover:text-accent transition-colors"
+                  className="block py-2 text-xs hover:text-gold-brand transition-colors"
                 >
                   Envíos Express
                 </Link>
                 <Link
                   href="/servicios/envios-lowcost"
                   onClick={toggleMenu}
-                  className="block py-2 text-xs hover:text-accent transition-colors"
+                  className="block py-2 text-xs hover:text-gold-brand transition-colors"
                 >
                   Envíos LowCost
                 </Link>
                 <Link
                   href="/servicios/enviosflex"
                   onClick={toggleMenu}
-                  className="block py-2 text-xs hover:text-accent transition-colors"
+                  className="block py-2 text-xs hover:text-gold-brand transition-colors"
                 >
-                  Envíos Flex (MeLi)
+                  Envíos Flex
                 </Link>
                 <Link
                   href="/servicios/plan-emprendedores"
                   onClick={toggleMenu}
-                  className="block py-2 text-xs hover:text-accent transition-colors"
+                  className="block py-2 text-xs hover:text-gold-brand transition-colors"
                 >
-                  Plan Emprendedores (3PL)
+                  E-Commerce & 3PL
                 </Link>
               </div>
             )}
@@ -226,18 +226,18 @@ export default function Navbar() {
           <Link
             href="/contacto"
             onClick={toggleMenu}
-            className="block px-4 py-2 hover:bg-primary/20 hover:text-accent transition-colors flex items-center gap-2"
+            className="block px-4 py-2 hover:bg-white-brand/10 hover:text-gold-brand transition-colors flex items-center gap-2"
           >
-            <Mail className="w-4 h-4 text-primary" />
+            <Mail className="w-4 h-4 text-gold-brand" />
             <span>Contacto</span>
           </Link>
 
-          <div className="border-t border-primary/10 pt-4 px-4 flex flex-col gap-4">
+          <div className="border-t-2 border-gold-brand/20 pt-4 px-4 flex flex-col gap-4">
             <a
               href="tel:+5492236602699"
-              className="hover:text-accent transition-colors flex items-center gap-2"
+              className="hover:text-gold-brand transition-colors flex items-center gap-2"
             >
-              <Phone className="w-4 h-4 text-accent animate-pulse" />
+              <Phone className="w-4 h-4 text-gold-brand animate-pulse" />
               <span>+54 223 660-2699</span>
             </a>
           </div>

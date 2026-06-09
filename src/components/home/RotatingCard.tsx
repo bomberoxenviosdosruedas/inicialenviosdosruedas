@@ -9,9 +9,9 @@ interface RotatingCardProps {
 }
 
 export default function RotatingCard({
-  frontImageSrc = "/hero/delante.webp",
-  backImageSrc = "/hero/detras.webp",
-  className = "",
+  frontImageSrc = "/cards/card_mapa.webp",
+  backImageSrc = "/cards/card_moto01.webp",
+  className,
 }: RotatingCardProps) {
   return (
     <div className={`scene ${className}`}>
