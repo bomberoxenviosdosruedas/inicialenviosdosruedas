@@ -56,7 +56,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden bg-white-brand">
+    <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden bg-background">
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
 
         {/* Left Content (Column 1) */}
@@ -66,13 +66,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.1 }}
-            className="inline-flex items-center gap-3 bg-white/40 backdrop-blur-md border-4 border-blue-brand px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            className="inline-flex items-center gap-3 bg-white/40 backdrop-blur-md border-4 border-primary px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
           >
             <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-brand bg-blue-brand opacity-75"></span>
-              <span className="relative inline-flex rounded-brand h-3 w-3 bg-blue-brand"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-brand bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-brand h-3 w-3 bg-primary"></span>
             </span>
-            <span className="font-mono text-xs font-bold uppercase tracking-wider text-blue-brand">
+            <span className="font-mono text-xs font-bold uppercase tracking-wider text-primary">
               Tu Solución Confiable
             </span>
           </motion.div>
@@ -82,12 +82,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.3 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-blue-brand leading-[0.9] uppercase lg:italic"
+            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-primary leading-[0.9] uppercase lg:italic"
           >
             Mensajería y <br />
             Logística <br />
             E-Commerce <br />
-            <span className="text-blue-brand/20 stroke-blue-brand stroke-2">en Mar del Plata</span>
+            <span className="text-primary/20 stroke-primary stroke-2">en Mar del Plata</span>
           </motion.h1>
 
           {/* Description */}
@@ -95,7 +95,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.5 }}
-            className="font-display text-xl text-blue-brand/70 max-w-xl border-l-8 border-gold-brand pl-6 py-2 leading-tight"
+            className="font-display text-xl text-primary/70 max-w-xl border-l-8 border-secondary pl-6 py-2 leading-tight"
           >
             Somos tu solución confiable en servicios de mensajería y delivery en Mar del Plata.
             Ofrecemos soluciones rápidas, seguras y económicas para todas tus necesidades de envío.
@@ -113,8 +113,8 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </Link>
             <Link href="/servicios/envios-express" className="brutalist-button-accent group flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-blue-brand/10 border-2 border-blue-brand flex items-center justify-center group-hover:scale-120 transition-transform">
-                <Play className="w-3 h-3 fill-blue-brand" />
+              <div className="w-8 h-8 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center group-hover:scale-120 transition-transform">
+                <Play className="w-3 h-3 fill-primary" />
               </div>
               Ver Servicios
             </Link>
@@ -125,7 +125,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.0, delay: 0.9 }}
-            className="flex flex-wrap gap-8 pt-8 border-t-4 border-blue-brand"
+            className="flex flex-wrap gap-8 pt-8 border-t-4 border-primary"
           >
             {[
               { icon: ShieldCheck, text: "100% SEGURO" },
@@ -133,7 +133,7 @@ export default function Hero() {
               { icon: Globe, text: "COBERTURA TOTAL" }
             ].map((badge, i) => (
               <div key={i} className="flex items-center gap-2">
-                <badge.icon className="w-5 h-5 text-blue-brand" />
+                <badge.icon className="w-5 h-5 text-primary" />
                 <span className="font-mono text-xs font-bold uppercase tracking-widest">{badge.text}</span>
               </div>
             ))}
@@ -147,20 +147,20 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="lg:col-span-5 space-y-6"
         >
-          <div className="relative w-full aspect-square border-4 border-blue-brand bg-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+          <div className="relative w-full aspect-square border-4 border-primary bg-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
             <Image
               src="/hero/mapa_background.jpeg"
               alt="Mapa Logístico MDP"
               fill
               className="object-cover opacity-40 grayscale"
             />
-            <div className="absolute inset-0 bg-blue-brand/10 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
 
             {/* Floating Cards */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-2 -right-2 brutalist-card p-3 bg-blue-brand text-white z-20"
+              className="absolute -top-2 -right-2 brutalist-card p-3 bg-primary text-white z-20"
             >
               <div className="flex flex-col">
                 <span className="font-mono text-[8px] uppercase">Estado</span>
@@ -171,7 +171,7 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-2 -left-2 brutalist-card p-3 bg-gold-brand text-blue-brand z-20"
+              className="absolute -bottom-2 -left-2 brutalist-card p-3 bg-secondary text-primary z-20"
             >
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5" />
@@ -189,7 +189,7 @@ export default function Hero() {
           </div>
 
           {/* Realtime Terminal Console */}
-          <div className="bg-black p-4 border-4 border-blue-brand shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] font-mono text-[11px] h-40 overflow-hidden flex flex-col justify-end space-y-2">
+          <div className="bg-black p-4 border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] font-mono text-[11px] h-40 overflow-hidden flex flex-col justify-end space-y-2">
             <p className="text-white/30 font-mono text-[9px] uppercase tracking-wider border-b border-white/5 pb-1">
               Realtime_Core_Logs:
             </p>
@@ -207,12 +207,12 @@ export default function Hero() {
 
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="brutalist-card p-4 bg-white text-blue-brand">
-              <span className="block text-[10px] font-mono text-blue-brand/50 uppercase">Velocidad Promedio</span>
+            <div className="brutalist-card p-4 bg-white text-primary">
+              <span className="block text-[10px] font-mono text-primary/50 uppercase">Velocidad Promedio</span>
               <span className="font-black text-2xl italic">{telemetry.avgSpeed}</span>
             </div>
-            <div className="brutalist-card p-4 bg-white text-blue-brand">
-              <span className="block text-[10px] font-mono text-blue-brand/50 uppercase">Entregados Hoy</span>
+            <div className="brutalist-card p-4 bg-white text-primary">
+              <span className="block text-[10px] font-mono text-primary/50 uppercase">Entregados Hoy</span>
               <span className="font-black text-2xl italic">{telemetry.deliveredToday}</span>
             </div>
           </div>

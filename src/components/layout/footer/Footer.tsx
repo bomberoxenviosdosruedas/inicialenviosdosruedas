@@ -40,7 +40,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-blue-brand text-white pt-24 pb-12 border-t-8 border-blue-brand">
+    <footer className="bg-primary text-white pt-24 pb-12 border-t-8 border-primary">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
 
@@ -60,12 +60,12 @@ export default function Footer() {
                   Envíos <br /> DosRuedas
                 </span>
               </div>
-              <span className="font-mono text-xs uppercase font-bold text-gold-brand ml-16 -mt-1">
+              <span className="font-mono text-xs uppercase font-bold text-secondary ml-16 -mt-1">
                 tu solución confiable
               </span>
             </Link>
 
-            <p className="font-display text-sm text-white-brand font-bold uppercase tracking-tight max-w-sm">
+            <p className="font-display text-sm text-background font-bold uppercase tracking-tight max-w-sm">
               Soluciones de logística, mensajería, MercadoLibre Flex y Fulfillment 3PL para e-commerce y pymes en Mar del Plata.
             </p>
 
@@ -75,7 +75,7 @@ export default function Footer() {
                   key={i}
                   href={social.href}
                   target="_blank"
-                  className="w-12 h-12 border-4 border-white flex items-center justify-center hover:bg-blue-brand transition-colors"
+                  className="w-12 h-12 border-4 border-white flex items-center justify-center hover:bg-primary transition-colors"
                 >
                   <social.icon className="w-6 h-6" />
                 </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 {['Sobre Nosotros', 'Preguntas Frecuentes', 'Nuestras Redes'].map((item) => (
                   <li key={item}>
-                    <Link href={`/nosotros/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-')}`} className="font-display text-sm font-bold uppercase tracking-tighter hover:text-gold-brand transition-colors">
+                    <Link href={`/nosotros/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-')}`} className="font-display text-sm font-bold uppercase tracking-tighter hover:text-secondary transition-colors">
                       {item}
                     </Link>
                   </li>
@@ -102,7 +102,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 {['Envíos Express', 'Envíos LowCost', 'Envíos Flex (MeLi)', 'E-Commerce & 3PL'].map((item) => (
                   <li key={item}>
-                    <Link href={`/servicios/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-').replace(/[()]/g, '')}`} className="font-display text-sm font-bold uppercase tracking-tighter hover:text-gold-brand transition-colors">
+                    <Link href={`/servicios/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-').replace(/[()]/g, '')}`} className="font-display text-sm font-bold uppercase tracking-tighter hover:text-secondary transition-colors">
                       {item}
                     </Link>
                   </li>
@@ -139,15 +139,15 @@ export default function Footer() {
             { icon: Globe, text: "COBERTURA DISTRITAL" },
             { icon: ArrowUpRight, text: "STATUS ONLINE" }
           ].map((banner, i) => (
-            <div key={i} className="brutalist-card bg-white text-blue-brand p-4 flex flex-col items-center justify-center gap-2 text-center group hover:bg-gold-brand transition-colors">
-              <banner.icon className="w-8 h-8 text-blue-brand group-hover:scale-110 transition-transform" />
+            <div key={i} className="brutalist-card bg-white text-primary p-4 flex flex-col items-center justify-center gap-2 text-center group hover:bg-secondary transition-colors">
+              <banner.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
               <span className="font-mono text-[10px] font-black tracking-widest">{banner.text}</span>
             </div>
           ))}
         </div>
 
         {/* Copyright */}
-        <div className="pt-12 border-t-4 border-blue-brand flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-12 border-t-4 border-primary flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="font-mono text-[10px] font-bold text-white/50 uppercase tracking-widest">
             © 2026 Envios DosRuedas. Todos los derechos reservados.
           </p>

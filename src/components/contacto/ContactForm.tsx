@@ -13,7 +13,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-blue-brand text-white p-12 text-center border-2 border-white">
+      <div className="bg-primary text-white p-12 text-center border-2 border-white">
         <h3 className="font-display text-4xl mb-4 uppercase">¡Mensaje Enviado!</h3>
         <p className="font-display text-sm mb-8">Tu consulta ha sido recibida correctamente. Un asesor se contactará con vos a la brevedad.</p>
         <button 
@@ -30,26 +30,26 @@ export default function ContactForm() {
     <div className="bg-white/5 border border-white/10 p-10 md:p-16">
       <div className="mb-10">
         <h3 className="font-display text-3xl text-white uppercase tracking-tight mb-2">Envianos un Mensaje</h3>
-        <p className="font-display text-xs text-white-brand/40 uppercase tracking-widest">Completá el formulario para una respuesta profesional</p>
+        <p className="font-display text-xs text-background/40 uppercase tracking-widest">Completá el formulario para una respuesta profesional</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
-          <label className="font-mono text-[10px] text-blue-brand uppercase tracking-widest block">Nombre *</label>
-          <input required type="text" className="w-full bg-blue-brand border border-white/10 p-4 font-display text-white focus:border-blue-brand outline-none transition-colors" placeholder="Tu nombre" />
+          <label className="font-mono text-[10px] text-primary uppercase tracking-widest block">Nombre *</label>
+          <input required type="text" className="w-full bg-primary border border-white/10 p-4 font-display text-white focus:border-primary outline-none transition-colors" placeholder="Tu nombre" />
         </div>
         <div className="space-y-2">
-          <label className="font-mono text-[10px] text-blue-brand uppercase tracking-widest block">Email *</label>
-          <input required type="email" className="w-full bg-blue-brand border border-white/10 p-4 font-display text-white focus:border-blue-brand outline-none transition-colors" placeholder="tu@email.com" />
+          <label className="font-mono text-[10px] text-primary uppercase tracking-widest block">Email *</label>
+          <input required type="email" className="w-full bg-primary border border-white/10 p-4 font-display text-white focus:border-primary outline-none transition-colors" placeholder="tu@email.com" />
         </div>
         <div className="space-y-2">
-          <label className="font-mono text-[10px] text-blue-brand uppercase tracking-widest block">Mensaje *</label>
-          <textarea required rows={5} className="w-full bg-blue-brand border border-white/10 p-4 font-display text-white focus:border-blue-brand outline-none transition-colors" placeholder="Contanos sobre tu consulta o necesidad de envío..." />
+          <label className="font-mono text-[10px] text-primary uppercase tracking-widest block">Mensaje *</label>
+          <textarea required rows={5} className="w-full bg-primary border border-white/10 p-4 font-display text-white focus:border-primary outline-none transition-colors" placeholder="Contanos sobre tu consulta o necesidad de envío..." />
         </div>
         <button 
           type="submit" 
           disabled={status === "sending"}
-          className="w-full bg-blue-brand text-white py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-blue-brand transition-all disabled:opacity-50"
+          className="w-full bg-primary text-white py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-primary transition-all disabled:opacity-50"
         >
           {status === "sending" ? "Enviando..." : "Enviar Mensaje"}
         </button>

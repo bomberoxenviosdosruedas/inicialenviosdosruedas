@@ -21,26 +21,26 @@ export default function MapFeatures() {
     <section className="py-20 border-y border-white/10">
       <div className="mb-12">
         <h2 className="font-display text-4xl md:text-5xl text-white uppercase mb-4">
-          Beneficios del <span className="text-gold-brand">Cotizador LowCost</span>
+          Beneficios del <span className="text-secondary">Cotizador LowCost</span>
         </h2>
-        <p className="font-display text-white-brand/60 max-w-2xl border-l-2 border-gold-brand pl-6">
+        <p className="font-display text-background/60 max-w-2xl border-l-2 border-secondary pl-6">
           Nuestra herramienta de cotización optimizada para envíos económicos te permite ahorrar sin perder el control de tus paquetes.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {features.map((feat) => (
-          <div key={feat.id} className="group border border-white/10 p-8 hover:border-gold-brand transition-colors bg-white/5 relative">
-            <span className="absolute top-4 right-4 font-mono text-[10px] text-gold-brand/40 group-hover:text-gold-brand transition-colors">
+          <div key={feat.id} className="group border border-white/10 p-8 hover:border-secondary transition-colors bg-white/5 relative">
+            <span className="absolute top-4 right-4 font-mono text-[10px] text-secondary/40 group-hover:text-secondary transition-colors">
               {feat.id}
             </span>
             <h3 className="font-display text-xl text-white mb-4 uppercase tracking-tighter">
               {feat.title}
             </h3>
-            <p className="font-display text-sm text-white-brand/70 leading-relaxed">
+            <p className="font-display text-sm text-background/70 leading-relaxed">
               {feat.description}
             </p>
-            <div className="mt-6 h-[2px] w-0 group-hover:w-full bg-gold-brand transition-all duration-500" />
+            <div className="mt-6 h-[2px] w-0 group-hover:w-full bg-secondary transition-all duration-500" />
           </div>
         ))}
       </div>

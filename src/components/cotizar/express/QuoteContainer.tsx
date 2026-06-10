@@ -73,30 +73,30 @@ export default function QuoteContainer() {
       <div className="lg:col-span-6 bg-white/5 border border-white/10 p-8 relative">
         <div className="mb-10">
           <h3 className="font-display text-3xl text-white uppercase tracking-tighter mb-2">Configuración de Ruta</h3>
-          <p className="font-mono text-[10px] text-white-brand/40 uppercase tracking-widest">Step_01: Input_Parameters</p>
+          <p className="font-mono text-[10px] text-background/40 uppercase tracking-widest">Step_01: Input_Parameters</p>
         </div>
 
         <div className="space-y-8">
           {!result ? (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label className="font-mono text-xs text-blue-brand uppercase tracking-widest block">Punto de Origen</label>
+                <label className="font-mono text-xs text-primary uppercase tracking-widest block">Punto de Origen</label>
                 <input
                   value={origin}
                   onChange={(e) => setOrigin(e.target.value)}
                   type="text"
                   placeholder="Ej: Av. Colón 1234"
-                  className="w-full bg-blue-brand/20 border border-white/10 p-4 font-display text-white focus:border-blue-brand outline-none transition-colors"
+                  className="w-full bg-primary/20 border border-white/10 p-4 font-display text-white focus:border-primary outline-none transition-colors"
                 />
               </div>
               <div className="space-y-2">
-                <label className="font-mono text-xs text-blue-brand uppercase tracking-widest block">Punto de Destino</label>
+                <label className="font-mono text-xs text-primary uppercase tracking-widest block">Punto de Destino</label>
                 <input
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
                   type="text"
                   placeholder="Ej: Juan B. Justo 5678"
-                  className="w-full bg-blue-brand/20 border border-white/10 p-4 font-display text-white focus:border-blue-brand outline-none transition-colors"
+                  className="w-full bg-primary/20 border border-white/10 p-4 font-display text-white focus:border-primary outline-none transition-colors"
                 />
               </div>
 
@@ -109,20 +109,20 @@ export default function QuoteContainer() {
               <button
                 type="submit"
                 disabled={calculating}
-                className="w-full bg-blue-brand text-white py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-blue-brand transition-all disabled:opacity-50"
+                className="w-full bg-primary text-white py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-primary transition-all disabled:opacity-50"
               >
                 {calculating ? "Calculando..." : "Calcular Cotización"}
               </button>
             </form>
           ) : (
             <div className="space-y-8">
-              <div className="p-6 bg-blue-brand/20 border border-blue-brand/30">
+              <div className="p-6 bg-primary/20 border border-primary/30">
                  <div className="flex justify-between items-center mb-4 pb-4 border-b border-white/10">
-                    <span className="font-mono text-[10px] text-white-brand/40 uppercase">Punto A</span>
+                    <span className="font-mono text-[10px] text-background/40 uppercase">Punto A</span>
                     <span className="font-display text-sm text-white">{origin}</span>
                  </div>
                  <div className="flex justify-between items-center">
-                    <span className="font-mono text-[10px] text-white-brand/40 uppercase">Punto B</span>
+                    <span className="font-mono text-[10px] text-background/40 uppercase">Punto B</span>
                     <span className="font-display text-sm text-white">{destination}</span>
                  </div>
               </div>
@@ -137,7 +137,7 @@ export default function QuoteContainer() {
           )}
 
           {calculating && (
-             <div className="bg-black p-4 font-mono text-[10px] text-blue-brand h-32 overflow-hidden flex flex-col justify-end space-y-1 border border-blue-brand/30">
+             <div className="bg-black p-4 font-mono text-[10px] text-primary h-32 overflow-hidden flex flex-col justify-end space-y-1 border border-primary/30">
                 {terminalLogs.map((log, i) => (
                   <div key={i} className="flex gap-2">
                     <span>&gt;</span>
@@ -149,32 +149,32 @@ export default function QuoteContainer() {
         </div>
       </div>
 
-      <div className="lg:col-span-6 border-2 border-blue-brand bg-blue-brand/5 p-8 relative overflow-hidden flex flex-col">
-        <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-blue-brand">EXPRESS_VAL_CORE</div>
+      <div className="lg:col-span-6 border-2 border-primary bg-primary/5 p-8 relative overflow-hidden flex flex-col">
+        <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-primary">EXPRESS_VAL_CORE</div>
 
-        <div className="mb-10 border-b border-blue-brand/20 pb-4">
+        <div className="mb-10 border-b border-primary/20 pb-4">
            <h3 className="font-display text-3xl text-white uppercase tracking-tighter">Cotización Express</h3>
-           <p className="font-mono text-[10px] text-white-brand/40 uppercase tracking-widest mt-1">Step_02: Output_Metrics</p>
+           <p className="font-mono text-[10px] text-background/40 uppercase tracking-widest mt-1">Step_02: Output_Metrics</p>
         </div>
 
         <div className="flex-1 space-y-8">
            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-white/5 border border-white/10 p-4">
-                 <p className="font-mono text-[10px] text-white-brand/40 uppercase mb-1">Distancia</p>
+                 <p className="font-mono text-[10px] text-background/40 uppercase mb-1">Distancia</p>
                  <p className="font-display text-2xl text-white">{result ? `${result.distanceKm} KM` : "---"}</p>
               </div>
               <div className="bg-white/5 border border-white/10 p-4">
-                 <p className="font-mono text-[10px] text-white-brand/40 uppercase mb-1">Tiempo</p>
+                 <p className="font-mono text-[10px] text-background/40 uppercase mb-1">Tiempo</p>
                  <p className="font-display text-2xl text-white">{result ? `${result.durationMin} MIN` : "---"}</p>
               </div>
               <div className="bg-white/5 border border-white/10 p-4">
-                 <p className="font-mono text-[10px] text-white-brand/40 uppercase mb-1">Total</p>
-                 <p className="font-display text-2xl text-blue-brand">{result ? `$${result.price.toLocaleString("es-AR")}` : "---"}</p>
+                 <p className="font-mono text-[10px] text-background/40 uppercase mb-1">Total</p>
+                 <p className="font-display text-2xl text-primary">{result ? `$${result.price.toLocaleString("es-AR")}` : "---"}</p>
               </div>
            </div>
 
-           <div className="p-6 border-l-4 border-blue-brand bg-blue-brand/10">
-              <p className="font-display text-xs text-white-brand/70 leading-relaxed">
+           <div className="p-6 border-l-4 border-primary bg-primary/10">
+              <p className="font-display text-xs text-background/70 leading-relaxed">
                  {result
                   ? "Esta tarifa de envío Express incluye prioridad de ruteo inmediata y entrega garantizada en un rango de 2 horas."
                   : "Por favor, configure el origen y destino para calcular el costo preciso del envío prioritario."}
@@ -188,7 +188,7 @@ export default function QuoteContainer() {
                 href={`https://wa.me/542236602699?text=Cotizacion%20Express:%20$${result.price}%20(${result.distanceKm}km)`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center bg-blue-brand text-white py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-blue-brand transition-all"
+                className="block text-center bg-primary text-white py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-primary transition-all"
               >
                 Confirmar Envío
               </a>

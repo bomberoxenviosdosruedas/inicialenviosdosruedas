@@ -6,20 +6,20 @@ export default function Values() {
   ];
 
   return (
-    <section className="py-24 bg-blue-brand/5">
+    <section className="py-24 bg-primary/5">
       <div className="max-w-7xl mx-auto px-6 text-center mb-16">
-        <h2 className="font-display text-5xl md:text-7xl text-white uppercase tracking-tighter mb-4">NUESTROS <span className="text-blue-brand">PILARES</span></h2>
-        <p className="font-display text-white-brand/60 max-w-2xl mx-auto">La excelencia no es un acto, es un hábito que practicamos en cada kilómetro recorrido por las calles de nuestra ciudad.</p>
+        <h2 className="font-display text-5xl md:text-7xl text-white uppercase tracking-tighter mb-4">NUESTROS <span className="text-primary">PILARES</span></h2>
+        <p className="font-display text-background/60 max-w-2xl mx-auto">La excelencia no es un acto, es un hábito que practicamos en cada kilómetro recorrido por las calles de nuestra ciudad.</p>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
         {values.map((v, i) => (
           <div key={i} className="flex flex-col items-center text-center group">
-             <div className="w-16 h-16 border-2 border-blue-brand rotate-45 flex items-center justify-center mb-10 group-hover:bg-blue-brand transition-all duration-300">
+             <div className="w-16 h-16 border-2 border-primary rotate-45 flex items-center justify-center mb-10 group-hover:bg-primary transition-all duration-300">
                 <span className="font-mono text-xl text-white -rotate-45">{v.icon}</span>
              </div>
              <h3 className="font-display text-3xl text-white uppercase mb-4 tracking-tighter">{v.title}</h3>
-             <p className="font-display text-sm text-white-brand/50 leading-relaxed">{v.desc}</p>
+             <p className="font-display text-sm text-background/50 leading-relaxed">{v.desc}</p>
           </div>
         ))}
       </div>

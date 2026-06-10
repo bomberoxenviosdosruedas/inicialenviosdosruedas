@@ -10,23 +10,23 @@ export default function UrgentScenarios() {
     <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
       <div className="text-center mb-16">
         <h2 className="font-display text-4xl md:text-6xl text-white uppercase tracking-tighter mb-4">
-          ¿CUÁNDO NECESITAS <span className="text-blue-brand">EXPRESS</span>?
+          ¿CUÁNDO NECESITAS <span className="text-primary">EXPRESS</span>?
         </h2>
-        <p className="font-mono text-gold-brand tracking-[0.2em] uppercase text-sm">
+        <p className="font-mono text-secondary tracking-[0.2em] uppercase text-sm">
           Situaciones donde cada minuto cuenta y la rapidez es fundamental.
         </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {scenarios.map((s) => (
-          <div key={s.icon} className="group border border-white/10 p-8 hover:bg-blue-brand transition-all duration-300">
+          <div key={s.icon} className="group border border-white/10 p-8 hover:bg-primary transition-all duration-300">
             <div className="font-display text-5xl text-white/10 mb-6 group-hover:text-white/20 transition-colors">
               {s.icon}
             </div>
-            <h3 className="font-display text-2xl text-white mb-4 uppercase group-hover:text-blue-brand">
+            <h3 className="font-display text-2xl text-white mb-4 uppercase group-hover:text-primary">
               {s.title}
             </h3>
-            <p className="font-display text-xs text-white-brand/60 leading-relaxed group-hover:text-blue-brand/80">
+            <p className="font-display text-xs text-background/60 leading-relaxed group-hover:text-primary/80">
               {s.desc}
             </p>
           </div>
