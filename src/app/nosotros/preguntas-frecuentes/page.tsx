@@ -17,8 +17,8 @@ export default function PreguntasFrecuentesPage() {
              <span className="font-mono text-xs text-blue-brand uppercase tracking-[0.3em]">Support_Core / FAQ</span>
           </div>
           <h1 className="font-display text-6xl md:text-9xl text-white uppercase tracking-tighter leading-[0.85] mb-8">
-            CENTRO DE <br/>
-            <span className="text-blue-brand">AYUDA</span>
+            CENTRO DE AYUDA
+
           </h1>
           <p className="font-display text-xl text-white-brand/60 max-w-2xl mx-auto">
             Encontrá respuestas rápidas a las dudas más comunes sobre nuestros servicios, procesos logísticos y facturación.

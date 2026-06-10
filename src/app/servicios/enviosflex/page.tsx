@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import HeroFlex from "@/components/servicios/enviosflex/HeroFlex";
 import MarketplaceIntegration from "@/components/servicios/enviosflex/MarketplaceIntegration";
@@ -75,12 +76,12 @@ export default function EnviosFlexPage() {
             </p>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-auto shrink-0">
-            <button className="bg-blue-brand text-white px-10 py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-blue-brand transition-all">
+            <Link href="/cotizar/express" className="bg-blue-brand text-white px-10 py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-blue-brand transition-all">
               EMPEZAR AHORA
-            </button>
-            <button className="border border-white/30 text-white px-10 py-5 font-mono text-xl uppercase hover:bg-white/10 transition-all">
+            </Link>
+            <Link href="/cotizar/express" className="border border-white/30 text-white px-10 py-5 font-mono text-xl uppercase hover:bg-white/10 transition-all">
               CONTACTAR ASESOR
-            </button>
+            </Link>
           </div>
         </div>
       </section>

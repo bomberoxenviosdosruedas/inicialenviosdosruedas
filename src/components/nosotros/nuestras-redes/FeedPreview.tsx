@@ -1,5 +1,5 @@
 import { SocialPost } from "@/generated/prisma/client";
-import { Heart, ExternalLink } from "lucide-react";
+// import { Heart, ExternalLink } from "lucide-react";
 
 interface FeedPreviewProps {
   posts: SocialPost[];

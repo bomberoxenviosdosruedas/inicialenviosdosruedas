@@ -79,7 +79,7 @@ export async function calculateQuote(req: QuoteRequest): Promise<QuoteResult> {
   const { origin, destination, serviceType } = req;
 
   // 1. Get distance and duration (simulated or via Google Maps API if available)
-  let route = getSimulatedRoute(origin, destination);
+  const route = getSimulatedRoute(origin, destination);
 
   if (process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY && process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY !== "YOUR_API_KEY") {
     try {

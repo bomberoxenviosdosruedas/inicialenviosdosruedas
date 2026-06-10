@@ -8,7 +8,7 @@ import { Home, ChevronDown, Mail, Phone, Calculator, Menu, X } from "lucide-reac
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false); // eslint-disable-line @typescript-eslint/no-unused-vars
 
   useEffect(() => {
     const handleScroll = () => {
