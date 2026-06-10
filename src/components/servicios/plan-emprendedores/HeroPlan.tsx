@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function HeroPlan() {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
@@ -19,12 +20,12 @@ export default function HeroPlan() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <button className="bg-blue-brand text-white px-8 py-4 font-mono text-lg uppercase font-bold hover:bg-white hover:text-blue-brand transition-all">
+            <Link href="/contacto" className="bg-blue-brand text-white px-8 py-4 font-mono text-lg uppercase font-bold hover:bg-white hover:text-blue-brand transition-all">
               CONFIGURAR MI PLAN
-            </button>
-            <button className="border border-white-brand/30 text-white px-8 py-4 font-mono text-lg uppercase hover:bg-white/10 transition-all">
+            </Link>
+            <Link href="/contacto" className="border border-white-brand/30 text-white px-8 py-4 font-mono text-lg uppercase hover:bg-white/10 transition-all">
               HABLAR CON UN EXPERTO
-            </button>
+            </Link>
           </div>
         </div>
       </div>

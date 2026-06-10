@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function PlanTiers() {
   const plans = [
     {
@@ -56,9 +57,9 @@ export default function PlanTiers() {
                 </p>
              </div>
 
-             <button className="w-full border border-white/20 text-white py-4 font-mono text-sm uppercase hover:bg-blue-brand hover:border-blue-brand transition-all">
+             <Link href="/contacto" className="w-full border border-white/20 text-white py-4 font-mono text-sm uppercase hover:bg-blue-brand hover:border-blue-brand transition-all">
                 SOLICITAR PLAN
-             </button>
+             </Link>
           </div>
         ))}
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FeedPreview from "@/components/nosotros/nuestras-redes/FeedPreview";
 import SocialGrid from "@/components/nosotros/nuestras-redes/SocialGrid";
+import { SocialPost } from "@/generated/prisma/client";
 import { prisma } from "@/lib/db";
 
 export const metadata: Metadata = {
@@ -8,11 +9,18 @@ export const metadata: Metadata = {
   description: "Conectá con la comunidad de Envíos DosRuedas en Mar del Plata. Seguí nuestras redes para ofertas exclusivas, consejos y novedades.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function NuestrasRedesPage() {
-  const posts = await prisma.socialPost.findMany({
-    orderBy: { timestamp: "desc" },
-    take: 6,
-  });
+  let posts: SocialPost[] = [];
+  try {
+    posts = await prisma.socialPost.findMany({
+      orderBy: { timestamp: "desc" },
+      take: 6,
+    });
+  } catch {
+    console.warn("Database not reachable during build, using fallback posts.");
+  }
 
   const benefits = [
     { title: "Ofertas Exclusivas", desc: "Accede a descuentos y promociones especiales solo para nuestra comunidad digital." },
@@ -36,7 +44,7 @@ export default async function NuestrasRedesPage() {
             <span className="text-blue-brand">MOVIMIENTO</span>
           </h1>
           <p className="font-display text-xl text-white-brand/60 max-w-3xl mx-auto">
-            Seguinos en nuestras plataformas digitales para estar al tanto de novedades logísticas, consejos para emprendedores y el día a día de nuestra flota recorriendo Mar del Plata.
+            Siguenos en nuestras plataformas digitales para estar al tanto de novedades logísticas, consejos para emprendedores y el día a día de nuestra flota recorriendo Mar del Plata.
           </p>
         </section>
 
@@ -99,7 +107,7 @@ export default async function NuestrasRedesPage() {
                     </button>
                  </form>
                  <p className="font-display text-[10px] text-blue-brand/40 uppercase mt-4 tracking-widest">
-                   Garantizamos la privacidad de tus datos. Desascribite cuando quieras.
+                   Garantizamos la privacidad de tus datos. Darse de baja cuando quieras.
                  </p>
               </div>
            </div>

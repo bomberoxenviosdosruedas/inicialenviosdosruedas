@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import History from "@/components/nosotros/sobre-nosotros/History";
 import Values from "@/components/nosotros/sobre-nosotros/Values";
@@ -35,12 +36,12 @@ export default function SobreNosotrosPage() {
               Desde Mar del Plata, construimos el futuro de la mensajería con tecnología, transparencia y un compromiso inquebrantable con cada entrega.
             </p>
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <button className="bg-blue-brand text-white px-8 py-4 font-mono text-lg uppercase font-bold hover:bg-white hover:text-blue-brand transition-all">
+              <Link href="/#servicios" className="bg-blue-brand text-white px-8 py-4 font-mono text-lg uppercase font-bold hover:bg-white hover:text-blue-brand transition-all">
                 VER NUESTROS SERVICIOS
-              </button>
-              <button className="border border-white/30 text-white px-8 py-4 font-mono text-lg uppercase hover:bg-white/10 transition-all">
+              </Link>
+              <Link href="/contacto" className="border border-white/30 text-white px-8 py-4 font-mono text-lg uppercase hover:bg-white/10 transition-all">
                 CONTACTAR
-              </button>
+              </Link>
             </div>
           </div>
           

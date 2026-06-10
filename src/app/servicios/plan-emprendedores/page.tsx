@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import HeroPlan from "@/components/servicios/plan-emprendedores/HeroPlan";
 import KeyBenefits from "@/components/servicios/plan-emprendedores/KeyBenefits";
@@ -80,15 +81,15 @@ export default function PlanEmprendedoresPage() {
                 <span className="text-blue-brand">TU E-COMMERCE?</span>
               </h2>
               <p className="font-display text-white-brand/60 text-lg mb-8">
-                Olvidáte de los paquetes y concéntrate en tu producto. Nosotros nos encargamos de toda la cadena de distribución, desde el almacenamiento hasta la última milla.
+                Olvidate de los paquetes y concéntrate en tu producto. Nosotros nos encargamos de toda la cadena de distribución, desde el almacenamiento hasta la última milla.
               </p>
               <div className="space-y-4">
-                 <button className="w-full sm:w-auto bg-blue-brand text-white px-10 py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-blue-brand transition-all">
+                 <Link href="/contacto" className="w-full sm:w-auto bg-blue-brand text-white px-10 py-5 font-mono text-xl uppercase font-bold hover:bg-white hover:text-blue-brand transition-all">
                    SOLICITAR PLAN
-                 </button>
-                 <button className="w-full sm:w-auto ml-0 sm:ml-4 border border-white/30 text-white px-10 py-5 font-mono text-xl uppercase hover:bg-white/10 transition-all">
+                 </Link>
+                 <Link href="/contacto" className="w-full sm:w-auto ml-0 sm:ml-4 border border-white/30 text-white px-10 py-5 font-mono text-xl uppercase hover:bg-white/10 transition-all">
                    HABLAR CON UN ASESOR
-                 </button>
+                 </Link>
               </div>
             </div>
             

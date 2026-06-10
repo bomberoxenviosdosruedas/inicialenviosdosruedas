@@ -35,8 +35,8 @@ export async function getQuoteAction(req: SafeQuoteRequest): Promise<{ success: 
     });
     
     return { success: true, data: quote };
-  } catch (error: any) {
-    console.error("Error in getQuoteAction:", error);
-    return { success: false, error: error?.message || "Error al calcular la cotización." };
+  } catch (error) {
+    console.error("Error in getQuoteAction:", (error as Error).message);
+    return { success: false, error: (error as Error).message || "Error al calcular la cotización." };
   }
 }

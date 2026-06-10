@@ -102,3 +102,10 @@
 .card-back {
   transform: rotateY(180deg);
 }
+
+@theme {
+  --color-dark-navy: #09090b;
+  --color-off-white: #fafafa;
+  --color-primary: #0c32a0;
+  --color-accent: #ffec00;
+}

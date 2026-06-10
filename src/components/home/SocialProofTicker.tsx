@@ -1,4 +1,4 @@
-import { SocialPost } from "@/generated/prisma/client";
+import { SocialPost, SocialPlatformEnum } from "@/generated/prisma/client";
 import { Heart, MessageSquare, Share2, ExternalLink, MessageCircle } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,16 +9,17 @@ interface SocialProofTickerProps {
 
 export default function SocialProofTicker({ posts }: SocialProofTickerProps) {
   // If there are no posts in the database, we use fallback posts to ensure the UI is populated
-  const displayPosts = posts.length > 0 ? posts : [
+  const displayPosts: SocialPost[] = posts.length > 0 ? posts : [
     {
       id: 1,
-      platform: "instagram",
+      platform: SocialPlatformEnum.instagram,
       userName: "Envios DosRuedas",
       userAvatar: "/LogoEnviosDosRuedas.webp",
       userUrl: "https://www.instagram.com/enviosdosruedas/",
       content: "¡Flota activa bajo la lluvia! En Mar del Plata el clima cambia, pero nuestro compromiso no. Entregas Express garantizadas en 2 horas.",
       postUrl: "https://www.instagram.com/enviosdosruedas/",
       imageUrl: null,
+      imageHint: null,
       likes: 42,
       comments: 12,
       shares: 5,
@@ -26,13 +27,14 @@ export default function SocialProofTicker({ posts }: SocialProofTickerProps) {
     },
     {
       id: 2,
-      platform: "facebook",
+      platform: SocialPlatformEnum.facebook,
       userName: "Envios DosRuedas",
       userAvatar: "/LogoEnviosDosRuedas.webp",
       userUrl: "https://facebook.com/enviosdosruedas",
       content: "Acelerá tu e-commerce con MercadoLibre Flex. Te ayudamos a despachar en el día y mantener tu reputación en verde.",
       postUrl: "https://facebook.com/enviosdosruedas",
       imageUrl: null,
+      imageHint: null,
       likes: 88,
       comments: 19,
       shares: 14,
@@ -137,8 +139,8 @@ export default function SocialProofTicker({ posts }: SocialProofTickerProps) {
 
       <div className="container mx-auto px-6 mt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayPosts.map((post: any) => {
-            const isInstagram = post.platform === "instagram";
+          {displayPosts.map((post) => {
+            const isInstagram = post.platform === SocialPlatformEnum.instagram;
             return (
               <div 
                 key={post.id} 

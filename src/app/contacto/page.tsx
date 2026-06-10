@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import ContactForm from "@/components/contacto/ContactForm";
 import LocationInfo from "@/components/contacto/LocationInfo";
@@ -47,9 +48,9 @@ export default function ContactoPage() {
            <p className="font-display text-white-brand/50 mb-10 max-w-xl mx-auto">
              Si buscás una solución logística recurrente para tu negocio, consultá nuestro plan especial para e-commerce.
            </p>
-           <button className="bg-white text-blue-brand px-10 py-5 font-mono text-xl uppercase font-bold hover:bg-blue-brand hover:text-white transition-all">
+           <Link href="/servicios/plan-emprendedores" className="bg-white text-blue-brand px-10 py-5 font-mono text-xl uppercase font-bold hover:bg-blue-brand hover:text-white transition-all">
              VER PLAN EMPRENDEDORES
-           </button>
+           </Link>
         </section>
       </div>
     </main>
