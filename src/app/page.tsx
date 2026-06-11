@@ -22,7 +22,7 @@ export default async function Home() {
   }
 
   return (
-    <main className="flex flex-col min-h-screen bg-dark-navy text-off-white">
+    <main className="flex flex-col min-h-screen bg-dark-navy text-foreground">
       <Hero />
       <Vision />
       <ServicesOverview />

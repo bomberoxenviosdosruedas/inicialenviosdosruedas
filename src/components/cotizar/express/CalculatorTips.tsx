@@ -23,11 +23,11 @@ export default function CalculatorTips() {
         <div className="lg:w-1/3">
           <h2 className="font-display text-4xl text-white uppercase leading-none mb-6">
             Consejos para una <br/>
-            <span className="text-blue-brand">Cotización</span> <br/>
+            <span className="text-primary">Cotización</span> <br/>
             Exitosa
           </h2>
-          <div className="h-1 w-20 bg-blue-brand mb-6"></div>
-          <p className="font-display text-sm text-white-brand/60">
+          <div className="h-1 w-20 bg-primary mb-6"></div>
+          <p className="font-display text-sm text-background/60">
             Sigue estas recomendaciones técnicas para obtener la cotización más precisa en nuestro sistema de despacho automatizado.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function CalculatorTips() {
                 {tip.num}
               </span>
               <h3 className="font-display text-lg text-white mb-3 uppercase">{tip.title}</h3>
-              <p className="font-display text-xs text-white-brand/70 leading-relaxed">
+              <p className="font-display text-xs text-background/70 leading-relaxed">
                 {tip.description}
               </p>
             </div>
